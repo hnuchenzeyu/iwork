@@ -38,20 +38,20 @@
     <!-- MapperScannerConfigurer会帮助我们自动扫描和注册Mapper对应的MapperFactory对象 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- basePackage是用来指定Mapper接口文件所在的包, 这个包下的子包中的内容也会被扫描到 -->
-        <property name="basePackage" value="com.ruanko.mapper" />
+        <property name="basePackage" value="com.iwork.mapper" />
     </bean>
 
 
     <!-- SpringMVC -->
     <!-- 开启注解扫描 -->
-    <context:component-scan base-package="com.czy.controller" />
+    <context:component-scan base-package="com.iwork.controller" />
 
     <!-- 开启RequestMapping注解 -->
     <mvc:annotation-driven />
 
     <!-- 处理请求转发 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/" />
+        <property name="prefix" value="/Resource/" />
         <property name="suffix" value=".jsp" />
     </bean>
     <!-- 文件上传解析器 -->

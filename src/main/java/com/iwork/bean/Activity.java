@@ -11,6 +11,8 @@ public class Activity {
 
     private Integer activityType;
 
+    private String activityTitle;
+
     private String activityContext;
 
     public Integer getActivityId() {
@@ -43,6 +45,14 @@ public class Activity {
 
     public void setActivityType(Integer activityType) {
         this.activityType = activityType;
+    }
+
+    public String getActivityTitle() {
+        return activityTitle;
+    }
+
+    public void setActivityTitle(String activityTitle) {
+        this.activityTitle = activityTitle;
     }
 
     public String getActivityContext() {
