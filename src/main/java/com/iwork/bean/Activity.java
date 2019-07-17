@@ -11,7 +11,7 @@ public class Activity {
 
     private Integer activityType;
 
-    private String activityTitle;//添加标题
+    private String activityTitle;//添加一个标题
 
     private String activityContext;
 
