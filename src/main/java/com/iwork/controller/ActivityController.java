@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/Activities")
 public class ActivityController {
 
     @Resource
@@ -20,10 +19,11 @@ public class ActivityController {
     @RequestMapping("/addWelfare")
     public ModelAndView addWelfare(HttpServletRequest request, Activity activity){
         ModelAndView mv = new ModelAndView();
-        String titile = request.getParameter("title");
+        String title = request.getParameter("title");
         String content = request.getParameter("content");
         activity.setActivityType(1);
-        activity.setActivityTitle(titile);
+        activity.setActivityId((int)(Math.random()+5));
+        activity.setActivityTitle(title);
         activity.setActivityContext(content);
         activity.setActivityCreateUserId(1001);
         activity.setActivityCreateTime(new Date());
