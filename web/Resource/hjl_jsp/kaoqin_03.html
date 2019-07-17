@@ -16,11 +16,11 @@
     <![endif]-->
 
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min.css?v=4.0.0" rel="stylesheet">
-	<link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+	<link href="../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
 </head>
 
 <body class="gray-bg" >  
@@ -37,7 +37,7 @@
                          <h4 class="example-title">工具条</h4>
                          <div class="example">
 							 <button type="button" class="btn label-primary">打卡</button>
-                             <div class="btn-group hidden-xs" id="exampleToolbar" role="group">
+                             <div class="btn-group hidden-xs" id="toolbar_vocation" role="group">
                                  <button type="button" class="btn btn-outline btn-default">
                                      <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                                  </button>
@@ -69,7 +69,7 @@
 							 <div class="example-wrap">
 							    <h4 class="example-title">考勤情况</h4>
 							    <div class="example">
-							        <div class="btn-group hidden-xs" id="exampleToolbar" role="group">
+							        <div class="btn-group hidden-xs" id="toolbar_now" role="group">
 							            <button type="button" class="btn btn-outline btn-default">
 							                <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
 							            </button>
@@ -93,7 +93,7 @@
 							 <div class="example-wrap">
 							    <h4 class="example-title">出勤统计</h4>
 							    <div class="example">
-							        <div class="btn-group hidden-xs" id="toolbar" role="group">
+							        <div class="btn-group hidden-xs" id="toolbar_statistic" role="group">
 							            <button type="button" class="btn btn-outline btn-default">
 							                <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
 							            </button>
@@ -104,7 +104,7 @@
 							                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
 							            </button>
 							        </div>
-							        <table id="ab_statistic" data-url="js/my/test.json" data-mobile-responsive="true">
+							        <table id="ab_statistic" data-url="../js/my/test.json" data-mobile-responsive="true">
 							            <thead>
 							              <th data-field="uid">工号</th>
 							              <th data-field="uname">姓名</th>
@@ -121,24 +121,24 @@
 		</div>
 
     </div>
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/plugins/layer/layer.min.js"></script>
-    <script src="js/hplus.min.js?v=4.0.0"></script>
-    <script type="text/javascript" src="js/contabs.min.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
-	<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-	<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-	<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-	<script src="js/demo/bootstrap-table-demo.min.js"></script>
-	<script src="js/my/kaoqin_03.js"></script>
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../js/plugins/layer/layer.min.js"></script>
+    <script src="../js/hplus.min.js?v=4.0.0"></script>
+    <script type="text/javascript" src="../js/contabs.min.js"></script>
+    <script src="../js/plugins/pace/pace.min.js"></script>
+	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+	<script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../js/demo/bootstrap-table-demo.min.js"></script>
+	<script src="/js/kaoqin_03.js"></script>
 		<!-- 日期Daterange picker -->
-	<link href="js/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />	
+	<link href="../js/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />	
 	<!-- 日期控件 -->
-	<script src="js/datetimepicker/bootstrap-datetimepicker.js"></script>
-	<script src='js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
+	<script src="../js/datetimepicker/bootstrap-datetimepicker.js"></script>
+	<script src='../js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
 	<script>
 		$('#starttime').datetimepicker({
 			format : 'yyyy-mm-dd hh:ii',
@@ -186,7 +186,7 @@
 	        		var a = '<span style="color:#0000ff">'+value+'</span>';
 	        	}else if(value == "2") {//迟到
 	        		var a = '<span style="color:#FF0000">'+value+'</span>';
-	        	}}else if(value == "3") {//早退
+	        	}else if(value == "3") {//早退
 	        		var a = '<span style="color:#FFF000">'+value+'</span>';
 	        	}else{
 	        		var a = '<span>'+value+'</span>';
