@@ -104,7 +104,7 @@
 							                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
 							            </button>
 							        </div>
-							        <table id="ab_statistic" data-url="../js/my/test.json" data-mobile-responsive="true">
+							        <table id="ab_statistic"  data-mobile-responsive="true">
 							            <thead>
 							              <th data-field="uid">工号</th>
 							              <th data-field="uname">姓名</th>
@@ -133,7 +133,7 @@
 	<script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 	<script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 	<script src="../js/demo/bootstrap-table-demo.min.js"></script>
-	<script src="/js/kaoqin_03.js"></script>
+	<script src="js/kaoqin_03.js"></script>
 		<!-- 日期Daterange picker -->
 	<link href="../js/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />	
 	<!-- 日期控件 -->
@@ -177,7 +177,7 @@
 		});
 		
 		
-		formatter: function(value,row,index) {
+		formatter: function work_type(value,row,index) {
         	//通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
         	var a = "";
 	        	if(value == "1") {//已签
