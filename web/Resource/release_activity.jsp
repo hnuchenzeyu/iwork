@@ -69,11 +69,14 @@
 
                 <div class="mail-body text-right tooltip-demo">
                     <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
-                       title="Send" onclick="sendActivity()"><i class="fa fa-reply"></i> 发送</button>
+                            title="Send" onclick="sendActivity()"><i class="fa fa-reply"></i> 发送
+                    </button>
                     <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"
-                       title="Discard email"><i class="fa fa-times"></i> 放弃</button>
+                            title="Discard email"><i class="fa fa-times"></i> 放弃
+                    </button>
                     <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"
-                       title="Move to draft folder"><i class="fa fa-pencil"></i> 存为草稿</button>
+                            title="Move to draft folder"><i class="fa fa-pencil"></i> 存为草稿
+                    </button>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -105,21 +108,25 @@
     function sendActivity() {
         var w_title = $("#title").val();
         var w_content = $(".summernote").code();
-        $.ajax({
-            url: "../addWelfare",
-            type: "post",
-            contentType: "application/json",
-            data: JSON.stringify({
-                activityTitle: w_title,
-                activityContext: w_content
-            }),
-            success: function (result) {
-                window.location.href = "welfareList";
-            },
-            error: function (result) {
-                alert("上传失败")
-            }
-        });
+        if (w_title == "" || w_content == "") {
+            alert("请输入完整标题和内容")
+        } else {
+            $.ajax({
+                url: "addWelfare",
+                type: "post",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    activityTitle: w_title,
+                    activityContext: w_content
+                }),
+                success: function (result) {
+                    window.location.href = "WelfareList";
+                },
+                error: function (result) {
+                    alert("上传失败")
+                }
+            });
+        }
     }
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
