@@ -1,0 +1,5 @@
+# 忽略下列文件夹和文件
+.idea/
+out/
+target/
+iWork.iml
