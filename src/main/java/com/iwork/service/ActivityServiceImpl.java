@@ -22,4 +22,9 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
 
+    public Activity selectActivityById(String id) {
+        return mapper.selectActivity(id);
+    }
+
+
 }

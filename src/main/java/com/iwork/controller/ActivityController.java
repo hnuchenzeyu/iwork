@@ -46,10 +46,25 @@ public class ActivityController {
      */
     @RequestMapping(value = "/WelfareList")
     public ModelAndView listWelfare(){
-        System.out.println("是否响应");
         ModelAndView mv = new ModelAndView("activities");
         List<Activity> list = service.welfareList();
         mv.addObject("welfares",list);
+        return mv;
+    }
+
+    /**
+     * 查找具体的活动
+     * @param Id
+     * @return
+     */
+    @RequestMapping("/article")
+    public ModelAndView showArticle(
+            @RequestParam(value = "id") String Id){
+        ModelAndView mv =new ModelAndView("article");
+        Activity activity = service.selectActivityById(Id);
+        System.out.println("ID:"+Id);
+        System.out.println(activity);
+        mv.addObject("article",activity);
         return mv;
     }
 }

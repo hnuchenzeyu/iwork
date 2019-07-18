@@ -8,4 +8,6 @@ public interface ActivityService {
     public void ActivityAdd(Activity activity);
 
     public List<Activity> welfareList();
+
+    Activity selectActivityById(String id);
 }

@@ -32,7 +32,7 @@
             <div class="col-lg-4">
                 <div class="ibox">
                     <div class="ibox-content">
-                        <a href="article.html" class="btn-link">
+                        <a href="article?id=${w.activityId}" class="btn-link">
                             <h2>
                                 ${w.activityTitle}
                             </h2>

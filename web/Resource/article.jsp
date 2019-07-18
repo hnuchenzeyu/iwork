@@ -40,10 +40,10 @@
 							</div>
 							<div class="text-center article-title">
 								<h1>
-									${pageContext.request.title}
+									${article.activityTitle}
 								</h1>
 							</div>
-							${pageContext.request.content}
+							${article.activityContext}
 							<hr>
 
 							<div class="row">
