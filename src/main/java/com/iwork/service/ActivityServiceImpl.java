@@ -17,8 +17,8 @@ public class ActivityServiceImpl implements ActivityService {
         mapper.addActivity(activity);
     }
 
-    public List<Activity> welfareList() {
-        return mapper.listWelfares();
+    public List<Activity> ActivityList(int id) {
+        return mapper.listActivities(id);
     }
 
 

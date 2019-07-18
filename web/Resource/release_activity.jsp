@@ -55,13 +55,6 @@
                     </form>
 
                 </div>
-
-                <!--                    <div class="mail-text h-200" >-->
-                <!--                        <div class="summernote">-->
-
-                <!--                        </div>-->
-                <!--                        <div class="clearfix"></div>-->
-                <!--                    </div>-->
                 <div class="mail-text h-200">
                     <div class="summernote"></div>
                     <div class="clearfix"></div>
