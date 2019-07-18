@@ -7,8 +7,803 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce2cfb84-34b2-4f25-9fe8-75f2f57716c6" name="Default Changelist" comment="teams_board.html 只显示团队分数&#10;team_editor.html 只显示团队基本信息和编辑团队分数&#10;teammate_editor.html 编辑团队成员信息&#10;teammates.html 显示团队成员">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_api_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_catalina_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_coyote_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_el_api_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jaspic_api_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jni_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jsp_api_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_scan_8_5_43.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iWork.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/activities.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/article.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/change.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/demo/webuploader-demo.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/first.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/login.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/patterns/header-profile-skin-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/patterns/header-profile-skin-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/patterns/header-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/patterns/shattered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/css/blueimp-gallery.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/error.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/play-pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/play-pause.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/video-play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/blueimp/img/video-play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/bootstrap-table/bootstrap-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/chosen/chosen-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/chosen/chosen-sprite@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/chosen/chosen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/clockpicker/clockpicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/codemirror/ambiance.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha-horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/hue-horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/hue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/saturation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/cropper/cropper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/dataTables/dataTables.bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/datapicker/datepicker3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/dropzone/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/dropzone/dropzone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/footable/fonts/footable.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/footable/fonts/footable.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/footable/fonts/footable.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/footable/footable.core.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/fullcalendar/fullcalendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/fullcalendar/fullcalendar.print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/iCheck/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/iCheck/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/iCheck/green@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/images/sort_asc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/images/sort_desc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/images/sprite-skin-flat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/images/spritemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/images/spritemap@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/jasny/jasny-bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/jqgrid/ui.jqgrid.css0820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/jsTree/32px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/jsTree/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/jsTree/throbber.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/markdown/bootstrap-markdown.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/morris/morris-0.4.3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/nouslider/jquery.nouislider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/plyr/plyr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/simditor/simditor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/steps/jquery.steps.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/summernote/summernote-bs3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/summernote/summernote.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/sweetalert/sweetalert.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/switchery/switchery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/toastr/toastr.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/treeview/bootstrap-treeview.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/plugins/webuploader/webuploader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/css/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/calendar_insert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/calendar_note.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/js/datepicker_demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/js/kaoqin_03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/js/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/kaoqin_01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/kaoqin_02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/kaoqin_03.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/kaoqin_04.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/meeting_asign.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/new_work.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/note_create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/hjl_jsp/work_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/a9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/iconfont-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/index.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/index_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/loading-upload.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/locked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/login-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/p_big1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/p_big2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/p_big3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/profile_big.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/profile_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/qr_code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/img/wenku_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/contabs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/content.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/bootstrap-datetimepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/bootstrap-datetimepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/bootstrap-datetimepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/bootstrap-datetimepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.rs-latin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.rs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/bootstrap-table-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/echarts-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/flot-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/form-advanced-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/form-validate-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/layer-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/morris-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/peity-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/rickshaw-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/sparkline-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/treeview-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/demo/webuploader-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/hplus.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/jquery-ui-1.10.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/jquery-ui.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/json2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/beautifyhtml/beautifyhtml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/bootstrap-table/bootstrap-table.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/chartJs/Chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/chosen/chosen.jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/clockpicker/clockpicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/codemirror/mode/javascript/javascript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/colorpicker/bootstrap-colorpicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/cropper/cropper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/dataTables/dataTables.bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/dataTables/jquery.dataTables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/datapicker/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/datetimepicker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/diff_match_patch/diff_match_patch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/dropzone/dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/easypiechart/jquery.easypiechart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/echarts/echarts-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/blank.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/fancybox_loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/fancybox_loading@2x.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/fancybox_overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/fancybox_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/fancybox_sprite@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/jquery.fancybox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fancybox/jquery.fancybox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/curvedLines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/jquery.flot.spline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/jquery.flot.symbol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/footable/footable.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/gritter/images/gritter-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/gritter/images/gritter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/gritter/images/ie-spacer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/gritter/jquery.gritter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/gritter/jquery.gritter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/iCheck/icheck.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jasny/jasny-bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jeditable/jquery.jeditable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jqgrid/i18n/grid.locale-cn.js0820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jqgrid/jquery.jqGrid.min.js0820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jquery-ui/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jsKnob/jquery.knob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jsTree/jstree.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/layer/laydate/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/layer/layer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/layer/layim/layim.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/layer/layim/layim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/layer/layim/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/markdown/bootstrap-markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/markdown/bootstrap-markdown.zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/markdown/markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/markdown/to-markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/metisMenu/jquery.metisMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/morris/morris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/morris/raphael-2.1.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/nestable/jquery.nestable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/nouslider/jquery.nouislider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/pace/pace.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/peity/jquery.peity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/plyr/plyr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/prettyfile/bootstrap-prettyfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/rickshaw/rickshaw.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/rickshaw/vendor/d3.v3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/simditor/hotkeys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/simditor/module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/simditor/simditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/simditor/uploader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/slimscroll/jquery.slimscroll.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/staps/jquery.steps.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/suggest/bootstrap-suggest.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/summernote/summernote-zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/summernote/summernote.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/sweetalert/sweetalert.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/switchery/switchery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/toastr/toastr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/treeview/bootstrap-treeview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/validate/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/validate/messages_zh.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/plugins/webuploader/webuploader.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/js/welcome.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/originality.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/plugins/fullavatareditor/scripts/fullAvatarEditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/plugins/fullavatareditor/scripts/jQuery.Cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/plugins/fullavatareditor/scripts/swfobject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/plugins/fullavatareditor/scripts/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/project_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/project_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/release_activity.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/statistics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/team_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/teammate_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/teammates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/Resource/teams_board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/META-INF/iWork.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Absence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Activity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Excellent_Stafff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Finance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Meeting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Power.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Project_Cost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/Project_Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/bean/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/controller/ActivityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/mapper/ActivityMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/mapper/ActivityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/service/ActivityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/com/iwork/service/ActivityServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/aspectjweaver-1.8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-beanutils-1.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-collections-3.2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-dbcp2-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-io-2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-lang-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/commons-pool2-2.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/ezmorph-1.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/jackson-annotations-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/jackson-core-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/jackson-databind-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/json-lib-2.4-jdk15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/mybatis-3.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/mybatis-spring-1.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/mysql-connector-java-8.0.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-aop-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-aspects-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-beans-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-context-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-core-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-expression-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-jdbc-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-tx-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-annotations-api-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-api-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-catalina-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-coyote-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-el-api-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-jaspic-api-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-jni-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-jsp-api-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-juli-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-servlet-api-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-util-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/lib/tomcat-util-scan-8.5.43.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Absence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Activity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Excellent_Stafff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Finance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Meeting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Note.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Power.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Project_Cost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/Project_Type.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/bean/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/controller/ActivityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/mapper/ActivityMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/mapper/ActivityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/service/ActivityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iwork/service/ActivityServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/iWork.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Absence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Activity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Excellent_Stafff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Finance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Meeting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Power.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Project_Cost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/Project_Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/bean/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/controller/ActivityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/mapper/ActivityMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/mapper/ActivityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/service/ActivityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iwork/service/ActivityServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/iWork.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/activities.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/article.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/change.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/demo/webuploader-demo.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/first.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/login.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/patterns/header-profile-skin-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/patterns/header-profile-skin-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/patterns/header-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/patterns/shattered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/css/blueimp-gallery.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/error.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/play-pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/play-pause.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/video-play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/blueimp/img/video-play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/bootstrap-table/bootstrap-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/chosen/chosen-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/chosen/chosen-sprite@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/chosen/chosen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/clockpicker/clockpicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/codemirror/ambiance.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha-horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/hue-horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/hue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/colorpicker/img/bootstrap-colorpicker/saturation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/cropper/cropper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/dataTables/dataTables.bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/datapicker/datepicker3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/dropzone/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/dropzone/dropzone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/footable/fonts/footable.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/footable/fonts/footable.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/footable/fonts/footable.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/footable/footable.core.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/fullcalendar/fullcalendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/fullcalendar/fullcalendar.print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/iCheck/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/iCheck/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/iCheck/green@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/images/sort_asc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/images/sort_desc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/images/sprite-skin-flat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/images/spritemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/images/spritemap@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/jasny/jasny-bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/jqgrid/ui.jqgrid.css0820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/jsTree/32px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/jsTree/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/jsTree/throbber.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/markdown/bootstrap-markdown.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/morris/morris-0.4.3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/nouslider/jquery.nouislider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/plyr/plyr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/simditor/simditor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/steps/jquery.steps.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/summernote/summernote-bs3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/summernote/summernote.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/sweetalert/sweetalert.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/switchery/switchery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/toastr/toastr.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/treeview/bootstrap-treeview.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/plugins/webuploader/webuploader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/css/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/calendar_insert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/calendar_note.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/js/datepicker_demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/js/kaoqin_03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/js/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/kaoqin_01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/kaoqin_02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/kaoqin_03.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/kaoqin_04.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/meeting_asign.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/new_work.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/note_create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/hjl_jsp/work_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/a9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/iconfont-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/index.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/index_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/loading-upload.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/locked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/login-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/p_big1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/p_big2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/p_big3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/profile_big.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/profile_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/qr_code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/img/wenku_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/contabs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/content.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/bootstrap-datetimepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/bootstrap-datetimepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/bootstrap-datetimepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/bootstrap-datetimepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.rs-latin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.rs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.sw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.ua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/datetimepicker/locales/bootstrap-datetimepicker.zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/bootstrap-table-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/echarts-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/flot-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/form-advanced-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/form-validate-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/layer-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/morris-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/peity-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/rickshaw-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/sparkline-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/treeview-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/demo/webuploader-demo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/hplus.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/jquery-ui-1.10.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/jquery-ui.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/json2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/beautifyhtml/beautifyhtml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/bootstrap-table/bootstrap-table.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/chartJs/Chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/chosen/chosen.jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/clockpicker/clockpicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/codemirror/mode/javascript/javascript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/colorpicker/bootstrap-colorpicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/cropper/cropper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/dataTables/dataTables.bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/dataTables/jquery.dataTables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/datapicker/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/datetimepicker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/diff_match_patch/diff_match_patch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/dropzone/dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/easypiechart/jquery.easypiechart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/echarts/echarts-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/blank.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/fancybox_loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/fancybox_loading@2x.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/fancybox_overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/fancybox_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/fancybox_sprite@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/jquery.fancybox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fancybox/jquery.fancybox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/curvedLines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/jquery.flot.spline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/jquery.flot.symbol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/footable/footable.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/gritter/images/gritter-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/gritter/images/gritter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/gritter/images/ie-spacer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/gritter/jquery.gritter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/gritter/jquery.gritter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/iCheck/icheck.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jasny/jasny-bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jeditable/jquery.jeditable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jqgrid/i18n/grid.locale-cn.js0820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jqgrid/jquery.jqGrid.min.js0820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jquery-ui/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jsKnob/jquery.knob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jsTree/jstree.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/layer/laydate/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/layer/layer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/layer/layim/layim.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/layer/layim/layim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/layer/layim/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/markdown/bootstrap-markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/markdown/bootstrap-markdown.zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/markdown/markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/markdown/to-markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/metisMenu/jquery.metisMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/morris/morris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/morris/raphael-2.1.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/nestable/jquery.nestable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/nouslider/jquery.nouislider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/pace/pace.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/peity/jquery.peity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/plyr/plyr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/prettyfile/bootstrap-prettyfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/rickshaw/rickshaw.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/rickshaw/vendor/d3.v3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/simditor/hotkeys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/simditor/module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/simditor/simditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/simditor/uploader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/slimscroll/jquery.slimscroll.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/staps/jquery.steps.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/suggest/bootstrap-suggest.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/summernote/summernote-zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/summernote/summernote.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/sweetalert/sweetalert.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/switchery/switchery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/toastr/toastr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/treeview/bootstrap-treeview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/validate/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/validate/messages_zh.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/plugins/webuploader/webuploader.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/js/welcome.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/originality.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/plugins/fullavatareditor/scripts/fullAvatarEditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/plugins/fullavatareditor/scripts/jQuery.Cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/plugins/fullavatareditor/scripts/swfobject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/plugins/fullavatareditor/scripts/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/project_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/project_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/release_activity.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/statistics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/team_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/teammate_editor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/teammates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resource/teams_board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,16 +832,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iWork.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/iWork.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="198">
+              <caret line="6" column="76" lean-forward="true" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -142,6 +932,11 @@
             <path>
               <item name="iwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="iwork" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iwork" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,7 +1081,7 @@
       <updated>1563351973068</updated>
       <workItem from="1563351974760" duration="2724000" />
       <workItem from="1563365195998" duration="12249000" />
-      <workItem from="1563405209707" duration="13541000" />
+      <workItem from="1563405209707" duration="14529000" />
     </task>
     <task id="LOCAL-00001" summary="添加了标题">
       <created>1563353010812</created>
@@ -366,7 +1161,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28684000" />
+    <option name="totallyTimeSpent" value="29672000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,7 +1174,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2549168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -396,13 +1190,13 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32903227" />
-      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.4977307" weight="0.2983871" />
+      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.4977307" visible="true" weight="0.2983871" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32419354" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.6919355" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32903227" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" weight="0.32903227" />
-      <window_info anchor="bottom" id="Version Control" order="13" visible="true" weight="0.32419354" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32419354" />
       <window_info anchor="bottom" id="Spring" order="14" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32419354" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -632,13 +1426,17 @@
     <entry file="file://$PROJECT_DIR$/.idea/dataSources.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/iWork.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iWork.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="76" lean-forward="true" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
         </state>
       </provider>
     </entry>
