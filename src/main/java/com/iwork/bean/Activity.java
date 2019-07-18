@@ -13,7 +13,7 @@ public class Activity {
 
     private String activityTitle;//添加一个标题
 
-    private String activityContext;
+    private String activityContext;//内容
 
     private User user; //一对多映射
 
