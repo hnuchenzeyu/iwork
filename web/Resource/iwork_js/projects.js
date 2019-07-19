@@ -36,8 +36,8 @@ function showProjects() {
         },
         //调用执行后调用的函数
         complete: function(XMLHttpRequest, textStatus){
-            alert(XMLHttpRequest.responseText);
-            alert(textStatus);
+            // alert(XMLHttpRequest.responseText);
+            // alert(textStatus);
             //HideLoading();
         },
         //调用出错执行的函数
@@ -54,10 +54,23 @@ $("#create_new_project").click(function () {
 
 //创建新分类
 $("#save_btn").click(function () {
-    var projectType = $("#create_new_project").val();
+    var projectType = $("#newProjectType").val();
+    console.log(projectType);
 
-    // $.ajax({
-    //     type:"POST",
-    //     url:"",
-    // })
-})
+    if (projectType == null){
+        alert("输入不能为空");
+    } else{
+        $.ajax({
+            type:"POST",
+            url:"http://localhost:8080/iWork/addProjectType",
+            data: {projectTypeName: projectType},
+            success:function (result) {
+                $("#myModal").modal("hide");
+            },
+            error:function () {
+                alert("创建失败!");
+                $("#myModal").modal("hide");
+            }
+        })
+    }
+});

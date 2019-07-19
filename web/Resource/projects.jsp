@@ -50,6 +50,7 @@
 								</button>
 							</div>
 
+                            <!-- 创建新分类的窗口 -->
 							<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content animated bounceInRight">
@@ -61,7 +62,7 @@
 											</div>
 										<div class="modal-body">
 											<p>创建项目相关分类，方便管理</p>
-											<div class="form-group"><label>分类名</label> <input type="text" placeholder="请输入分类名称" class="form-control"></div>
+											<div class="form-group"><label>分类名</label> <input id="newProjectType" type="text" placeholder="请输入分类名称" class="form-control" value=""></div>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
@@ -100,6 +101,7 @@
 		<script src="js/bootstrap.min.js?v=3.3.5"></script>
 		<script src="js/content.min.js?v=1.0.0"></script>
 
+        <script src="js/json2.js"></script>
 		<script src="iwork_js/projects.js"></script>
 
 		<script>

@@ -2,7 +2,51 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="com.iwork.mapper.ProjectsMapper">
-    <select id="showProjects" resultType="com.iwork.bean.Project">
+    <select id="selectAllProject" resultType="com.iwork.bean.Project">
         select * from project
     </select>
+
+    <insert id="addProject" parameterType="com.iwork.bean.Project">
+        insert into project(
+                        projectId,
+                        createUserId,
+                        projectTitle,
+                        projectStatus,
+                        createTime,
+                        projectType,
+                        projectContext,
+                        projectProgress,
+                        projectReview,
+                        projectExam,
+                        projectBidding,
+                        bidingSummary
+                )values (
+                        #{projectId},
+                        #{createUserId},
+                        #{projectTitle},
+                        #{projectStatus},
+                        #{createTime},
+                        #{projectType},
+                        #{projectContext},
+                        #{projectProgress},
+                        #{projectReview},
+                        #{projectExam},
+                        #{projectBidding},
+                        #{bidingSummary}
+                          )
+    </insert>
+
+    <update id="updateProject" parameterType="com.iwork.bean.Project">
+         update project set
+                 projectTitle = #{projectTitle},
+                 projectStatus = #{projectStatus},
+                 projectType = #{projectType},
+                 projectContext = #{projectContext},
+                 projectProgress = #{projectProgress},
+                 projectReview = #{projectReview},
+                 projectExam = #{projectExam},
+                 projectBidding = #{projectBidding},
+                 bidingSummary = #{bidingSummary}
+        where projectId = #{projectId}
+    </update>
 </mapper>
