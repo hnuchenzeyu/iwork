@@ -26,32 +26,34 @@
         <property name="password" value="${pwd}"/>
     </bean>
 
-    <!-- 配置mybatis的 SqlSessionFactory -->
-<!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-<!--        &lt;!&ndash; dataSource:表示用于连接数据库的数据源 &ndash;&gt;-->
-<!--        <property name="dataSource" ref="ds" />-->
+<!--     配置mybatis的 SqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- dataSource:表示用于连接数据库的数据源 -->
+        <property name="dataSource" ref="ds" />
 
-<!--        &lt;!&ndash; mapperLocations: 表示我们mybatis中接口的xml文件存放的位置, 当.xml文件和接口处于同一路径时不用配置该属性的值 &ndash;&gt;-->
-<!--        <property name="mapperLocations" value="classpath:com/czy/mapper/*.xml" />-->
-<!--    </bean>-->
+        <!-- mapperLocations: 表示我们mybatis中接口的xml文件存放的位置, 当.xml文件和接口处于同一路径时不用配置该属性的值 -->
+        <property name="mapperLocations" value="classpath:com/iwork/mapper/*.xml" />
+    </bean>
 
     <!-- MapperScannerConfigurer会帮助我们自动扫描和注册Mapper对应的MapperFactory对象 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- basePackage是用来指定Mapper接口文件所在的包, 这个包下的子包中的内容也会被扫描到 -->
-        <property name="basePackage" value="com.ruanko.mapper" />
+        <property name="basePackage" value="com.iwork.mapper" />
     </bean>
 
 
     <!-- SpringMVC -->
     <!-- 开启注解扫描 -->
-    <context:component-scan base-package="com.czy.controller" />
+    <context:component-scan base-package="com.iwork" />
 
     <!-- 开启RequestMapping注解 -->
     <mvc:annotation-driven />
 
+    <mvc:default-servlet-handler />
+
     <!-- 处理请求转发 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/" />
+        <property name="prefix" value="/Resource/" />
         <property name="suffix" value=".jsp" />
     </bean>
     <!-- 文件上传解析器 -->

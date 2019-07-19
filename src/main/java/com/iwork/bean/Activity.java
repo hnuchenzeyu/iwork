@@ -11,7 +11,11 @@ public class Activity {
 
     private Integer activityType;
 
-    private String activityContext;
+    private String activityTitle;//添加一个标题
+
+    private String activityContext;//内容
+
+    private User user; //一对多映射
 
     public Integer getActivityId() {
         return activityId;
@@ -45,11 +49,27 @@ public class Activity {
         this.activityType = activityType;
     }
 
+    public String getActivityTitle() {
+        return activityTitle;
+    }
+
+    public void setActivityTitle(String activityTitle) {
+        this.activityTitle = activityTitle;
+    }
+
     public String getActivityContext() {
         return activityContext;
     }
 
     public void setActivityContext(String activityContext) {
         this.activityContext = activityContext == null ? null : activityContext.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

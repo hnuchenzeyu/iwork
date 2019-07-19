@@ -196,9 +196,9 @@
                             <li>
                                 <a href="#">博客 <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="blog.html">文章列表</a>
+                                    <li><a class="J_menuItem" href="activities.jsp">文章列表</a>
                                     </li>
-                                    <li><a class="J_menuItem" href="article.html">文章详情</a>
+                                    <li><a class="J_menuItem" href="article.jsp">文章详情</a>
                                     </li>
                                 </ul>
                             </li>
