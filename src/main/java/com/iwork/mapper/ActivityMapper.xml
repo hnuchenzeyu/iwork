@@ -56,4 +56,21 @@
         #{content},#{userID},#{activityID},#{commentDate}
         )
     </insert>
+    <select id="selectCommentsByArticleId" resultMap="userResultMap">
+        SELECT * FROM `comment`
+        INNER JOIN `user` ON `comment`.`userID`=`user`.`userId`
+        WHERE activityID=#{id};
+    </select>
+    <resultMap id="userResultMap" type="com.iwork.bean.Comment">
+        <id property="commentID" column="commentID"></id>
+        <result property="content" column="content"></result>
+        <result property="commentDate" column="commentDate"></result>
+        <association property="user" column="userID" javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+        </association>
+    </resultMap>
+    <delete id="deleteActivityById" parameterType="java.lang.String">
+        delete from activity where activityId=#{activityId}
+    </delete>
 </mapper>

@@ -14,5 +14,7 @@ public interface ActivityService {
 
     void CommentAdd(Comment comment);
 
-    List<Comment> selectCommentsByAticleId(String id);
+    List<Comment> selectCommentsByArticleId(String id);
+
+    void deleteActivityById(String activityId);
 }

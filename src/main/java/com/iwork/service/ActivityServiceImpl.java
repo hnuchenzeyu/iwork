@@ -31,10 +31,11 @@ public class ActivityServiceImpl implements ActivityService {
         mapper.addComment(comment);
     }
 
-    @Override
-    public List<Comment> selectCommentsByAticleId(String id) {
-        return null;
+    public List<Comment> selectCommentsByArticleId(String id) {
+        return mapper.selectCommentsByArticleId(id);
     }
 
-
+    public void deleteActivityById(String activityId) {
+        mapper.deleteActivityById(activityId);
+    }
 }

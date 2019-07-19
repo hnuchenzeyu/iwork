@@ -50,6 +50,7 @@
                         <div class="col-lg-12">
 
                             <h2>评论：</h2>
+                            <c:forEach items="${comments}" var="cmt">
                             <div class="social-feed-box">
                                 <div class="social-avatar">
                                     <a href="" class="pull-left">
@@ -57,19 +58,21 @@
                                     </a>
                                     <div class="media-body">
                                         <a href="#">
-                                            逆光狂胜蔡舞娘
+                                            ${cmt.user.userName}
                                         </a>
-                                        <small class="text-muted">17 小时前</small>
+                                        <small class="text-muted">${cmt.commentDate}</small>
                                     </div>
                                 </div>
                                 <div class="social-body">
                                     <p>
-                                        好东西，我朝淘宝准备跟进，1折开卖
+                                        ${cmt.content}
                                     </p>
                                 </div>
                             </div>
+                            </c:forEach>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ibox float-e-margins">

@@ -27,6 +27,7 @@ public class ActivityController {
 
     /**
      * 添加福利
+     *
      * @param activity json传过来的数据
      */
     @RequestMapping(value = "/addActivity", method = RequestMethod.POST)
@@ -36,7 +37,7 @@ public class ActivityController {
         activity.setActivityCreateTime(new Date());
 //        System.out.println(activity.toString());
         service.ActivityAdd(activity);
-        switch (activity.getActivityType()){
+        switch (activity.getActivityType()) {
             case 1://请求福利列表
                 response.getWriter().print("WelfareList");
 
@@ -49,6 +50,7 @@ public class ActivityController {
 
     /**
      * 查找所有福利
+     *
      * @return ModelAndView 实例
      */
     @RequestMapping(value = "/WelfareList")
@@ -58,20 +60,28 @@ public class ActivityController {
         mv.addObject("activities", list);
         return mv;
     }
+
     /**
      * 查找所有福利
+     *
      * @return ModelAndView 实例
      */
     @RequestMapping(value = "/ActivityList")
     public ModelAndView listActivity() {
         ModelAndView mv = new ModelAndView("activities");
         List<Activity> list = service.ActivityList(2);
+        if (list == null)
+            mv.addObject("commentCount", 0);//如果查不到评论，评论数为0
+        else
+            mv.addObject("commentCount", list.size());//如果查不到评论，评论数为0
+
         mv.addObject("activities", list);
         return mv;
     }
 
     /**
      * 查找具体的活动
+     *
      * @param Id
      * @return
      */
@@ -80,51 +90,54 @@ public class ActivityController {
             @RequestParam(value = "id") String Id) {
         ModelAndView mv = new ModelAndView("article");
         Activity activity = service.selectActivityById(Id);
-        List<Comment> comments = service.selectCommentsByAticleId(Id);
+        List<Comment> comments = service.selectCommentsByArticleId(Id);
         mv.addObject("article", activity);
-        mv.addObject("comments",comments);
+        mv.addObject("comments", comments);
         return mv;
     }
 
     /**
      * 查找 创意 并显示到页面
+     *
      * @return
      */
     @RequestMapping("/OriginList")
-    public ModelAndView listOriginality(){
+    public ModelAndView listOriginality() {
         ModelAndView mv = new ModelAndView("originality");
         List<Activity> list = service.ActivityList(3);
         Collections.sort(list, new Comparator<Activity>() {//按创建时间排序
             public int compare(Activity o1, Activity o2) {
-                return (int)(o2.getActivityCreateTime().getTime()-o1.getActivityCreateTime().getTime());
+                return (int) (o2.getActivityCreateTime().getTime() - o1.getActivityCreateTime().getTime());
             }
         });
-        mv.addObject("Origins",list);
-        mv.addObject("requestURL","\"addOriginality\"");
+        mv.addObject("Origins", list);
+        mv.addObject("requestURL", "\"addOriginality\"");
         return mv;
     }
 
     /**
      * 查找 意见 并显示到页面
+     *
      * @return
      */
     @RequestMapping("/OpinionList")
-    public ModelAndView listOpinion(){
+    public ModelAndView listOpinion() {
         ModelAndView mv = new ModelAndView("originality");
         List<Activity> list = service.ActivityList(4);
         Collections.sort(list, new Comparator<Activity>() {//按创建时间排序
             public int compare(Activity o1, Activity o2) {
-                return (int)(o2.getActivityCreateTime().getTime()-o1.getActivityCreateTime().getTime());
+                return (int) (o2.getActivityCreateTime().getTime() - o1.getActivityCreateTime().getTime());
             }
         });
-        mv.addObject("Origins",list);
-        mv.addObject("requestURL","\"addOpinion\"");
+        mv.addObject("Origins", list);
+        mv.addObject("requestURL", "\"addOpinion\"");
         return mv;
     }
 
     /**
      * 添加创意
-     * @param content 创意内容
+     *
+     * @param content  创意内容
      * @param response 返回结果
      * @throws IOException
      */
@@ -143,6 +156,7 @@ public class ActivityController {
 
     /**
      * 添加意见
+     *
      * @param content
      * @param response
      * @throws IOException
@@ -162,17 +176,27 @@ public class ActivityController {
 
     /**
      * 添加评论
+     *
      * @param comment
      * @param response
      */
     @RequestMapping("/addComment")
     public void addComment(@RequestBody Comment comment, HttpServletResponse response) throws IOException {
-        System.out.println(comment);
+//        System.out.println(comment);
         comment.setCommentDate(new Date());
-        comment.setCommentID((int)(Math.random()%100+1));
+        comment.setCommentID((int) (Math.random() % 100 + 1));
         comment.setUserID(1001);
         service.CommentAdd(comment);
         response.getWriter().print("success");
     }
 
+    /**
+     * 删除一条创意或意见
+     * @param activityId
+     */
+    @RequestMapping("/deleteActivityById")
+    public void deleteAnActivity(@RequestParam String activityId, HttpServletResponse response) throws IOException {
+        service.deleteActivityById(activityId);
+        response.getWriter().print("success");
+    }
 }

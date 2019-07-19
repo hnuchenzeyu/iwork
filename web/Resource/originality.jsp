@@ -61,8 +61,7 @@
                         <i class="fa fa-angle-down"></i>
                     </button>
                     <ul class="dropdown-menu m-t-xs">
-                        <li><a href="#">设置</a></li>
-                        <li><a href="#">不在显示</a></li>
+                        <li><a onclick="deleteOrin(${o.activityId})">删除</a></li>
                     </ul>
                 </div>
                 <div class="social-avatar">
@@ -136,6 +135,21 @@
                 }
             });
         }
+    }
+</script>
+<script>
+    function deleteOrin(activityId) {
+        $.ajax({
+           url:"deleteActivityById",
+           type:"post",
+            data:{activityId:activityId},
+            success:function () {
+                window.location.reload();
+            },
+            error:function () {
+                alert("删除失败！");
+            }
+        });
     }
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
