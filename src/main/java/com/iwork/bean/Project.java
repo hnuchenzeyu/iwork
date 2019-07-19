@@ -7,6 +7,10 @@ public class Project {
 
     private Integer createUserId;
 
+    private String projectTitle;
+
+    private String projectStatus;
+
     private Date createTime;
 
     private String projectType;
@@ -37,6 +41,22 @@ public class Project {
 
     public void setCreateUserId(Integer createUserId) {
         this.createUserId = createUserId;
+    }
+
+    public String getProjectTitle() {
+        return projectTitle;
+    }
+
+    public void setProjectTitle(String projectTitle) {
+        this.projectTitle = projectTitle;
+    }
+
+    public String getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setProjectStatus(String projectStatus) {
+        this.projectStatus = projectStatus;
     }
 
     public Date getCreateTime() {
