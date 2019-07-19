@@ -13,7 +13,9 @@ public class Activity {
 
     private String activityTitle;//添加一个标题
 
-    private String activityContext;
+    private String activityContext;//内容
+
+    private User user; //一对多映射
 
     public Integer getActivityId() {
         return activityId;
@@ -61,5 +63,13 @@ public class Activity {
 
     public void setActivityContext(String activityContext) {
         this.activityContext = activityContext == null ? null : activityContext.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

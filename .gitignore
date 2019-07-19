@@ -1,5 +1,6 @@
-# 忽略下列文件夹及文件
-/.idea/
-out
-target
+# 忽略下列文件夹和文件
+.idea/
+out/
+target/
+Test/
 iWork.iml
