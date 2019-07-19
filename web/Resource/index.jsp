@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
 <head>
@@ -177,7 +177,7 @@
                             <li>
                                 <a href="#">项目管理 <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="projects.html">项目</a>
+                                    <li><a class="J_menuItem" href="projects.jsp">项目</a>
                                     </li>
                                     <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
                                     </li>
