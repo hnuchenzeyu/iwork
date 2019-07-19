@@ -26,36 +26,51 @@ public class ActivityController {
 
     /**
      * 添加福利
-     *
      * @param activity json传过来的数据
      */
-    @RequestMapping(value = "/addWelfare", method = RequestMethod.POST)
-    public void addWelfare(@RequestBody Activity activity, HttpServletResponse response) throws IOException {
-        activity.setActivityType(1);
+    @RequestMapping(value = "/addActivity", method = RequestMethod.POST)
+    public void addActivity(@RequestBody Activity activity, HttpServletResponse response) throws IOException {
         activity.setActivityId((int) (Math.random() * 100 + 5));
         activity.setActivityCreateUserId(1001);
         activity.setActivityCreateTime(new Date());
         System.out.println(activity.toString());
         service.ActivityAdd(activity);
-        response.getWriter().print("sucess");
+        switch (activity.getActivityType()){
+            case 1://请求福利列表
+                response.getWriter().print("WelfareList");
+
+                break;
+            case 2://请求公告列表
+                response.getWriter().print("ActivityList");
+                break;
+        }
     }
 
     /**
      * 查找所有福利
-     *
      * @return ModelAndView 实例
      */
     @RequestMapping(value = "/WelfareList")
     public ModelAndView listWelfare() {
         ModelAndView mv = new ModelAndView("activities");
         List<Activity> list = service.ActivityList(1);
-        mv.addObject("welfares", list);
+        mv.addObject("activities", list);
+        return mv;
+    }
+    /**
+     * 查找所有福利
+     * @return ModelAndView 实例
+     */
+    @RequestMapping(value = "/ActivityList")
+    public ModelAndView listActivity() {
+        ModelAndView mv = new ModelAndView("activities");
+        List<Activity> list = service.ActivityList(2);
+        mv.addObject("activities", list);
         return mv;
     }
 
     /**
      * 查找具体的活动
-     *
      * @param Id
      * @return
      */
@@ -70,6 +85,10 @@ public class ActivityController {
         return mv;
     }
 
+    /**
+     * 查找 创意 并显示到页面
+     * @return
+     */
     @RequestMapping("/OriginList")
     public ModelAndView listOriginality(){
         ModelAndView mv = new ModelAndView("originality");
@@ -81,6 +100,26 @@ public class ActivityController {
             }
         });
         mv.addObject("Origins",list);
+        mv.addObject("requestURL","\"addOriginality\"");
+        return mv;
+    }
+
+    /**
+     * 查找 意见 并显示到页面
+     * @return
+     */
+    @RequestMapping("/OpinionList")
+    public ModelAndView listOpinion(){
+        ModelAndView mv = new ModelAndView("originality");
+        List<Activity> list = service.ActivityList(4);
+        Collections.sort(list, new Comparator<Activity>() {//按创建时间排序
+            @Override
+            public int compare(Activity o1, Activity o2) {
+                return (int)(o2.getActivityCreateTime().getTime()-o1.getActivityCreateTime().getTime());
+            }
+        });
+        mv.addObject("Origins",list);
+        mv.addObject("requestURL","\"addOpinion\"");
         return mv;
     }
 
@@ -94,6 +133,25 @@ public class ActivityController {
     public void addOriginality(@RequestParam String content, HttpServletResponse response) throws IOException {
         Activity activity = new Activity();
         activity.setActivityType(3);
+        activity.setActivityTitle("");
+        activity.setActivityContext(content);
+        activity.setActivityId((int) (Math.random() * 100 + 5));//随机生成ID
+        activity.setActivityCreateUserId(1001);//应从session获取已登入的用户ID
+        activity.setActivityCreateTime(new Date());
+        service.ActivityAdd(activity);
+        response.getWriter().print("success");
+    }
+
+    /**
+     * 添加意见
+     * @param content
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/addOpinion")
+    public void addOpinion(@RequestParam String content, HttpServletResponse response) throws IOException {
+        Activity activity = new Activity();
+        activity.setActivityType(4);
         activity.setActivityTitle("");
         activity.setActivityContext(content);
         activity.setActivityId((int) (Math.random() * 100 + 5));//随机生成ID

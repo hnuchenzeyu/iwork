@@ -27,7 +27,7 @@
 <body class="gray-bg">
 <div class="wrapper wrapper-content  animated fadeInRight blog">
     <div class="row">
-        <c:forEach var="w" items="${welfares}">
+        <c:forEach var="w" items="${activities}">
 
             <div class="col-lg-4">
                 <div class="ibox">
@@ -40,7 +40,7 @@
                         <div class="small m-b-xs">
                             <strong>${w.user.userName}</strong> <span class="text-muted"></span>
                         </div>
-                        ${w.activityContext}
+                        <div style="height: 20px;overflow: hidden;">${w.activityContext}</div>
                         <div class="row">
                             <div class="col-md-6">
                                 <h5>标签：</h5>

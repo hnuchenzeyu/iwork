@@ -30,10 +30,11 @@
         <div class="col-sm-12 animated fadeInRight">
             <div class="mail-box-header">
                 <div class="pull-right tooltip-demo">
-                    <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"
-                       title="存为草稿"><i class="fa fa-pencil"></i> 存为草稿</a>
-                    <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top"
-                       title="放弃"><i class="fa fa-times"></i> 放弃</a>
+                    <select id="typeId" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"
+                            aria-expanded="false">操作 <span class="caret"></span>
+                        <option value="1">福利</option>
+                        <option value="2">公告</option>
+                    </select>
                 </div>
                 <h2>
                     发布<!-- 标题：福利或相关活动 -->
@@ -101,19 +102,21 @@
     function sendActivity() {
         var w_title = $("#title").val();
         var w_content = $(".summernote").code();
+        var w_typeId = $("#typeId option:selected").val();
         if (w_title == "" || w_content == "") {
             alert("请输入完整标题和内容")
         } else {
             $.ajax({
-                url: "addWelfare",
+                url: "addActivity",
                 type: "post",
                 contentType: "application/json",
                 data: JSON.stringify({
                     activityTitle: w_title,
-                    activityContext: w_content
+                    activityContext: w_content,
+                    activityType: w_typeId
                 }),
                 success: function (result) {
-                    window.location.href = "WelfareList";
+                    window.location.href = result;
                 },
                 error: function (result) {
                     alert("上传失败")

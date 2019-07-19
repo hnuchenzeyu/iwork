@@ -40,8 +40,8 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="mail-body text-right tooltip-demo">
-                            <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
-                                    title="Send" onclick="sendOriginality()"><i class="fa fa-reply"></i> 发送
+                            <button id="requestAdd" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
+                                    title="Send"><i class="fa fa-reply"></i> 发送
                             </button>
                             <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="Discard email"><i class="fa fa-times"></i> 放弃
@@ -113,16 +113,21 @@
     };
 </script>
 <script>
-    function sendOriginality() {
-        var originality = $('.summernote').code();
-        if (originality==""){
+    $("#requestAdd").click(function () {
+        sendOriginality(${requestURL});
+    })
+</script>
+<script>
+    function sendOriginality(URL) {
+        var original = $('.summernote').code();
+        if (original==""){
             alert("内容不能为空")
         }
         else{
             $.ajax({
-                url:"addOriginality",
+                url:URL,
                 type:"post",
-                data:{content:originality},
+                data:{content:original},
                 success:function (data) {
                     window.location.reload();
                 },
