@@ -94,7 +94,6 @@ public class ActivityController {
         ModelAndView mv = new ModelAndView("originality");
         List<Activity> list = service.ActivityList(3);
         Collections.sort(list, new Comparator<Activity>() {//按创建时间排序
-            @Override
             public int compare(Activity o1, Activity o2) {
                 return (int)(o2.getActivityCreateTime().getTime()-o1.getActivityCreateTime().getTime());
             }
@@ -113,7 +112,6 @@ public class ActivityController {
         ModelAndView mv = new ModelAndView("originality");
         List<Activity> list = service.ActivityList(4);
         Collections.sort(list, new Comparator<Activity>() {//按创建时间排序
-            @Override
             public int compare(Activity o1, Activity o2) {
                 return (int)(o2.getActivityCreateTime().getTime()-o1.getActivityCreateTime().getTime());
             }

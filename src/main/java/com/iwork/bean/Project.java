@@ -13,7 +13,7 @@ public class Project {
 
     private Date createTime;
 
-    private String projectType;
+    private Integer projectType;
 
     private String projectContext;
 
@@ -67,12 +67,12 @@ public class Project {
         this.createTime = createTime;
     }
 
-    public String getProjectType() {
+    public Integer getProjectType() {
         return projectType;
     }
 
-    public void setProjectType(String projectType) {
-        this.projectType = projectType == null ? null : projectType.trim();
+    public void setProjectType(Integer projectType) {
+        this.projectType = projectType;
     }
 
     public String getProjectContext() {
