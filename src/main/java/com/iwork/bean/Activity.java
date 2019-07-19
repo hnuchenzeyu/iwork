@@ -1,6 +1,7 @@
 package com.iwork.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Activity {
     private Integer activityId;
@@ -15,7 +16,9 @@ public class Activity {
 
     private String activityContext;//内容
 
-    private User user; //一对多映射
+    private User user; //一对多映射：一个活动->一个用户；一个用户->多个活动
+
+    private List<Comment> comments;// 一个活动->多跳评论；一条评论->一个活动
 
     public Integer getActivityId() {
         return activityId;
@@ -71,5 +74,13 @@ public class Activity {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
