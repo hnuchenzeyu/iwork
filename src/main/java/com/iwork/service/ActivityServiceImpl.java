@@ -1,6 +1,7 @@
 package com.iwork.service;
 
 import com.iwork.bean.Activity;
+import com.iwork.bean.Comment;
 import com.iwork.mapper.ActivityMapper;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,15 @@ public class ActivityServiceImpl implements ActivityService {
 
     public Activity selectActivityById(String id) {
         return mapper.selectActivity(id);
+    }
+
+    public void CommentAdd(Comment comment) {
+        mapper.addComment(comment);
+    }
+
+    @Override
+    public List<Comment> selectCommentsByAticleId(String id) {
+        return null;
     }
 
 

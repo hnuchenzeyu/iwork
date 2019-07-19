@@ -1,6 +1,7 @@
 package com.iwork.controller;
 
 import com.iwork.bean.Activity;
+import com.iwork.bean.Comment;
 import com.iwork.service.ActivityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,7 +34,7 @@ public class ActivityController {
         activity.setActivityId((int) (Math.random() * 100 + 5));
         activity.setActivityCreateUserId(1001);
         activity.setActivityCreateTime(new Date());
-        System.out.println(activity.toString());
+//        System.out.println(activity.toString());
         service.ActivityAdd(activity);
         switch (activity.getActivityType()){
             case 1://请求福利列表
@@ -79,9 +80,9 @@ public class ActivityController {
             @RequestParam(value = "id") String Id) {
         ModelAndView mv = new ModelAndView("article");
         Activity activity = service.selectActivityById(Id);
-        System.out.println("ID:" + Id);
-        System.out.println(activity);
+        List<Comment> comments = service.selectCommentsByAticleId(Id);
         mv.addObject("article", activity);
+        mv.addObject("comments",comments);
         return mv;
     }
 
@@ -161,11 +162,17 @@ public class ActivityController {
 
     /**
      * 添加评论
-     * @param content
+     * @param comment
      * @param response
      */
     @RequestMapping("/addComment")
-    public void addComment(@RequestParam String content,HttpServletResponse response){
-
+    public void addComment(@RequestBody Comment comment, HttpServletResponse response) throws IOException {
+        System.out.println(comment);
+        comment.setCommentDate(new Date());
+        comment.setCommentID((int)(Math.random()%100+1));
+        comment.setUserID(1001);
+        service.CommentAdd(comment);
+        response.getWriter().print("success");
     }
+
 }

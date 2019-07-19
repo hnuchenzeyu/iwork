@@ -116,6 +116,7 @@
 
 </div>
 <script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/json2.js"></script>
 <script src="js/bootstrap.min.js?v=3.3.5"></script>
 <script src="js/content.min.js?v=1.0.0"></script>
 <script src="js/plugins/summernote/summernote.min.js"></script>
@@ -137,6 +138,8 @@
 <script>
     function sendComment() {
         var comment = $('.summernote').code();
+        var param = window.location.search;//?后的字符串
+        param = param.split("=")[1];//获取id对应的值
         if (comment==""){
             alert("内容不能为空")
         }
@@ -144,7 +147,11 @@
             $.ajax({
                 url:"addComment",
                 type:"post",
-                data:{content:comment},
+                contentType: "application/json",
+                data:JSON.stringify({
+                    content: comment,
+                    activityID: param
+                }),
                 success:function (data) {
                     window.location.reload();
                 },
