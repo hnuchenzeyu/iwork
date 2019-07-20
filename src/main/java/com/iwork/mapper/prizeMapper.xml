@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="andy.dao.prizeMapper" >
-  <resultMap id="BaseResultMap" type="andy.model.prize" >
+<mapper namespace="com.iwork.mapper.prizeMapper" >
+  <resultMap id="BaseResultMap" type="com.iwork.bean.prize" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="prizeClass" property="prizeclass" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="VARCHAR" />
@@ -21,13 +21,13 @@
     delete from prize
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.prize" >
+  <insert id="insert" parameterType="com.iwork.bean.prize" >
     insert into prize (id, prizeClass, type, 
       terms, publishTime)
     values (#{id,jdbcType=INTEGER}, #{prizeclass,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
       #{terms,jdbcType=INTEGER}, #{publishtime,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.prize" >
+  <insert id="insertSelective" parameterType="com.iwork.bean.prize" >
     insert into prize
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.prize" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.prize" >
     update prize
     <set >
       <if test="prizeclass != null" >
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.prize" >
+  <update id="updateByPrimaryKey" parameterType="com.iwork.bean.prize" >
     update prize
     set prizeClass = #{prizeclass,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},
