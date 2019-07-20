@@ -47,9 +47,8 @@
     <!-- 开启RequestMapping注解 -->
     <mvc:annotation-driven/>
 
+    <!-- 开始默认servlet处理，静态资源放行 -->
     <mvc:default-servlet-handler/>
-
-    <mvc:default-servlet-handler />
 
     <!-- 处理请求转发 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

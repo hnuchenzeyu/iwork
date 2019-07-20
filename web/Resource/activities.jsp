@@ -43,9 +43,9 @@
                         <div style="height: 20px;overflow: hidden;">${w.activityContext}</div>
                         <div class="row">
                             <div class="col-md-6">
-                                <h5>标签：</h5>
-                                <button class="btn btn-primary btn-xs" type="button">查看</button>
-                                <button class="btn btn-white btn-xs" type="button">删除</button>
+                                <h5>操作：</h5>
+                                <a href="article?id=${w.activityId}"><button class="btn btn-primary btn-xs" type="button">查看</button></a>
+                                <button class="btn btn-white btn-xs" type="button" onclick="deleteOrin(${w.activityId})">删除</button>
                             </div>
                             <div class="col-md-6">
                                 <div class="small text-right">
@@ -64,6 +64,21 @@
 <script src="js/jquery.min.js?v=2.1.4"></script>
 <script src="js/bootstrap.min.js?v=3.3.5"></script>
 <script src="js/content.min.js?v=1.0.0"></script>
+<script>
+    function deleteOrin(activityId) {
+        $.ajax({
+            url:"deleteActivityById",
+            type:"post",
+            data:{activityId:activityId},
+            success:function () {
+                window.location.reload();
+            },
+            error:function () {
+                alert("删除失败！");
+            }
+        });
+    }
+</script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 </body>
 
