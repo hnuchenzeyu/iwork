@@ -20,11 +20,11 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <!-- 放行用到的静态资源 -->
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    <!-- 放静态资源 -->
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.css</url-pattern>
@@ -39,11 +39,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.gif</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>*.gif</url-pattern>
+        <url-pattern>/Resource/fonts/*</url-pattern>
     </servlet-mapping>
 
     <!-- 解决乱码问题-->
