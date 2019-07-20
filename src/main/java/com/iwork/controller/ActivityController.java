@@ -62,7 +62,7 @@ public class ActivityController {
     }
 
     /**
-     * 查找所有福利
+     * 查找所有公告
      *
      * @return ModelAndView 实例
      */
