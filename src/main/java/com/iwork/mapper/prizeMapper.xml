@@ -94,4 +94,12 @@
         select * from prize where terms =
         (SELECT terms FROM prize ORDER BY terms DESC LIMIT 1)
     </select>
+
+    <select id="selectPrizesByTerms" parameterType="java.lang.String" resultType="com.iwork.bean.prize">
+        select * from prize where terms=#{terms}
+    </select>
+
+    <delete id="deletePrizeById" parameterType="java.lang.String">
+        delete from prize where id=#{id}
+    </delete>
 </mapper>

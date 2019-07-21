@@ -64,7 +64,7 @@
                                 <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                             </button>
 
-                            <button type="button" class="btn btn-outline btn-default">
+                            <button type="button" class="btn btn-outline btn-default" onclick="deletePrizeData()">
                                 <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                             </button>
 
@@ -79,7 +79,8 @@
                             </thead>
                             <tbody><%--显示数据有效--%>
                             <c:forEach items="${prizes}" var="p">
-                            <tr>
+                            <tr data-id="${p.id}">
+                                <td></td>
                                 <td>${p.type}</td>
                                 <td>${p.prizeClass}</td>
                                 <td>${p.amount}</td>
@@ -97,7 +98,7 @@
             <div class="col-sm-9">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h4>本<input id="terms" class="teams btn btn-group" value="14" type="text">期绩效奖获得名单</h4>
+                        <h4>本<input id="terms" class="teams btn btn-group" value="${prizes[0].terms}" type="text">期绩效奖获得名单</h4>
                     </div>
                     <div class="btn-group hidden-xs" id="toolbar_finance" role="group">
                         <button type="button" class="btn btn-outline btn-default">
@@ -105,12 +106,25 @@
                         </button>
 
                         <button type="button" class="btn btn-outline btn-default">
-                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                            <i class="glyphicon glyphicon-trash" aria-hidden="true" onclick="deleteWageData()"></i>
                         </button>
 
                     </div>
                     <div class="ibox-content">
-                        <table id="excellent_staff"></table>
+                        <table id="excellent_staff">
+                            <tbody>
+                            <c:forEach items="${staff_wages}" var="w">
+                                <tr data-id="${w.wageId}">
+                                    <td></td>
+                                    <td>${w.user.userId}</td>
+                                    <td>${w.user.userName}</td>
+                                    <td>${w.prize.type}</td>
+                                    <td>${w.prize.publishTime}</td>
+                                    <td>${w.prize.prizeClass}</td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -198,6 +212,9 @@
 
         oTable.Init(data, "#excellent_staff", '#toolbar_finance', true, true);
         data = [{
+            field: 'checkbox',
+            checkbox: true
+        },{
             field: 'prize_class',
             title: '绩效奖档次'
         }, {
@@ -279,7 +296,7 @@
                 <label class="col-sm-2 control-label">员工工号：</label>
 
                 <div class="col-sm-10">
-                    <input id="finance_id" name="title_note" type="text" placeholder="流水号" class="form-control">
+                    <input id="userId" name="title_note" type="text" placeholder="流水号" class="form-control">
                 </div>
             </div>
         </div>
@@ -288,7 +305,11 @@
                 <label class="col-sm-2 control-label">绩效奖档次：</label>
 
                 <div class="col-sm-10">
-                    <input id="finan_creater" name="title_note" type="text" placeholder="绩效奖档次" class="form-control">
+                    <select id="prizeId" name="title_note" class="form-control">
+                        <c:forEach var="p" items="${prizes}">
+                            <option value="${p.id}">${p.type}</option>
+                        </c:forEach>
+                    </select>
                 </div>
             </div>
         </div>
@@ -297,7 +318,7 @@
                 <label class="col-sm-2 control-label">绩效奖期数：</label>
 
                 <div class="col-sm-10">
-                    <input id="create_time" name="title_note" value="绩效奖期数" type="text" class="form-control">
+                    <input id="prizeTerm" name="title_note" value="绩效奖期数" type="text" class="form-control">
                 </div>
             </div>
         </div>
@@ -308,7 +329,7 @@
                 <div class="col-sm-offset-2 col-sm-10 bottom">
                     <a class="btn btn-sm center btn-white">取消</a>
                     <a class="btn btn-sm center btn-white">修改</a>
-                    <a class="btn btn-sm center btn-white">创建</a>
+                    <a id="createList" class="btn btn-sm center btn-white">创建</a>
                 </div>
             </div>
         </div>
