@@ -3,10 +3,10 @@
 <mapper namespace="com.iwork.mapper.prizeMapper" >
   <resultMap id="BaseResultMap" type="com.iwork.bean.prize" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="prizeClass" property="prizeclass" jdbcType="INTEGER" />
+    <result column="prizeClass" property="prizeClass" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="terms" property="terms" jdbcType="INTEGER" />
-    <result column="publishTime" property="publishtime" jdbcType="VARCHAR" />
+    <result column="publishTime" property="publishTime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, prizeClass, type, terms, publishTime
@@ -24,8 +24,8 @@
   <insert id="insert" parameterType="com.iwork.bean.prize" >
     insert into prize (id, prizeClass, type, 
       terms, publishTime)
-    values (#{id,jdbcType=INTEGER}, #{prizeclass,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
-      #{terms,jdbcType=INTEGER}, #{publishtime,jdbcType=VARCHAR})
+    values (#{id,jdbcType=INTEGER}, #{prizeClass,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR},
+      #{terms,jdbcType=INTEGER}, #{publishTime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.iwork.bean.prize" >
     insert into prize
@@ -33,7 +33,7 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="prizeclass != null" >
+      <if test="prizeClass != null" >
         prizeClass,
       </if>
       <if test="type != null" >
@@ -42,7 +42,7 @@
       <if test="terms != null" >
         terms,
       </if>
-      <if test="publishtime != null" >
+      <if test="publishTime != null" >
         publishTime,
       </if>
     </trim>
@@ -50,8 +50,8 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="prizeclass != null" >
-        #{prizeclass,jdbcType=INTEGER},
+      <if test="prizeClass != null" >
+        #{prizeClass,jdbcType=INTEGER},
       </if>
       <if test="type != null" >
         #{type,jdbcType=VARCHAR},
@@ -59,16 +59,16 @@
       <if test="terms != null" >
         #{terms,jdbcType=INTEGER},
       </if>
-      <if test="publishtime != null" >
-        #{publishtime,jdbcType=VARCHAR},
+      <if test="publishTime != null" >
+        #{publishTime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.prize" >
     update prize
     <set >
-      <if test="prizeclass != null" >
-        prizeClass = #{prizeclass,jdbcType=INTEGER},
+      <if test="prizeClass != null" >
+        prizeClass = #{prizeClass,jdbcType=INTEGER},
       </if>
       <if test="type != null" >
         type = #{type,jdbcType=VARCHAR},
@@ -76,18 +76,18 @@
       <if test="terms != null" >
         terms = #{terms,jdbcType=INTEGER},
       </if>
-      <if test="publishtime != null" >
-        publishTime = #{publishtime,jdbcType=VARCHAR},
+      <if test="publishTime != null" >
+        publishTime = #{publishTime,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.iwork.bean.prize" >
     update prize
-    set prizeClass = #{prizeclass,jdbcType=INTEGER},
+    set prizeClass = #{prizeClass,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},
       terms = #{terms,jdbcType=INTEGER},
-      publishTime = #{publishtime,jdbcType=VARCHAR}
+      publishTime = #{publishTime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

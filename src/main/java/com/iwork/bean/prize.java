@@ -1,15 +1,17 @@
-package andy.model;
+package com.iwork.bean;
 
 public class prize {
     private Integer id;
 
-    private Integer prizeclass;
+    private Integer prizeClass;
 
     private String type;
 
     private Integer terms;
 
-    private String publishtime;
+    private Integer amount;
+
+    private String publishTime;
 
     public Integer getId() {
         return id;
@@ -19,12 +21,12 @@ public class prize {
         this.id = id;
     }
 
-    public Integer getPrizeclass() {
-        return prizeclass;
+    public Integer getPrizeClass() {
+        return prizeClass;
     }
 
-    public void setPrizeclass(Integer prizeclass) {
-        this.prizeclass = prizeclass;
+    public void setPrizeClass(Integer prizeClass) {
+        this.prizeClass = prizeClass;
     }
 
     public String getType() {
@@ -43,11 +45,19 @@ public class prize {
         this.terms = terms;
     }
 
-    public String getPublishtime() {
-        return publishtime;
+    public String getPublishTime() {
+        return publishTime;
     }
 
-    public void setPublishtime(String publishtime) {
-        this.publishtime = publishtime == null ? null : publishtime.trim();
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime == null ? null : publishTime.trim();
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }
