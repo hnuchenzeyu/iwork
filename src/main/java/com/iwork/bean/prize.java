@@ -60,4 +60,16 @@ public class prize {
     public void setAmount(Integer amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return "prize{" +
+                "id=" + id +
+                ", prizeClass=" + prizeClass +
+                ", type='" + type + '\'' +
+                ", terms=" + terms +
+                ", amount=" + amount +
+                ", publishTime='" + publishTime + '\'' +
+                '}';
+    }
 }

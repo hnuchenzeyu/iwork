@@ -74,9 +74,18 @@
                             <tr>
                                 <th data-field="Tid">绩效奖档次</th>
                                 <th data-field="First">类别</th>
-                                <th data-field="First">类别</th>
+                                <th data-field="First">金额</th>
                             </tr>
                             </thead>
+                            <tbody><%--显示数据有效--%>
+                            <c:forEach items="${prizes}" var="p">
+                            <tr>
+                                <td>${p.type}</td>
+                                <td>${p.prizeClass}</td>
+                                <td>${p.amount}</td>
+                            </tr>
+                            </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                     <div class="ibox-heading">
@@ -197,7 +206,7 @@
         }, {
             field: 'prize_count',
             title: '金额'
-        },];
+        }];
         oTable.Init(data, "#prizeClass", "#toolbar_prizeclass", false, false);
 
         //2.初始化Button的点击事件
@@ -341,7 +350,7 @@
         <div class="row">
             <div class="form-group ">
                 <div class="col-sm-offset-2 col-sm-10 bottom">
-                    <input type="button" id="createPrize" class="btn btn-sm center btn-white" value="发放" />
+                    <input type="button" id="createPrize" class="btn btn-sm center btn-white" value="发放"/>
                 </div>
             </div>
         </div>

@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.iwork.mapper.prizeMapper" >
-  <resultMap id="BaseResultMap" type="com.iwork.bean.prize" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="prizeClass" property="prizeClass" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="terms" property="terms" jdbcType="INTEGER" />
-    <result column="publishTime" property="publishTime" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
+<mapper namespace="com.iwork.mapper.prizeMapper">
+    <resultMap id="BaseResultMap" type="com.iwork.bean.prize">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="prizeClass" property="prizeClass" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="terms" property="terms" jdbcType="INTEGER"/>
+        <result column="publishTime" property="publishTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, prizeClass, type, terms, publishTime
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from prize
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from prize
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from prize
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.iwork.bean.prize" >
-    insert into prize (id, prizeClass, type, 
-      terms, publishTime)
-    values (#{id,jdbcType=INTEGER}, #{prizeClass,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR},
-      #{terms,jdbcType=INTEGER}, #{publishTime,jdbcType=VARCHAR})
+    <insert id="addPrize" parameterType="com.iwork.bean.prize" useGeneratedKeys="true">
+    insert into prize (prizeClass, type,
+      terms, amount, publishTime)
+    values (#{prizeClass}, #{type},
+      #{terms},#{amount}, #{publishTime})
   </insert>
-  <insert id="insertSelective" parameterType="com.iwork.bean.prize" >
-    insert into prize
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="prizeClass != null" >
-        prizeClass,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="terms != null" >
-        terms,
-      </if>
-      <if test="publishTime != null" >
-        publishTime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="prizeClass != null" >
-        #{prizeClass,jdbcType=INTEGER},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="terms != null" >
-        #{terms,jdbcType=INTEGER},
-      </if>
-      <if test="publishTime != null" >
-        #{publishTime,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.prize" >
-    update prize
-    <set >
-      <if test="prizeClass != null" >
-        prizeClass = #{prizeClass,jdbcType=INTEGER},
-      </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="terms != null" >
-        terms = #{terms,jdbcType=INTEGER},
-      </if>
-      <if test="publishTime != null" >
-        publishTime = #{publishTime,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.iwork.bean.prize" >
+    <insert id="insertSelective" parameterType="com.iwork.bean.prize">
+        insert into prize
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="prizeClass != null">
+                prizeClass,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="terms != null">
+                terms,
+            </if>
+            <if test="publishTime != null">
+                publishTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="prizeClass != null">
+                #{prizeClass,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="terms != null">
+                #{terms,jdbcType=INTEGER},
+            </if>
+            <if test="publishTime != null">
+                #{publishTime,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.prize">
+        update prize
+        <set>
+            <if test="prizeClass != null">
+                prizeClass = #{prizeClass,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="terms != null">
+                terms = #{terms,jdbcType=INTEGER},
+            </if>
+            <if test="publishTime != null">
+                publishTime = #{publishTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iwork.bean.prize">
     update prize
     set prizeClass = #{prizeClass,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},
@@ -90,4 +90,8 @@
       publishTime = #{publishTime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="selectNewPrizes" resultType="com.iwork.bean.prize">
+        select * from prize where terms =
+        (SELECT terms FROM prize ORDER BY terms DESC LIMIT 1)
+    </select>
 </mapper>
