@@ -7,5 +7,5 @@ import java.util.List;
 public interface ProjectTypeMapper {
     void addProjectType(Project_Type project_type);
 
-    List<Project_Type> showAllPrjectType();
+    List<Project_Type> showAllProjectType();
 }

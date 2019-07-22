@@ -21,11 +21,12 @@ function showProjects() {
             for (i in datas){
                 var progress = datas[i].projectProgress;
                 var projectType = datas[i].projectType;     //需要多表联合查询，先标记
+                var createTime = new Date(datas[i].createTime).Format("yy-MM-dd");      //月份是M，秒是m
                 console.log(progress);
                 console.log(datas[i].createTime);
                 str += "<tr>" +
                     "<td class=\"project-status\"><span class=\"label label-primary\">" + datas[i].projectStatus + "</span></td>" +
-                    "<td name=\"project-title\" value=\""+ datas[i].projectId + "\" class=\"project-title\"><a href=\"project_detail.html\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ datas[i].createTime +"</small> </td>" +
+                    "<td name=\"project-title\" value=\""+ datas[i].projectId + "\" class=\"project-title\"><a href=\"project_detail.html\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ createTime +"</small> </td>" +
                     "<td class=\"project-type\"><a href=\"project_detail.html\">" + "项目类型" + "</a> <br /> <small>"+ projectType +"</small> </td>" +
                     "<td class=\"project-completion\"> <small>当前进度：" + progress + "%</small> <div class=\"progress progress-mini\"> <div style=\"width: " + progress + "%;\" class=\"progress-bar\"></div> </div> </td>" +
                     "<td class=\"project-people\"> <img alt=\"image\" class=\"img-circle\" src=\"img/a3.jpg\"> </td>" +
@@ -51,7 +52,7 @@ function showProjects() {
 };
 
 //编辑按钮
-$("edit_project").click(function () {
+$("#edit_project").click(function () {
         var projectId = $(".project-title").val();
         console.log(projectId);
 

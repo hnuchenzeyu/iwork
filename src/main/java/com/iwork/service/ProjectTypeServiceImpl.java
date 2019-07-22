@@ -17,6 +17,6 @@ public class ProjectTypeServiceImpl implements ProjectTypeService{
     }
 
     public List<Project_Type> showAllProjectType() {
-        return projectTypeMapper.showAllPrjectType();
+        return projectTypeMapper.showAllProjectType();
     }
 }

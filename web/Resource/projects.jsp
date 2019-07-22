@@ -38,9 +38,7 @@
 
 							<button id="allProjects" class="btn btn-outline btn-primary">所有项目</button>
 							<c:forEach var="pro" items="${projectTypes}" >
-							<div>
 								<button class="btn btn-outline btn-default" name="projectType" onclick="showTypeProjects()" value="${pro.projectTypeId}">${pro.projectTypeName}</button>
-							</div>
 							</c:forEach>
 
 							<div class="ibox-tools">
@@ -206,6 +204,7 @@
 
         <script src="js/json2.js"></script>
 		<script src="iwork_js/projects.js"></script>
+		<script src="iwork_js/timeControl.js"></script>
 
 		<script>
 			$(document).ready(function() {

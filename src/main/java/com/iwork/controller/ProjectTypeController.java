@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/Resource")
 public class ProjectTypeController {
     @Resource
     private ProjectTypeService projectTypeService;
