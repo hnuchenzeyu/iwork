@@ -45,7 +45,7 @@
             <div class="col-sm-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>绩效奖</h5>
+                        <h5>补贴</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -72,25 +72,25 @@
                         <table id="prizeClass" data-mobile-responsive="true">
                             <thead>
                             <tr>
-                                <th data-field="Tid">绩效奖档次</th>
+                                <th data-field="Tid">补贴档次</th>
                                 <th data-field="First">类别</th>
                                 <th data-field="First">金额</th>
                             </tr>
                             </thead>
                             <tbody><%--显示数据有效--%>
                             <c:forEach items="${prizes}" var="p">
-                            <tr data-id="${p.id}">
-                                <td></td>
-                                <td>${p.type}</td>
-                                <td>${p.prizeClass}</td>
-                                <td>${p.amount}</td>
-                            </tr>
+                                <tr data-id="${p.id}">
+                                    <td></td>
+                                    <td>${p.type}</td>
+                                    <td>${p.prizeClass}</td>
+                                    <td>${p.amount}</td>
+                                </tr>
                             </c:forEach>
                             </tbody>
                         </table>
                     </div>
                     <div class="ibox-heading">
-                        <a id="publish" class="btn btn-block btn-primary">发放绩效奖</a>
+                        <a id="publish" class="btn btn-block btn-primary">发放补贴</a>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@
             <div class="col-sm-9">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h4>本<input id="terms" class="teams btn btn-group" value="${prizes[0].terms}" type="text">期绩效奖获得名单</h4>
+                        <h4>本<input id="terms" class="teams btn btn-group" value="${prizes[0].terms}" type="text">期补贴获得名单</h4>
                     </div>
                     <div class="btn-group hidden-xs" id="toolbar_finance" role="group">
                         <button type="button" class="btn btn-outline btn-default">
@@ -160,7 +160,7 @@
         layer.open({
             type: 1,
             maxmin: true,
-            title: '绩效奖',
+            title: '补贴',
             fix: false,
             shadeClose: true,
             closeBtn: 0,
@@ -175,7 +175,7 @@
         layer.open({
             type: 1,
             maxmin: true,
-            title: '绩效奖',
+            title: '补贴',
             fix: false,
             shadeClose: true,
             closeBtn: 0,
@@ -200,7 +200,7 @@
             title: '员工姓名'
         }, {
             field: 'prize_class',
-            title: '绩效奖档次'
+            title: '补贴档次'
         }, {
             field: 'prize_time',
             title: '发放期数'
@@ -216,7 +216,7 @@
             checkbox: true
         },{
             field: 'prize_class',
-            title: '绩效奖档次'
+            title: '补贴次'
         }, {
             field: 'prize_type',
             title: '类别'
@@ -302,7 +302,7 @@
         </div>
         <div class="row">
             <div class="form-group">
-                <label class="col-sm-2 control-label">绩效奖档次：</label>
+                <label class="col-sm-2 control-label">补贴档次：</label>
 
                 <div class="col-sm-10">
                     <select id="prizeId" name="title_note" class="form-control">
@@ -315,10 +315,10 @@
         </div>
         <div class="row">
             <div class="form-group">
-                <label class="col-sm-2 control-label">绩效奖期数：</label>
+                <label class="col-sm-2 control-label">补贴期数：</label>
 
                 <div class="col-sm-10">
-                    <input id="prizeTerm" name="title_note" value="绩效奖期数" type="text" class="form-control">
+                    <input id="prizeTerm" name="title_note" value="补贴期数" type="text" class="form-control">
                 </div>
             </div>
         </div>
@@ -343,10 +343,10 @@
 
         <div class="row">
             <div class="form-group">
-                <label class="col-sm-2 control-label">绩效奖档次：</label>
+                <label class="col-sm-2 control-label">补贴档次：</label>
 
                 <div class="col-sm-10">
-                    <input id="prizeType" name="prizeType" type="text" class="form-control" placeholder="例如：绩效奖二等">
+                    <input id="prizeType" name="prizeType" type="text" class="form-control" placeholder="例如：补贴二等">
                 </div>
             </div>
         </div>
@@ -355,7 +355,7 @@
                 <label class="col-sm-2 control-label">类别：</label>
 
                 <div class="col-sm-10">
-                    <input id="prizeCate" name="prizeCate" type="text" class="form-control" placeholder="绩效奖为1，补贴为2">
+                    <input id="prizeCate" name="prizeCate" type="text" class="form-control" placeholder="例如：2">
                 </div>
             </div>
         </div>

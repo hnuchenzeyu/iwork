@@ -8,9 +8,9 @@ import java.util.List;
 public interface prizeMapper {
     void addPrize(prize p);
 
-    List<prize> selectNewPrizes();
+    List<prize> selectNewPrizes(Integer id);
 
-    List<prize> selectPrizesByTerms(String terms);
+    List<prize> selectPrizesByTerms(prize prize);
 
     void deletePrizeById(String id);
 }

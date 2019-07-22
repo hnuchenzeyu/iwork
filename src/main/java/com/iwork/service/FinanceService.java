@@ -8,13 +8,13 @@ import java.util.List;
 public interface FinanceService {
     void prizeAdd(prize p);
 
-    List<prize> showNewPrize();
+    List<prize> showNewPrize(Integer prizeClass);
 
     void addStaff_Wage(staff_wage sw);
 
-    List<staff_wage> findWages(Integer terms);
+    List<staff_wage> findWages(prize prize);
 
-    List<prize> showPrize(String terms);
+    List<prize> showPrize(prize prize);
 
     void deletePrize(String id);
 

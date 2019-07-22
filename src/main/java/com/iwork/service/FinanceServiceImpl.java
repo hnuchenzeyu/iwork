@@ -21,20 +21,20 @@ public class FinanceServiceImpl implements FinanceService {
         pmapper.addPrize(p);
     }
 
-    public List<prize> showNewPrize() {
-        return pmapper.selectNewPrizes();
+    public List<prize> showNewPrize(Integer prizeClass) {
+        return pmapper.selectNewPrizes(prizeClass);
     }
 
     public void addStaff_Wage(staff_wage sw) {
         smapper.addStaffWage(sw);
     }
 
-    public List<staff_wage> findWages(Integer terms) {
-        return smapper.selectWagesByTerms(terms);
+    public List<staff_wage> findWages(prize prize) {
+        return smapper.selectWagesByTerms(prize);
     }
 
-    public List<prize> showPrize(String terms) {
-        return pmapper.selectPrizesByTerms(terms);
+    public List<prize> showPrize(prize prize) {
+        return pmapper.selectPrizesByTerms(prize);
     }
 
     @Override

@@ -1,3 +1,4 @@
+//==================以下是绩效======================
 //创建绩效奖
 $("#createPrize").click(function () {
     var type = $("#prizeType").val();//字符串
@@ -51,7 +52,12 @@ $("#createList").click(function () {
 //绩效期数改变时，刷新数据
 $("#terms").blur(function () {
     var termNum = $("#terms").val();
-    window.location.href = "changePrizeAndWage?terms=" + termNum;
+    var classPrize = null
+    if($("h5").text()=="绩效奖")
+        classPrize=1;
+    else if($("h5").text()=="补贴")
+        classPrize=2;
+    window.location.href = "changePrizeAndWage?classPrize="+classPrize+"&terms=" + termNum;
 });
 
 //删除Prize选中的内容
@@ -92,3 +98,5 @@ function deleteData(tableId) {
         alert("请选择要删除的项");
     }
 };
+
+//==================以下是福利======================

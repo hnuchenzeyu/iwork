@@ -100,10 +100,10 @@
     where wageId = #{wageId,jdbcType=INTEGER}
   </update>
 
-    <select id="selectWagesByTerms" parameterType="int" resultMap="winnerList">
+    <select id="selectWagesByTerms" parameterType="com.iwork.bean.prize" resultMap="winnerList">
         SELECT * FROM `staff_wage`,`user`,`prize` 
-        WHERE `staff_wage`.`userId`=`user`.`userId` AND `staff_wage`.`prizeId`=prize.`id` 
-        AND `prize`.`terms`=#{terms}
+        WHERE `staff_wage`.`userId`=`user`.`userId` AND `staff_wage`.`prizeId`=`prize`.`id`
+        AND `prize`.`prizeClass`=#{prizeClass} AND `prize`.`terms`=#{terms}
     </select>
     <resultMap id="winnerList" type="com.iwork.bean.staff_wage">
         <id property="wageId" column="wageId"></id>
