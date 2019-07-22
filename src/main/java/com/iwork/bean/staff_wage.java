@@ -1,63 +1,53 @@
-package andy.model;
+package com.iwork.bean;
 
 public class staff_wage {
-    private Integer wageid;
+    private Integer wageId;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Double prizeclass;
+    private Integer prizeId;
 
-    private Double welfare;
+    private User user;
 
-    private Integer terms;
+    private prize prize;
 
-    private String publishtime;
-
-    public Integer getWageid() {
-        return wageid;
+    public Integer getWageId() {
+        return wageId;
     }
 
-    public void setWageid(Integer wageid) {
-        this.wageid = wageid;
+    public void setWageId(Integer wageId) {
+        this.wageId = wageId;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Double getPrizeclass() {
-        return prizeclass;
+    public Integer getPrizeId() {
+        return prizeId;
     }
 
-    public void setPrizeclass(Double prizeclass) {
-        this.prizeclass = prizeclass;
+    public void setPrizeId(Integer prizeId) {
+        this.prizeId = prizeId;
     }
 
-    public Double getWelfare() {
-        return welfare;
+    public User getUser() {
+        return user;
     }
 
-    public void setWelfare(Double welfare) {
-        this.welfare = welfare;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Integer getTerms() {
-        return terms;
+    public com.iwork.bean.prize getPrize() {
+        return prize;
     }
 
-    public void setTerms(Integer terms) {
-        this.terms = terms;
-    }
-
-    public String getPublishtime() {
-        return publishtime;
-    }
-
-    public void setPublishtime(String publishtime) {
-        this.publishtime = publishtime == null ? null : publishtime.trim();
+    public void setPrize(com.iwork.bean.prize prize) {
+        this.prize = prize;
     }
 }
