@@ -1,5 +1,6 @@
 package com.iwork.controller;
 
+import com.iwork.bean.Finance;
 import com.iwork.bean.Project_Cost;
 import com.iwork.bean.prize;
 import com.iwork.bean.staff_wage;
@@ -157,16 +158,24 @@ public class FinanceController {
 
     /**
      * 显示项目流水
+     *
      * @return
      */
     @RequestMapping("/showProjectCost")
     public ModelAndView showProjectCost() {
         ModelAndView mv = new ModelAndView("finance/finance_project_cost");
         List<Project_Cost> list = service.showProjectCosts();
-        mv.addObject("ProjectCosts",list);
+        mv.addObject("ProjectCosts", list);
         return mv;
     }
 
+    /**
+     * 删除多条项目流水数据
+     *
+     * @param ids
+     * @param response
+     * @throws IOException
+     */
     @RequestMapping("/delete_project_cost")
     public void deleteProjectCost(@RequestParam String ids,
                                   HttpServletResponse response) throws IOException {
@@ -175,6 +184,46 @@ public class FinanceController {
         for (String id : prizeIds) {
 //            System.out.println("Id:"+id);
             service.deleteProject_Cost(id);
+        }
+        response.getWriter().print("success");
+    }
+
+    /**
+     * 添加一条财务数据
+     *
+     * @param finance
+     * @param response
+     */
+    @RequestMapping("/addFinance")
+    public void addFinance(@RequestBody Finance finance,
+                           HttpServletResponse response) throws IOException {
+        service.addFinance(finance);
+        response.getWriter().print("request from addFinance");
+    }
+
+    /**
+     * 显示财务信息到页面
+     * @return
+     */
+    @RequestMapping("/showFinance")
+    public ModelAndView showFinance() {
+        ModelAndView mv = new ModelAndView("finance/finance_company_cost");
+        List<Finance> list = service.showFinanceCost();
+        List<String> years = service.findYears();//查询存在的年份
+        mv.addObject("financeCosts",list);
+        mv.addObject("years",years);
+        return mv;
+    }
+
+    /**
+     * 删除多条finance数据
+     */
+    @RequestMapping("/delete_finance")
+    public void deleteFinance(@RequestParam String ids,
+                              HttpServletResponse response) throws IOException {
+        String[] fIds = ids.split(",");
+        for (String id:fIds){
+            service.deleteFinance(id);
         }
         response.getWriter().print("success");
     }

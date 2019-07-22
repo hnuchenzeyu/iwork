@@ -146,10 +146,6 @@
                             </li>
                             <li><a class="J_menuItem" href="OpinionList">意见</a>
                             </li>
-                            <li><a class="J_menuItem" href="suggest.html">搜索自动补全</a>
-                            </li>
-                            <li><a class="J_menuItem" href="layerdate.html">日期选择器layerDate</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
@@ -315,18 +311,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">财务</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="table_basic.html">基本表格</a>
+                            <li><a class="J_menuItem" href="finance/showFinance">财务支出</a>
                             </li>
-                            <li><a class="J_menuItem" href="table_data_tables.html">DataTables</a>
+                            <li><a class="J_menuItem" href="finance/showProjectCost">项目流水</a>
                             </li>
-                            <li><a class="J_menuItem" href="table_jqgrid.html">jqGrid</a>
+                            <li><a class="J_menuItem" href="finance/showPrize">发放绩效奖</a>
                             </li>
-                            <li><a class="J_menuItem" href="table_foo_table.html">Foo Tables</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_bootstrap.html">Bootstrap Table
-                                <span class="label label-danger pull-right">推荐</span></a>
+                            <li><a class="J_menuItem" href="finance/showWelfare">发放补贴</a>
                             </li>
                         </ul>
                     </li>

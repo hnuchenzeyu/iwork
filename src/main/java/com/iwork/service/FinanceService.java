@@ -1,5 +1,6 @@
 package com.iwork.service;
 
+import com.iwork.bean.Finance;
 import com.iwork.bean.Project_Cost;
 import com.iwork.bean.prize;
 import com.iwork.bean.staff_wage;
@@ -26,4 +27,12 @@ public interface FinanceService {
     List<Project_Cost> showProjectCosts();
 
     void deleteProject_Cost(String id);
+
+    void addFinance(Finance finance);
+
+    List<Finance> showFinanceCost();
+
+    void deleteFinance(String id);
+
+    List<String> findYears();
 }

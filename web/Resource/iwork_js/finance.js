@@ -75,12 +75,12 @@ function deleteWageData() {
  * @param tableId 页面中显示数据的<table>标签的ID
  */
 function deleteData(tableId) {
-    var list = $("#" + tableId + " tbody .selected");
+    var list = $("#" + tableId + " tbody .selected");//找到<table>里选中的行
     var ids = "";
     for (var i = 0; i < list.length; i += 1) {
-        ids += list.eq(i).data("id") + ",";
+        ids += list.eq(i).data("id") + ",";//获取每行data-id属性的值，并拼接起来
     }
-    if (ids != "") {
+    if (ids != "") {//数据不为空
         ids = ids.substr(0, ids.length - 1);
         var flag = confirm("您确定删除这些数据吗？");
         if (flag == true) {
@@ -150,3 +150,35 @@ function deleteProjectCost(){
 //         }
 //     });
 // }
+
+//=====================以下是财务============================
+function addFinance() {
+    var financeId=$("#financeId").val();
+    var createUserId=$("#createUserId").val();
+    var createTime=$("#create_time").val();
+    var expense=$("#expense").val();
+    var expenseType=$("#expenseType option:selected").val();
+    // alert(financeId+" "+createUserId+" "+createTime+" "+expense+" "+expenseType);
+    $.ajax({
+        url:"addFinance",
+        type:"post",
+        contentType:"application/json",
+        data:JSON.stringify({
+            financeId:financeId,
+            createUserId:createUserId,
+            createTime:createTime,
+            expense:expense,
+            expenseType:expenseType
+        }),
+        success:function () {
+            window.location.reload();
+        },
+        error:function () {
+            alert("添加失败...");
+        }
+    });
+}
+//删除一条Finance记录
+function deleteFinance() {
+    deleteData("finance");
+}

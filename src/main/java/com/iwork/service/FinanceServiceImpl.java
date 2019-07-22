@@ -1,8 +1,10 @@
 package com.iwork.service;
 
+import com.iwork.bean.Finance;
 import com.iwork.bean.Project_Cost;
 import com.iwork.bean.prize;
 import com.iwork.bean.staff_wage;
+import com.iwork.mapper.FinanceMapper;
 import com.iwork.mapper.Project_CostMapper;
 import com.iwork.mapper.prizeMapper;
 import com.iwork.mapper.staff_wageMapper;
@@ -20,6 +22,8 @@ public class FinanceServiceImpl implements FinanceService {
     staff_wageMapper smapper;
     @Resource
     Project_CostMapper pcmapper;
+    @Resource
+    FinanceMapper fmapper;
 
     public void prizeAdd(prize p) {
         pmapper.addPrize(p);
@@ -61,5 +65,25 @@ public class FinanceServiceImpl implements FinanceService {
     @Override
     public void deleteProject_Cost(String id) {
         pcmapper.deleteProjectCost(id);
+    }
+
+    @Override
+    public void addFinance(Finance finance) {
+        fmapper.addFinance(finance);
+    }
+
+    @Override
+    public List<Finance> showFinanceCost() {
+        return fmapper.selectFinance();
+    }
+
+    @Override
+    public void deleteFinance(String id) {
+        fmapper.deleteFinanceById(id);
+    }
+
+    @Override
+    public List<String> findYears() {
+        return fmapper.selectYears();
     }
 }

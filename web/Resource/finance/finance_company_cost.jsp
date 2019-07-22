@@ -39,35 +39,117 @@
 
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
+    <ul id="myTab" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#home" data-toggle="tab">财务一览</a></li>
+        <li role="presentation"><a href="#profile" data-toggle="tab">财务清单</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="ibox" id="box" style="height: 300px;">
 
+                        <div id="yearselectBtnGroup">
+                            <c:forEach items="${years}" var="year" varStatus="vs">
+                                <c:choose>
+                                    <c:when test="${vs.last}">
+                                        <span class="btn btn-block btn-primary year">${year}年</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="btn btn-block btn-default year">${year}年</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>饼状图</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="graph_flot.html#">选项1</a>
+                                    </li>
+                                    <li><a href="graph_flot.html#">选项2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-pie-chart"></div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="ibox " id="profile">
-        <div class="ibox-title">
-            <h4>项目流水</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>多轴线图表示例</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="graph_flot.html#">选项1</a>
+                                    </li>
+                                    <li><a href="graph_flot.html#">选项2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="ibox-content">
+        <div class="tab-pane fade " id="profile">
+
             <div class="btn-group hidden-xs" id="toolbar_finance" role="group">
                 <button type="button" class="btn btn-outline btn-default">
                     <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                 </button>
+
                 <button type="button" class="btn btn-outline btn-default">
-                    <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="btn btn-outline btn-default" onclick="deleteProjectCost()">
-                    <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                    <i class="glyphicon glyphicon-trash" aria-hidden="true" onclick="deleteFinance()"></i>
                 </button>
 
             </div>
-            <table id="project_cost">
+            <table id="finance">
                 <tbody>
-                <c:forEach items="${ProjectCosts}" var="cost">
-                    <tr data-id="${cost.projectAccountId}" <%--onclick="modifyRowData(this)"--%>>
+                <c:forEach items="${financeCosts}" var="fc">
+                    <tr data-id="${fc.financeId}">
                         <td></td>
-                        <td>${cost.projectAccountId}</td>
-                        <td>${cost.user.userName}</td>
-                        <td>${cost.projectCostTime}</td>
-                        <td>${cost.projectCostAmount}</td>
-                        <td>${cost.projectCostContext}</td>
+                        <td>${fc.financeId}</td>
+                        <td>${fc.user.userName}</td>
+                        <td>${fc.createTime}</td>
+                        <td>${fc.expense}</td>
+                        <td>${fc.expenseType}</td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -77,12 +159,49 @@
 </div>
 <script src="../js/jquery.min.js?v=2.1.4"></script>
 <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-
+<script src="../js/plugins/flot/jquery.flot.js"></script>
+<script src="../js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="../js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="../js/plugins/flot/jquery.flot.pie.js"></script>
 <script src="../js/content.min.js?v=1.0.0"></script>
 <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script>
+    $("#yearselectBtnGroup").on('click', 'span', function () {
+        $("#yearselectBtnGroup span").addClass("btn-default");
+        $(this).removeClass("btn-default");
+        $(this).addClass("btn-primary");
+    });
+    var data = [
+        {label: "支出", data: 2913},
+        {label: "收入", data: 4313}
+    ];
 
+    $("#home").show(function () {
+        $.plot($("#flot-pie-chart"), data, {
+            series: {
+                pie: {
+                    show: true //显示饼图
+                }
+            },
+            legend: {
+                show: false //不显示图例
+            }
+        });
+        $.plot($("#flot-line-chart-multi"), [{label: "支出", data: [[1, 123], [2, 314], [3, 223]]},
+                {label: "收入", data: [[1, 133], [2, 151], [3, 333]]},
+                {label: "单位：万元", data: [1, 0]}],
+            {
+                xaxis: {
+                    ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"],
+                        [7, "一月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"]],
+                    min: 1,
+                    max: 12
+                }
+            });
+    });
+</script>
 <script src="../js/plugins/layer/layer.js"></script>
 <script src="../js/json2.js"></script>
 <script src="../iwork_js/finance.js"></script>
@@ -103,12 +222,11 @@
     $("#toolbar_finance").children().eq(0).click(function () {
         layer.open({
             type: 1,
-            maxmin: true,
-            title: '项目流水',
+            title: '财务清单',
             fix: false,
             shadeClose: true,
             closeBtn: 0,
-            area: ['600px', '300px'],
+            area: ['1000px', '500px'],
             content: $('#create_finance'),//这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
             success: function () {
                 $("#create_time").val(year + month + day);
@@ -132,7 +250,7 @@
 
         //初始化Table
         oTableInit.Init = function () {
-            $("#project_cost").bootstrapTable({
+            $("#finance").bootstrapTable({
                 url: '/VenderManager/TradeList',     //请求后台的URL（*）
                 method: 'get',           //请求方式（*）
                 toolbar: '#toolbar_finance',        //工具按钮用哪个容器
@@ -170,8 +288,8 @@
                     field: 'expense',
                     title: '金额'
                 }, {
-                    field: 'project_context',
-                    title: '备注'
+                    field: 'expense——type',
+                    title: '类型'
                 },]
             });
         };
@@ -209,7 +327,7 @@
             <label class="col-sm-2 control-label">流水号：</label>
 
             <div class="col-sm-10">
-                <input id="finance_id" name="title_note" type="text" placeholder="流水号" class="form-control">
+                <input id="financeId" name="title_note" type="text" placeholder="流水号" class="form-control">
             </div>
         </div>
     </div>
@@ -218,7 +336,7 @@
             <label class="col-sm-2 control-label">创建人：</label>
 
             <div class="col-sm-10">
-                <input id="finance_creater" name="title_note" type="text" placeholder="创建人" class="form-control">
+                <input id="createUserId" name="title_note" type="text" placeholder="创建人" class="form-control">
             </div>
         </div>
     </div>
@@ -236,17 +354,23 @@
             <label class="col-sm-2 control-label">金额：</label>
 
             <div class="col-sm-10">
-                <input id="finance_cost" name="title_note" type="text" placeholder="金额" class="form-control">
+                <input id="expense" name="title_note" type="text" placeholder="金额" class="form-control">
             </div>
         </div>
     </div>
     <div class="row">
 
         <div class="form-group">
-            <label class="col-sm-2 control-label">备注：</label>
+            <label class="col-sm-2 control-label">类型：</label>
 
             <div class="col-sm-10">
-                <input id="finance_type" class="form-control" name="content" type="text"/>
+                <select id="expenseType" class="form-control" name="content">
+                    <option value="1">奖金</option>
+                    <option value="2">补贴</option>
+                    <option value="3">项目开销</option>
+                    <option value="4">其他</option>
+                    <option value="5">收入</option>
+                </select>
             </div>
         </div>
     </div>
@@ -254,11 +378,9 @@
 
     </div>
     <div class="row">
-        <div class="form-group ">
-            <div class="col-sm-offset-2 col-sm-10 bottom">
-                <a id="create" class="btn btn-sm center btn-white">取消</a>
-                <a id="create" class="btn btn-sm center btn-white">修改</a>
-                <a id="create" class="btn btn-sm center btn-white" onclick="addProjectCost()">创建</a>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a id="create" class="btn btn-sm center btn-white" onclick="addFinance()">创建</a>
             </div>
         </div>
     </div>

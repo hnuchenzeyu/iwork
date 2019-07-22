@@ -216,7 +216,7 @@
             checkbox: true
         },{
             field: 'prize_class',
-            title: '补贴次'
+            title: '补贴档次'
         }, {
             field: 'prize_type',
             title: '类别'
