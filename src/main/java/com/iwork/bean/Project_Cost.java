@@ -1,17 +1,18 @@
 package com.iwork.bean;
 
-import java.util.Date;
 
 public class Project_Cost {
     private Integer projectAccountId;
 
-    private Date projectCostTime;
+    private String projectCostTime;
 
     private Integer projectCostUser;
 
-    private String projectCostAmount;
+    private Double projectCostAmount;
 
     private String projectCostContext;
+
+    private User user;
 
     public Integer getProjectAccountId() {
         return projectAccountId;
@@ -21,11 +22,11 @@ public class Project_Cost {
         this.projectAccountId = projectAccountId;
     }
 
-    public Date getProjectCostTime() {
+    public String getProjectCostTime() {
         return projectCostTime;
     }
 
-    public void setProjectCostTime(Date projectCostTime) {
+    public void setProjectCostTime(String projectCostTime) {
         this.projectCostTime = projectCostTime;
     }
 
@@ -37,12 +38,12 @@ public class Project_Cost {
         this.projectCostUser = projectCostUser;
     }
 
-    public String getProjectCostAmount() {
+    public Double getProjectCostAmount() {
         return projectCostAmount;
     }
 
-    public void setProjectCostAmount(String projectCostAmount) {
-        this.projectCostAmount = projectCostAmount == null ? null : projectCostAmount.trim();
+    public void setProjectCostAmount(Double projectCostAmount) {
+        this.projectCostAmount = projectCostAmount;
     }
 
     public String getProjectCostContext() {
@@ -50,6 +51,14 @@ public class Project_Cost {
     }
 
     public void setProjectCostContext(String projectCostContext) {
-        this.projectCostContext = projectCostContext == null ? null : projectCostContext.trim();
+        this.projectCostContext = projectCostContext;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

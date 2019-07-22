@@ -296,7 +296,7 @@
                 <label class="col-sm-2 control-label">员工工号：</label>
 
                 <div class="col-sm-10">
-                    <input id="userId" name="title_note" type="text" placeholder="流水号" class="form-control">
+                    <input id="userId" name="title_note" type="text" placeholder="员工工号" class="form-control">
                 </div>
             </div>
         </div>

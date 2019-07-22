@@ -1,7 +1,9 @@
 package com.iwork.service;
 
+import com.iwork.bean.Project_Cost;
 import com.iwork.bean.prize;
 import com.iwork.bean.staff_wage;
+import com.iwork.mapper.Project_CostMapper;
 import com.iwork.mapper.prizeMapper;
 import com.iwork.mapper.staff_wageMapper;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,8 @@ public class FinanceServiceImpl implements FinanceService {
     prizeMapper pmapper;
     @Resource
     staff_wageMapper smapper;
+    @Resource
+    Project_CostMapper pcmapper;
 
     public void prizeAdd(prize p) {
         pmapper.addPrize(p);
@@ -37,13 +41,25 @@ public class FinanceServiceImpl implements FinanceService {
         return pmapper.selectPrizesByTerms(prize);
     }
 
-    @Override
     public void deletePrize(String id) {
         pmapper.deletePrizeById(id);
     }
 
-    @Override
     public void deleteStaff_Wage(String id) {
         smapper.deleteWageById(id);
+    }
+
+    public void addProject_Cost(Project_Cost project_cost) {
+        pcmapper.addProjectCost(project_cost);
+    }
+
+    @Override
+    public List<Project_Cost> showProjectCosts() {
+        return pcmapper.selectAllCosts();
+    }
+
+    @Override
+    public void deleteProject_Cost(String id) {
+        pcmapper.deleteProjectCost(id);
     }
 }

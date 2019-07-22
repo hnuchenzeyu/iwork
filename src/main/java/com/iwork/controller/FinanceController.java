@@ -1,5 +1,6 @@
 package com.iwork.controller;
 
+import com.iwork.bean.Project_Cost;
 import com.iwork.bean.prize;
 import com.iwork.bean.staff_wage;
 import com.iwork.service.FinanceService;
@@ -137,5 +138,44 @@ public class FinanceController {
         mv.addObject("prizes", plist);
         mv.addObject("staff_wages", swList);
         return mv;
+    }
+
+    /**
+     * 添加一条项目流水
+     *
+     * @param project_cost
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping("/addProjectCost")
+    public void addProjectCost(@RequestBody Project_Cost project_cost,
+                               HttpServletResponse response) throws IOException {
+        service.addProject_Cost(project_cost);
+
+        response.getWriter().print("success");
+    }
+
+    /**
+     * 显示项目流水
+     * @return
+     */
+    @RequestMapping("/showProjectCost")
+    public ModelAndView showProjectCost() {
+        ModelAndView mv = new ModelAndView("finance/finance_project_cost");
+        List<Project_Cost> list = service.showProjectCosts();
+        mv.addObject("ProjectCosts",list);
+        return mv;
+    }
+
+    @RequestMapping("/delete_project_cost")
+    public void deleteProjectCost(@RequestParam String ids,
+                                  HttpServletResponse response) throws IOException {
+
+        String[] prizeIds = ids.split(",");
+        for (String id : prizeIds) {
+//            System.out.println("Id:"+id);
+            service.deleteProject_Cost(id);
+        }
+        response.getWriter().print("success");
     }
 }
