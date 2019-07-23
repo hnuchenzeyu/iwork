@@ -111,13 +111,20 @@
                     </li>
 
                     <li>
-                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
+                        <a href="#">
+                            <i class="fa fa-envelope"></i>
+                            <span class="nav-label"> 日程模块 </span>
+                            <span class="fa arrow"></span>
+                        </a>
                         <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="mailbox.html">收件箱</a>
+                            <li>
+                                <a class="J_menuItem" href="schedule/calendar.html">日历</a>
                             </li>
-                            <li><a class="J_menuItem" href="mail_detail.html">查看邮件</a>
+                            <li>
+                                <a class="J_menuItem" href="schedule/meeting_asign.html">会议安排</a>
                             </li>
-                            <li><a class="J_menuItem" href="mail_compose.html">写信</a>
+                            <li>
+                                <a class="J_menuItem" href="schedule/calendar_note.jsp">记事本</a>
                             </li>
                         </ul>
                     </li>
@@ -146,10 +153,6 @@
                             </li>
                             <li><a class="J_menuItem" href="OpinionList">意见</a>
                             </li>
-                            <li><a class="J_menuItem" href="suggest.html">搜索自动补全</a>
-                            </li>
-                            <li><a class="J_menuItem" href="layerdate.html">日期选择器layerDate</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
@@ -162,7 +165,7 @@
                             <li>
                                 <a href="#">项目管理 <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a class="J_menuItem" href="projects.jsp">项目</a>
+                                    <li><a class="J_menuItem" href="http://localhost:8080/iWork/Resource/showAllProjectType">项目</a>
                                     </li>
                                     <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
                                     </li>
@@ -315,18 +318,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">财务</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="table_basic.html">基本表格</a>
+                            <li><a class="J_menuItem" href="finance/showFinance">财务支出</a>
                             </li>
-                            <li><a class="J_menuItem" href="table_data_tables.html">DataTables</a>
+                            <li><a class="J_menuItem" href="finance/showProjectCost">项目流水</a>
                             </li>
-                            <li><a class="J_menuItem" href="table_jqgrid.html">jqGrid</a>
+                            <li><a class="J_menuItem" href="finance/showPrize">发放绩效奖</a>
                             </li>
-                            <li><a class="J_menuItem" href="table_foo_table.html">Foo Tables</a>
-                            </li>
-                            <li><a class="J_menuItem" href="table_bootstrap.html">Bootstrap Table
-                                <span class="label label-danger pull-right">推荐</span></a>
+                            <li><a class="J_menuItem" href="finance/showWelfare">发放补贴</a>
                             </li>
                         </ul>
                     </li>

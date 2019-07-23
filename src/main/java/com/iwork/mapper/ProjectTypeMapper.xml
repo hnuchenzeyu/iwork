@@ -10,7 +10,7 @@
         )
     </insert>
 
-    <select id="showAllPrjectType" resultType="com.iwork.bean.Project_Type">
+    <select id="showAllProjectType" resultType="com.iwork.bean.Project_Type">
         select * from project_type
     </select>
 </mapper>

@@ -7,11 +7,13 @@ public class Finance {
 
     private Integer createUserId;
 
-    private Date createTime;
+    private String createTime;
 
     private String expense;
 
     private String expenseType;
+
+    private User user;
 
     public Integer getFinanceId() {
         return financeId;
@@ -29,11 +31,11 @@ public class Finance {
         this.createUserId = createUserId;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -51,5 +53,13 @@ public class Finance {
 
     public void setExpenseType(String expenseType) {
         this.expenseType = expenseType == null ? null : expenseType.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

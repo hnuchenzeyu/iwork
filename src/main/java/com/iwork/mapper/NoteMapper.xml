@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.iwork.mapper.NoteMapper">
+    <select id="showAllNotes" resultType="com.iwork.bean.Note">
+        select * from note order by noteCreateTime DESC
+    </select>
+
+    <insert id="createNote" parameterType="com.iwork.bean.Note">
+        insert into note(
+                noteId,
+                noteCreateUser,
+                noteCreateTime,
+                noteTitle,
+                noteContext
+                )
+        VALUES (
+                #{noteId},
+                #{noteCreateUser},
+                #{noteCreateTime},
+                #{noteTitle},
+                #{noteContext}
+                )
+    </insert>
+</mapper>

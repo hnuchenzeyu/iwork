@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.iwork.mapper.Project_CostMapper">
+    <insert id="addProjectCost" parameterType="com.iwork.bean.Project_Cost" useGeneratedKeys="true">
+        insert into project_cost(
+        projectAccountId,
+        projectCostTime,
+        projectCostUser,
+        projectCostAmount,
+        projectCostContext
+        ) values (
+        #{projectAccountId},
+        #{projectCostTime},
+        #{projectCostUser},
+        #{projectCostAmount},
+        #{projectCostContext}
+        )
+    </insert>
+    <select id="selectAllCosts" resultMap="ProjectCostJoinUser">
+        SELECT * FROM `project_cost` JOIN `user` ON `project_cost`.`projectCostUser`=`user`.`userId`
+    </select>
+    <resultMap id="ProjectCostJoinUser" type="com.iwork.bean.Project_Cost">
+        <id property="projectAccountId" column="projectAccountId"></id>
+        <result property="projectCostTime" column="projectCostTime"></result>
+        <result property="projectCostUser" column="projectCostUser"></result>
+        <result property="projectCostAmount" column="projectCostAmount"></result>
+        <result property="projectCostContext" column="projectCostContext"></result>
+        <association property="user" column="userId" javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+        </association>
+    </resultMap>
+    <delete id="deleteProjectCost" parameterType="java.lang.String">
+        delete from project_cost where projectAccountId=#{id}
+    </delete>
+</mapper>
