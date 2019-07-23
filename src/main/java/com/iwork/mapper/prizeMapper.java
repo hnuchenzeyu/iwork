@@ -1,16 +1,17 @@
 package com.iwork.mapper;
 
-import com.iwork.bean.prize;
-import com.iwork.bean.staff_wage;
+import com.iwork.bean.Prize;
 
-import java.util.List;
+public interface PrizeMapper {
+    int deleteByPrimaryKey(Integer id);
 
-public interface prizeMapper {
-    void addPrize(prize p);
+    int insert(Prize record);
 
-    List<prize> selectNewPrizes(Integer id);
+    int insertSelective(Prize record);
 
-    List<prize> selectPrizesByTerms(prize prize);
+    Prize selectByPrimaryKey(Integer id);
 
-    void deletePrizeById(String id);
+    int updateByPrimaryKeySelective(Prize record);
+
+    int updateByPrimaryKey(Prize record);
 }

@@ -27,8 +27,26 @@
 <body class="gray-bg">
     <div class="wrapper wrapper-content">
         <div class="row animated fadeInDown">
-            <div>
-
+            <div class="ibox-content">
+                <div class="row m-b-sm m-t-sm">
+                    <div class="col-md-1">
+                        <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> 刷新</button>
+                    </div>
+                    <div class="col-md-11">
+                        <div class="input-group">
+                            <input type="text" placeholder="请输入项目名称" class="input-sm form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-primary"> 搜索</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list">
+                    <table class="table table-hover">
+                        <tbody id="tbody-meeting-data">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -49,8 +67,31 @@
 
 	<script src="../js/datetimepicker/bootstrap-datetimepicker.js"></script>
 	<script src='../js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
-	<script src="../js/plugins/layer/layer.js"></script>	
+	<script src="../js/plugins/layer/layer.js"></script>
 
+
+
+    <script>
+        $(document).ready(function() {
+            $("#loading-example-btn").click(function() {
+                btn = $(this);
+                simpleLoad(btn, true);
+                simpleLoad(btn, false)
+            })
+        });
+
+        function simpleLoad(btn, state) {
+            if (state) {
+                btn.children().addClass("fa-spin");
+                btn.contents().last().replaceWith(" Loading")
+            } else {
+                setTimeout(function() {
+                    btn.children().removeClass("fa-spin");
+                    btn.contents().last().replaceWith(" Refresh")
+                }, 2000)
+            }
+        };
+    </script>
 	
 	
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
