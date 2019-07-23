@@ -1,6 +1,6 @@
 package com.iwork.bean;
 
-public class Prize {
+public class prize {
     private Integer id;
 
     private Integer prizeClass;
