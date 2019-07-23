@@ -270,7 +270,7 @@
               contentType:"application/json;charset=utf-8",
               success:function (data) {
                   alert("success");
-                  alert(data);
+                  alert(data.toString());
               },
                error:function (XMLHttpRequest, textStatus) {
                    alert(XMLHttpRequest.readyState+"/"+XMLHttpRequest.status+"/"+textStatus);

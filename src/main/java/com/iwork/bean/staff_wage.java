@@ -1,4 +1,4 @@
-package andy.model;
+package com.iwork.bean;
 
 public class staff_wage {
     private Integer wageid;

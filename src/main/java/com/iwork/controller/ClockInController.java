@@ -82,6 +82,8 @@ public class ClockInController {
                 pw.write(1);
             else
                 pw.write(0);
+            pw.flush();
+            pw.close();
      }
 
     @RequestMapping("/testAj")
