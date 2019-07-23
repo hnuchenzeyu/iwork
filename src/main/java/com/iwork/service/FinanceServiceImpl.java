@@ -6,7 +6,7 @@ import com.iwork.bean.Project_Cost;
 import com.iwork.bean.staff_wage;
 import com.iwork.mapper.FinanceMapper;
 import com.iwork.mapper.Project_CostMapper;
-import com.iwork.mapper.PrizeMapper;
+import com.iwork.mapper.prizeMapper;
 import com.iwork.mapper.staff_wageMapper;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
 public class FinanceServiceImpl implements FinanceService {
 
     @Resource
-    PrizeMapper pmapper;
+    prizeMapper pmapper;
     @Resource
     staff_wageMapper smapper;
     @Resource
