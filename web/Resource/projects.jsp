@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*,com.iwork.bean.*" pageEncoding="utf-8" %>
 <html>
 
 	<head>
@@ -35,14 +36,15 @@
 					<div class="ibox">
 						<div class="ibox-title">
 
-							<button class="btn btn-outline btn-primary">所有项目</button>
-							<button class="btn btn-outline btn-default">分类1</button>
-							<button class="btn btn-outline btn-default">分类2</button>
-							<button class="btn btn-outline btn-default">分类3</button>
-
+							<button id="allProjects" class="btn btn-outline btn-primary">所有项目</button>
+							<c:forEach var="pro" items="${projectTypes}" >
+								<button class="btn btn-outline btn-default" name="projectType" onclick="showTypeProjects()" value="${pro.projectTypeId}">${pro.projectTypeName}</button>
+							</c:forEach>
 
 							<div class="ibox-tools">
-								<a href="projects.jsp" id="create_new_project" class="btn btn-primary btn-xs">创建新项目</a>
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#newProjectModal">
+                                    创建新项目
+                                </button>
 							</div>
 							<div class="ibox-tools">
 								<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
@@ -62,11 +64,110 @@
 											</div>
 										<div class="modal-body">
 											<p>创建项目相关分类，方便管理</p>
-											<div class="form-group"><label>分类名</label> <input id="newProjectType" type="text" placeholder="请输入分类名称" class="form-control" value=""></div>
+											<div class="form-group"><label>分类名</label> <input id="projectType" type="text" placeholder="请输入分类名称" class="form-control" value=""></div>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
 											<button id="save_btn" type="button" class="btn btn-primary">保存</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+                            <!-- 创建新项目的窗口 -->
+                            <div class="modal inmodal" id="newProjectModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content animated bounceInRight">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                                            </button>
+                                            <i class="fa fa-laptop modal-icon"></i>
+                                            <h4 class="modal-title">创建项目</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>创建一个新的项目</p>
+                                            <div class="form-group">
+                                                <label>项目名称</label>
+                                                <input id="newProjectTitle" type="text" placeholder="请输入项目名称" class="form-control" value="">
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label>项目状态</label>
+                                                <select id="newProjectStatus" type="text" placeholder="请选择项目状态" class="form-control">
+                                                    <option value="1">进行中</option>
+                                                    <option value="2">已取消</option>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label>项目类别</label>
+                                                <select id="newProjectType" type="text" placeholder="请选择项目类别" class="form-control">
+                                                    <option value="1">电子商城</option>
+                                                    <option value="2">政府部门</option>
+                                                    <option value="3">电子商务</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>项目内容</label>
+                                                <textarea id="newProjectContext" rows="3" cols="81" placeholder="请输入项目内容" ></textarea>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                                            <button id="create_new_project" type="button" class="btn btn-primary">保存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+							<!-- 编辑项目的窗口 -->
+							<div class="modal inmodal" id="editProjectModal" tabindex="-1" role="dialog" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content animated bounceInRight">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+											</button>
+											<i class="fa fa-laptop modal-icon"></i>
+											<h4 class="modal-title">编辑项目</h4>
+										</div>
+										<div class="modal-body">
+											<p>编辑这个项目</p>
+											<div class="form-group">
+												<label>项目名称</label>
+												<input id="editProjectTitle" type="text" placeholder="请输入项目名称" class="form-control" value="">
+											</div>
+											<br>
+											<div class="form-group">
+												<label>项目状态</label>
+												<select id="editProjectStatus" type="text" placeholder="请选择项目状态" class="form-control">
+													<option value="1">进行中</option>
+													<option value="2">已取消</option>
+												</select>
+											</div>
+											<br>
+											<div class="form-group">
+												<label>项目类别</label>
+												<select id="editProjectType" type="text" placeholder="请选择项目类别" class="form-control">
+													<option value="1">电子商城</option>
+													<option value="2">政府部门</option>
+													<option value="3">电子商务</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>项目进度</label>
+												<input id="editProjectProgress" rows="3" cols="81" placeholder="请输入项目进度" ></input>
+											</div>
+											<div class="form-group">
+												<label>项目内容</label>
+												<textarea id="editProjectContext" rows="3" cols="81" placeholder="请输入项目内容" ></textarea>
+											</div>
+										</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+											<button id="edit_project" type="button" class="btn btn-primary">保存</button>
 										</div>
 									</div>
 								</div>
@@ -103,6 +204,7 @@
 
         <script src="js/json2.js"></script>
 		<script src="iwork_js/projects.js"></script>
+		<script src="iwork_js/timeControl.js"></script>
 
 		<script>
 			$(document).ready(function() {

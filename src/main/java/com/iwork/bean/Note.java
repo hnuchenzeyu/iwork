@@ -9,6 +9,8 @@ public class Note {
 
     private Date noteCreateTime;
 
+    private String noteTitle;
+
     private String noteContext;
 
     public Integer getNoteId() {
@@ -33,6 +35,14 @@ public class Note {
 
     public void setNoteCreateTime(Date noteCreateTime) {
         this.noteCreateTime = noteCreateTime;
+    }
+
+    public String getNoteTitle() {
+        return noteTitle;
+    }
+
+    public void setNoteTitle(String noteTitle) {
+        this.noteTitle = noteTitle;
     }
 
     public String getNoteContext() {

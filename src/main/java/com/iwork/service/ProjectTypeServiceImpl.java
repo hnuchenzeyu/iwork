@@ -5,6 +5,7 @@ import com.iwork.mapper.ProjectTypeMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class ProjectTypeServiceImpl implements ProjectTypeService{
@@ -15,7 +16,7 @@ public class ProjectTypeServiceImpl implements ProjectTypeService{
         projectTypeMapper.addProjectType(project_type);
     }
 
-    public Project_Type showAllProjectType() {
-        return projectTypeMapper.showAllPrjectType();
+    public List<Project_Type> showAllProjectType() {
+        return projectTypeMapper.showAllProjectType();
     }
 }

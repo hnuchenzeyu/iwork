@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
 <head>
@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="../css/plugins/markdown/bootstrap-markdown.min.css" />
     <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
 
+    <!-- Sweet Alert -->
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
 </head>
 
 <body class="gray-bg">
@@ -24,19 +27,17 @@
 				<form class="form-horizontal">
 				<div class="row">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">主题：</label>
+                        <label class="col-sm-1 control-label">主题：</label>
                     
-                        <div class="col-sm-10">
-                            <input id="title_note" name="title_note" type="text" placeholder="主题" class="form-control"> 
+                        <div class="col-sm-9">
+                            <input id="title_note" name="title" type="text" placeholder="主题" class="form-control">
                         </div>
                     </div>
                 </div>  
                 <div class="row">
-					
 					 <div class="form-group">
-					    <label class="col-sm-2 control-label">内容：</label>
-					
-					    <div class="col-sm-10">
+					    <label class="col-sm-1 control-label">内容：</label>
+					    <div class="col-sm-9">
 					        <textarea id="detail_note" name="content" data-provide="markdown" rows="10"></textarea> 
 					    </div>
 					</div>
@@ -44,8 +45,8 @@
 				<div class="row">
 					<div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
-					        <a class="btn btn-sm center btn-white cancel"  >取消</a>
-							<a class="btn btn-sm center btn-white" >发布</a>
+					        <a class="btn btn-sm center btn-white cancel" href="calendar_note.jsp" target="_self">取消</a>
+							<a id="createNote" class="btn btn-sm center btn-white">创建</a>
 					    </div>
 					</div>
 				</div>		   
@@ -54,6 +55,11 @@
     <script src="../js/jquery.min.js?v=2.1.4"></script>
     <script src="../js/bootstrap.min.js?v=3.3.5"></script>
     <script src="../js/content.min.js?v=1.0.0"></script>
+
+    <script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../iwork_js/note.js"></script>
+    <script src="../iwork_js/timeControl.js"></script>
+
     <script type="text/javascript" src="../js/plugins/markdown/markdown.js"></script>
     <script type="text/javascript" src="../js/plugins/markdown/to-markdown.js"></script>
     <script type="text/javascript" src="../js/plugins/markdown/bootstrap-markdown.js"></script>
@@ -66,7 +72,7 @@
 				
 			var data ={
 				note_title:title,
-				note_detail:datail
+				note_detail:detail
 			}
 			return data;
 		}
