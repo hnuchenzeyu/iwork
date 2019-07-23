@@ -37,4 +37,7 @@
     <select id="selectYears" resultType="java.lang.String">
         SELECT DISTINCT LEFT(createTime,4) AS createTime FROM finance ORDER BY createTime ASC;
     </select>
+    <select id="selectFinanceByYear" parameterType="java.lang.String" resultType="com.iwork.bean.Finance">
+        SELECT * FROM finance WHERE createTime LIKE #{year}"%"
+    </select>
 </mapper>

@@ -12,4 +12,6 @@ public interface FinanceMapper {
     void deleteFinanceById(String id);
 
     List<String> selectYears();
+
+    List<Finance> selectFinanceByYear(String year);
 }

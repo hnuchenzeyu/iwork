@@ -35,4 +35,6 @@ public interface FinanceService {
     void deleteFinance(String id);
 
     List<String> findYears();
+
+    List<Finance> findFinanceCostByYear(String year);
 }

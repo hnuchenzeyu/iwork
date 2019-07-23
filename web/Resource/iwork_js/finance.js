@@ -112,26 +112,26 @@ function addProjectCost() {
     var context = $("#finance_type").val();
     // alert(id+" "+userId+" "+time+" "+cost+" "+context);
     $.ajax({
-        url:"addProjectCost",
-        type:"post",
-        contentType:"application/json",
-        data:JSON.stringify({
-            projectAccountId:id,
-            projectCostTime:time,
-            projectCostUser:userId,
-            projectCostAmount:cost,
-            projectCostContext:context
+        url: "addProjectCost",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify({
+            projectAccountId: id,
+            projectCostTime: time,
+            projectCostUser: userId,
+            projectCostAmount: cost,
+            projectCostContext: context
         }),
-        success:function () {
+        success: function () {
             window.location.reload();
         },
-        error:function () {
+        error: function () {
             alert("请注意输入的格式");
         }
     });
 }
 
-function deleteProjectCost(){
+function deleteProjectCost() {
     deleteData("project_cost");
 }
 
@@ -153,32 +153,110 @@ function deleteProjectCost(){
 
 //=====================以下是财务============================
 function addFinance() {
-    var financeId=$("#financeId").val();
-    var createUserId=$("#createUserId").val();
-    var createTime=$("#create_time").val();
-    var expense=$("#expense").val();
-    var expenseType=$("#expenseType option:selected").val();
+    var financeId = $("#financeId").val();
+    var createUserId = $("#createUserId").val();
+    var createTime = $("#create_time").val();
+    var expense = $("#expense").val();
+    var expenseType = $("#expenseType option:selected").val();
     // alert(financeId+" "+createUserId+" "+createTime+" "+expense+" "+expenseType);
     $.ajax({
-        url:"addFinance",
-        type:"post",
-        contentType:"application/json",
-        data:JSON.stringify({
-            financeId:financeId,
-            createUserId:createUserId,
-            createTime:createTime,
-            expense:expense,
-            expenseType:expenseType
+        url: "addFinance",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify({
+            financeId: financeId,
+            createUserId: createUserId,
+            createTime: createTime,
+            expense: expense,
+            expenseType: expenseType
         }),
-        success:function () {
+        success: function () {
             window.location.reload();
         },
-        error:function () {
+        error: function () {
             alert("添加失败...");
         }
     });
 }
+
 //删除一条Finance记录
 function deleteFinance() {
     deleteData("finance");
 }
+
+//获取指定年份的饼图数据
+function changeFinanceDataByYear(year) {
+    var paymentOfYear = 1;
+    var incomeOfYear = 1;
+    var paymentOfMonths = [
+        [1, 0], [2, 0], [3, 0], [4, 0],
+        [5, 0], [6, 0], [7, 0], [8, 0],
+        [9, 0], [10, 0], [11, 0], [12, 0]];
+    var incomeOfMonths = [
+        [1, 0], [2, 0], [3, 0], [4, 0],
+        [5, 0], [6, 0], [7, 0], [8, 0],
+        [9, 0], [10, 0], [11, 0], [12, 0]];
+    // 获取数据并数据处理
+    $.ajax({
+        url: "getFinanceData",
+        type: "get",
+        data: {year: year},
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            $.each(data, function (i, val) {//对每一条数据计算收入支出
+                var month = parseInt(val.createTime.substr(4, 2));//获取月份
+                if (val.expenseType == "5") {// 收入
+                    incomeOfYear = incomeOfYear + parseFloat(val.expense);
+                    incomeOfMonths[month - 1][1] = incomeOfMonths[month - 1][1] + parseFloat(val.expense);
+                } else {// 支出
+                    paymentOfYear = paymentOfYear + parseFloat(val.expense);
+                    paymentOfMonths[month - 1][1] = paymentOfMonths[month - 1][1] + parseFloat(val.expense);
+                }
+            });
+            // 将数据显示在饼图
+            var gotData = [
+                {label: "支出", data: paymentOfYear},
+                {label: "收入", data: incomeOfYear}
+            ];
+            $.plot($("#flot-pie-chart"), gotData, {
+                series: {
+                    pie: {
+                        show: true //显示饼图
+                    }
+                },
+                legend: {
+                    show: false //不显示图例
+                }
+            });
+            // 将数据显示在折现图
+            $.plot($("#flot-line-chart-multi"), [
+                    {label: "支出", data: paymentOfMonths},
+                    {label: "收入", data: incomeOfMonths},
+                    {label: "单位：元", data: [1, 0]}
+                ],
+                {
+                    xaxis: {
+                        ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"],
+                            [7, "一月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"], [13, " "]],
+                        min: 1,
+                        max: 13
+                    }
+                });
+        },
+        error: function (data) {
+            console.log("读取数据错误");
+        }
+    });
+}
+
+function changeFinanceData(obj) {
+    var year = $(obj).text().substr(0, 4); // 获取年份
+    changeFinanceDataByYear(year);
+}
+
+//页面加载时获取最新一年的数据
+$(document).ready(function () {
+    var year = $("#latestYear").text().substr(0, 4);//获取年份
+    changeFinanceDataByYear(year);
+});

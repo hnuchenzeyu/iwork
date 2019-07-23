@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -226,5 +227,13 @@ public class FinanceController {
             service.deleteFinance(id);
         }
         response.getWriter().print("success");
+    }
+
+    @RequestMapping("/getFinanceData")
+    @ResponseBody
+    public List<Finance> getFinanceJson(@RequestParam String year){
+        List<Finance> list = service.findFinanceCostByYear(year);
+//        List<Finance> list = service.showFinanceCost();
+        return list;
     }
 }

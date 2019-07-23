@@ -53,10 +53,12 @@
                             <c:forEach items="${years}" var="year" varStatus="vs">
                                 <c:choose>
                                     <c:when test="${vs.last}">
-                                        <span class="btn btn-block btn-primary year">${year}年</span>
+                                        <span id="latestYear" class="btn btn-block btn-primary year"
+                                              onclick="changeFinanceData(this)">${year}年</span>
                                     </c:when>
                                     <c:otherwise>
-                                        <span class="btn btn-block btn-default year">${year}年</span>
+                                        <span class="btn btn-block btn-default year"
+                                              onclick="changeFinanceData(this)">${year}年</span>
                                     </c:otherwise>
                                 </c:choose>
                             </c:forEach>
@@ -174,8 +176,8 @@
         $(this).addClass("btn-primary");
     });
     var data = [
-        {label: "支出", data: 2913},
-        {label: "收入", data: 4313}
+        {label: "支出", data: 1},
+        {label: "收入", data: 1}
     ];
 
     $("#home").show(function () {
@@ -189,15 +191,17 @@
                 show: false //不显示图例
             }
         });
-        $.plot($("#flot-line-chart-multi"), [{label: "支出", data: [[1, 123], [2, 314], [3, 223]]},
+        $.plot($("#flot-line-chart-multi"), [
+                {label: "支出", data: [[1, 123], [2, 314], [3, 223]]},
                 {label: "收入", data: [[1, 133], [2, 151], [3, 333]]},
-                {label: "单位：万元", data: [1, 0]}],
+                {label: "单位：元", data: [1, 0]}
+            ],
             {
                 xaxis: {
                     ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"],
-                        [7, "一月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"]],
+                        [7, "一月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"], [13, " "]],
                     min: 1,
-                    max: 12
+                    max: 13
                 }
             });
     });

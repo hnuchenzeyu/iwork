@@ -86,4 +86,9 @@ public class FinanceServiceImpl implements FinanceService {
     public List<String> findYears() {
         return fmapper.selectYears();
     }
+
+    @Override
+    public List<Finance> findFinanceCostByYear(String year) {
+        return fmapper.selectFinanceByYear(year);
+    }
 }
