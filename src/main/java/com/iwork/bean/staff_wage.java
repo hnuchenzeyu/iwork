@@ -1,53 +1,63 @@
 package com.iwork.bean;
 
 public class staff_wage {
-    private Integer wageId;
+    private Integer wageid;
 
-    private Integer userId;
+    private Integer userid;
 
-    private Integer prizeId;
+    private Double prizeclass;
 
-    private User user;
+    private Double welfare;
 
-    private prize prize;
+    private Integer terms;
 
-    public Integer getWageId() {
-        return wageId;
+    private String publishtime;
+
+    public Integer getWageid() {
+        return wageid;
     }
 
-    public void setWageId(Integer wageId) {
-        this.wageId = wageId;
+    public void setWageid(Integer wageid) {
+        this.wageid = wageid;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUserid() {
+        return userid;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
-    public Integer getPrizeId() {
-        return prizeId;
+    public Double getPrizeclass() {
+        return prizeclass;
     }
 
-    public void setPrizeId(Integer prizeId) {
-        this.prizeId = prizeId;
+    public void setPrizeclass(Double prizeclass) {
+        this.prizeclass = prizeclass;
     }
 
-    public User getUser() {
-        return user;
+    public Double getWelfare() {
+        return welfare;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setWelfare(Double welfare) {
+        this.welfare = welfare;
     }
 
-    public com.iwork.bean.prize getPrize() {
-        return prize;
+    public Integer getTerms() {
+        return terms;
     }
 
-    public void setPrize(com.iwork.bean.prize prize) {
-        this.prize = prize;
+    public void setTerms(Integer terms) {
+        this.terms = terms;
+    }
+
+    public String getPublishtime() {
+        return publishtime;
+    }
+
+    public void setPublishtime(String publishtime) {
+        this.publishtime = publishtime == null ? null : publishtime.trim();
     }
 }
