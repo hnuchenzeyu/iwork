@@ -137,8 +137,8 @@
                     <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
                 </button>
 
-                <button type="button" class="btn btn-outline btn-default">
-                    <i class="glyphicon glyphicon-trash" aria-hidden="true" onclick="deleteFinance()"></i>
+                <button type="button" class="btn btn-outline btn-default" onclick="deleteFinance()">
+                    <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                 </button>
 
             </div>
@@ -215,7 +215,7 @@
             {
                 xaxis: {
                     ticks: [[1, "一月"], [2, "二月"], [3, "三月"], [4, "四月"], [5, "五月"], [6, "六月"],
-                        [7, "一月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"], [13, " "]],
+                        [7, "七月"], [8, "八月"], [9, "九月"], [10, "十月"], [11, "十一月"], [12, "十二月"], [13, " "]],
                     min: 1,
                     max: 13
                 }

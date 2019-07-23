@@ -78,7 +78,7 @@ function deleteData(tableId) {
     var list = $("#" + tableId + " tbody .selected");//找到<table>里选中的行
     var ids = "";
     for (var i = 0; i < list.length; i += 1) {
-        ids += list.eq(i).data("id") + ",";//获取每行data-id属性的值，并拼接起来
+        ids += list.eq(i).children().eq(1).text() + ",";//获取每行data-id属性的值，并拼接起来
     }
     if (ids != "") {//数据不为空
         ids = ids.substr(0, ids.length - 1);
@@ -89,8 +89,9 @@ function deleteData(tableId) {
                 type: "post",
                 data: {ids: ids},
                 success: function () {
-                    // alert("响应成功！");
-                    window.location.reload();
+                    for (var i = 0; i < list.length; i += 1) {
+                        list.eq(i).remove();//获取每行data-id属性的值，并拼接起来
+                    }
                 },
                 error: function () {
                     alert("删除失败，可能名单上存有该记录的信息");
@@ -171,7 +172,14 @@ function addFinance() {
             expenseType: expenseType
         }),
         success: function () {
-            window.location.reload();
+            $("#finance").prepend("<tr>" +
+                "<td class=\"bs-checkbox\"><input name=\"btSelectItem\" type='checkbox'></td>" +
+                "<td>"+financeId+"</td>" +
+                "<td>"+createUserId+"</td>" +
+                "<td>"+createTime+"</td>" +
+                "<td>"+expense+"</td>" +
+                "<td>"+expenseType+"</td>" +
+                "</tr>");
         },
         error: function () {
             alert("添加失败...");

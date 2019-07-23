@@ -10,6 +10,6 @@ public interface prizeMapper {
     List<prize> selectNewPrizes(Integer id);
 
     List<prize> selectPrizesByTerms(prize prize);
-    //asda
+
     void deletePrizeById(String id);
 }
