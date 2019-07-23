@@ -146,6 +146,10 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><a class="J_menuItem" href="OriginList">创意</a>
+                            </li>
+                            <li><a class="J_menuItem" href="OpinionList">意见</a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -154,6 +158,19 @@
                             <li><a class="J_menuItem" href="http://localhost:8080/iWork/Resource/showAllProjectType">项目</a>
                             </li>
                             <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">财务</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a class="J_menuItem" href="finance/showFinance">财务支出</a>
+                            </li>
+                            <li><a class="J_menuItem" href="finance/showProjectCost">项目流水</a>
+                            </li>
+                            <li><a class="J_menuItem" href="finance/showPrize">发放绩效奖</a>
+                            </li>
+                            <li><a class="J_menuItem" href="finance/showWelfare">发放补贴</a>
                             </li>
                         </ul>
                     </li>
