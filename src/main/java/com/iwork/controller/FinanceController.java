@@ -1,7 +1,7 @@
 package com.iwork.controller;
 
 import com.iwork.bean.Finance;
-import com.iwork.bean.Prize;
+import com.iwork.bean.prize;
 import com.iwork.bean.Project_Cost;
 import com.iwork.bean.staff_wage;
 import com.iwork.service.FinanceService;
@@ -32,7 +32,7 @@ public class FinanceController {
      * @throws IOException
      */
     @RequestMapping("/addPrize")
-    public void addPrize(@RequestBody Prize p, HttpServletResponse response) throws IOException {
+    public void addPrize(@RequestBody prize p, HttpServletResponse response) throws IOException {
         service.prizeAdd(p);
         response.getWriter().print("Success");
     }
@@ -45,7 +45,7 @@ public class FinanceController {
     @RequestMapping("/showPrize")
     public ModelAndView showPrize() {
         ModelAndView mv = new ModelAndView("finance/finance_prize");
-        List<Prize> plist = service.showNewPrize(1);//查找最新一期的绩效奖（非获得绩效的名单）
+        List<prize> plist = service.showNewPrize(1);//查找最新一期的绩效奖（非获得绩效的名单）
         List<staff_wage> swList = null;
         if (plist != null && plist.size() != 0) {
             swList = service.findWages(plist.get(0));
@@ -81,10 +81,10 @@ public class FinanceController {
             mv.setViewName("finance/finance_prize");
         else if (classPrize.equals("2"))
             mv.setViewName("finance/finance_welfare");
-        Prize p = new Prize();
+        prize p = new prize();
         p.setPrizeClass(Integer.parseInt(classPrize));
         p.setTerms(Integer.parseInt(terms));
-        List<Prize> plist = service.showPrize(p);//查找指定一期的绩效奖（非获得绩效的名单）
+        List<prize> plist = service.showPrize(p);//查找指定一期的绩效奖（非获得绩效的名单）
         List<staff_wage> swList = null;
         if (plist != null && plist.size() != 0) {
             swList = service.findWages(plist.get(0));//名单
@@ -132,7 +132,7 @@ public class FinanceController {
     @RequestMapping("/showWelfare")
     public ModelAndView showWelfare() {
         ModelAndView mv = new ModelAndView("finance/finance_welfare");
-        List<Prize> plist = service.showNewPrize(2);//查找最新一期的福利（非获得福利的名单）
+        List<prize> plist = service.showNewPrize(2);//查找最新一期的福利（非获得福利的名单）
         List<staff_wage> swList = null;
         if (plist != null && plist.size() != 0) {
             swList = service.findWages(plist.get(0));
