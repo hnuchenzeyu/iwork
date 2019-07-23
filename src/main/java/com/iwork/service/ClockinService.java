@@ -10,5 +10,5 @@ public interface ClockinService {
     List<User>  selectByisManager();
     User selectUserById(int id);
     Boolean insertIntoVocation(Vocation record);
-
+    Boolean deleteVocationById(int vid);
 }

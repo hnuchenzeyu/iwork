@@ -293,9 +293,41 @@
 		$(function () {
 
 
+            function operateFormatter(value, row, index) {
+                return [
+                    '<a type="button" id="rowdelete" class="btn  btn-sm" ><i class="glyphicon glyphicon-remove"></i></a>'
+                ].join('');
+            };
+            window.operateEvents1 = {
+                'click #rowdelete': function(e, value, row, index) {
+                    alert(row.vocationId);
+						$.ajax({
+							url:"${pageContext.request.contextPath}/deleteVocation",
+							type:"post",
+							data:{vocationId:row.vocationId},
+							success:function (data) {
+								alert(data.toString());
+                            },
+                            error:function (XMLHttpRequest, textStatus) {
+                                alert(XMLHttpRequest.readyState+"/"+XMLHttpRequest.status+"/"+textStatus);
+                            }
+						});
+                }
+            };
+
+
+
+
 			//1.初始化Table
 			var oTable = new TableInit();
-			var d= [ {
+			var d= [{
+                title: 'id',
+                field: 'vocationId',
+                align: 'center',
+                valign: 'middle',
+                width: '7%',
+                visible: false
+            }, {
 			  field: 'username',
 			  title: '申请人'
 			}, {
@@ -311,12 +343,8 @@
 			}, {
 			  field: 'operate',
 			  title: '操作',
-
-              formatter:function operateFormatter(value, row, index) {
-                return [
-                    '<a type="button" class="btn  btn-sm" ><i class="glyphicon glyphicon-remove"></i></a>'
-                ].join('');
-        }
+                events: operateEvents1,
+              formatter:operateFormatter
 			
 			}];
 			
@@ -325,19 +353,25 @@
 			oTable.Init("#vocation_now",d,2);
 			oTable.Init("#vocation_log",d,3);
 			d= [{
+                title: 'id',
+                field: 'vocationId',
+                align: 'center',
+                valign: 'middle',
+                width: '7%',
+                visible: false
+            },{
 			  field: 'status',
 			  title: '状态',
-				formatter:function(value,row,index) {
-					//通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
-					var a = "";
-					if(value == "4") {
-						 a = '<span  class="btn btn-block btn-primary">'+'审核中'+'</span>';
-					}else if(value == "5"){
-						a = '<span class="btn btn-block btn-warning">'+'驳回'+'</span>';
-					}
-					return a;
-
-				}
+                formatter: function(value,row,index) {
+                    //通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
+                    var a = "";
+                    if(value == "4") {
+                         a = '<span class="btn btn-block btn-primary">'+'审核中'+'</span>';
+                    }else if(value == "5"){
+                        a = '<span class="btn btn-block btn-warning">'+'已驳回'+'</span>';
+                    }
+                    return a;
+                }
 			}, {
 			  field: 'startTime',
 			  title: '开始时间',
@@ -351,11 +385,9 @@
 			}, {
 			  field: 'operate',
 			  title: '操作',
-              formatter:function operateFormatter(value, row, index) {
-                    return [
-                        '<a type="button" class="btn  btn-sm" ><i class="glyphicon glyphicon-remove"></i></a>'
-                    ].join('');
-			}}];
+				events: operateEvents1,
+              formatter:operateFormatter()
+			}];
 			oTable.Init("#vocation_submit",d,4);
 			//2.初始化Button的点击事件
 			/* var oButtonInit = new ButtonInit();
@@ -377,7 +409,7 @@
 			toolbar: '#toolbar',        //工具按钮用哪个容器
 			striped: true,           //是否显示行间隔色
 			cache: false,            //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-			pagination: true,          //是否显示分页（*）
+
 			sortable: false,           //是否启用排序
 			sortOrder: "asc",          //排序方式
 			queryParams:function (params) {
