@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.iwork.mapper.FinanceMapper">
+    <insert id="addFinance" parameterType="com.iwork.bean.Finance" useGeneratedKeys="true">
+        insert into finance(
+        financeId,
+        createUserId,
+        createTime,
+        expense,
+        expenseType) values (
+        #{financeId},
+        #{createUserId},
+        #{createTime},
+        #{expense},
+        #{expenseType}
+        )
+    </insert>
+
+    <select id="selectFinance" resultMap="FinanceJoinUser">
+        SELECT * FROM `finance` JOIN `user` ON `finance`.`createUserId`=`user`.`userId`
+    </select>
+    <resultMap id="FinanceJoinUser" type="com.iwork.bean.Finance">
+        <id property="financeId" column="financeId"></id>
+        <result property="createUserId" column="createUserId"></result>
+        <result property="createTime" column="createTime"></result>
+        <result property="expense" column="expense"></result>
+        <result property="expenseType" column="expenseType"></result>
+        <association property="user" column="createUserId"  javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+        </association>
+    </resultMap>
+    <delete id="deleteFinanceById" parameterType="java.lang.String">
+        delete from finance where financeId=#{id}
+    </delete>
+    <select id="selectYears" resultType="java.lang.String">
+        SELECT DISTINCT LEFT(createTime,4) AS createTime FROM finance ORDER BY createTime ASC;
+    </select>
+    <select id="selectFinanceByYear" parameterType="java.lang.String" resultType="com.iwork.bean.Finance">
+        SELECT * FROM finance WHERE createTime LIKE #{year}"%"
+    </select>
+</mapper>

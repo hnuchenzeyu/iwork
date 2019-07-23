@@ -1,126 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.iwork.mapper.staff_wageMapper">
-    <resultMap id="BaseResultMap" type="com.iwork.bean.staff_wage">
-        <id column="wageId" property="wageId" jdbcType="INTEGER"/>
-        <result column="userId" property="userId" jdbcType="INTEGER"/>
-        <result column="prizeClass" property="prizeClass" jdbcType="DOUBLE"/>
-        <result column="welfare" property="welfare" jdbcType="DOUBLE"/>
-        <result column="terms" property="terms" jdbcType="INTEGER"/>
-        <result column="publishTime" property="publishTime" jdbcType="VARCHAR"/>
-    </resultMap>
-    <sql id="Base_Column_List">
+<mapper namespace="andy.dao.staff_wageMapper" >
+  <resultMap id="BaseResultMap" type="andy.model.staff_wage" >
+    <id column="wageId" property="wageid" jdbcType="INTEGER" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="prizeClass" property="prizeclass" jdbcType="DOUBLE" />
+    <result column="welfare" property="welfare" jdbcType="DOUBLE" />
+    <result column="terms" property="terms" jdbcType="INTEGER" />
+    <result column="publishTime" property="publishtime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
     wageId, userId, prizeClass, welfare, terms, publishTime
   </sql>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-        select
-        <include refid="Base_Column_List"/>
-        from staff_wage
-        where wageId = #{wageId,jdbcType=INTEGER}
-    </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from staff_wage
+    where wageId = #{wageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from staff_wage
-    where wageId = #{wageId,jdbcType=INTEGER}
+    where wageId = #{wageid,jdbcType=INTEGER}
   </delete>
-    <insert id="addStaffWage" parameterType="com.iwork.bean.staff_wage" useGeneratedKeys="true">
-    insert into staff_wage (userId, prizeId)
-    values (#{userId},#{prizeId})
+  <insert id="insert" parameterType="andy.model.staff_wage" >
+    insert into staff_wage (wageId, userId, prizeClass, 
+      welfare, terms, publishTime
+      )
+    values (#{wageid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{prizeclass,jdbcType=DOUBLE}, 
+      #{welfare,jdbcType=DOUBLE}, #{terms,jdbcType=INTEGER}, #{publishtime,jdbcType=VARCHAR}
+      )
   </insert>
-    <insert id="insertSelective" parameterType="com.iwork.bean.staff_wage">
-        insert into staff_wage
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="wageId != null">
-                wageId,
-            </if>
-            <if test="userId != null">
-                userId,
-            </if>
-            <if test="prizeClass != null">
-                prizeClass,
-            </if>
-            <if test="welfare != null">
-                welfare,
-            </if>
-            <if test="terms != null">
-                terms,
-            </if>
-            <if test="publishTime != null">
-                publishTime,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="wageId != null">
-                #{wageId,jdbcType=INTEGER},
-            </if>
-            <if test="userId != null">
-                #{userId,jdbcType=INTEGER},
-            </if>
-            <if test="prizeClass != null">
-                #{prizeClass,jdbcType=DOUBLE},
-            </if>
-            <if test="welfare != null">
-                #{welfare,jdbcType=DOUBLE},
-            </if>
-            <if test="terms != null">
-                #{terms,jdbcType=INTEGER},
-            </if>
-            <if test="publishTime != null">
-                #{publishTime,jdbcType=VARCHAR},
-            </if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.staff_wage">
-        update staff_wage
-        <set>
-            <if test="userId != null">
-                userId = #{userId,jdbcType=INTEGER},
-            </if>
-            <if test="prizeClass != null">
-                prizeClass = #{prizeClass,jdbcType=DOUBLE},
-            </if>
-            <if test="welfare != null">
-                welfare = #{welfare,jdbcType=DOUBLE},
-            </if>
-            <if test="terms != null">
-                terms = #{terms,jdbcType=INTEGER},
-            </if>
-            <if test="publishTime != null">
-                publishTime = #{publishTime,jdbcType=VARCHAR},
-            </if>
-        </set>
-        where wageId = #{wageId,jdbcType=INTEGER}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.iwork.bean.staff_wage">
+  <insert id="insertSelective" parameterType="andy.model.staff_wage" >
+    insert into staff_wage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wageid != null" >
+        wageId,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+      <if test="prizeclass != null" >
+        prizeClass,
+      </if>
+      <if test="welfare != null" >
+        welfare,
+      </if>
+      <if test="terms != null" >
+        terms,
+      </if>
+      <if test="publishtime != null" >
+        publishTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wageid != null" >
+        #{wageid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="prizeclass != null" >
+        #{prizeclass,jdbcType=DOUBLE},
+      </if>
+      <if test="welfare != null" >
+        #{welfare,jdbcType=DOUBLE},
+      </if>
+      <if test="terms != null" >
+        #{terms,jdbcType=INTEGER},
+      </if>
+      <if test="publishtime != null" >
+        #{publishtime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="andy.model.staff_wage" >
     update staff_wage
-    set userId = #{userId,jdbcType=INTEGER},
-      prizeClass = #{prizeClass,jdbcType=DOUBLE},
+    <set >
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="prizeclass != null" >
+        prizeClass = #{prizeclass,jdbcType=DOUBLE},
+      </if>
+      <if test="welfare != null" >
+        welfare = #{welfare,jdbcType=DOUBLE},
+      </if>
+      <if test="terms != null" >
+        terms = #{terms,jdbcType=INTEGER},
+      </if>
+      <if test="publishtime != null" >
+        publishTime = #{publishtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wageId = #{wageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="andy.model.staff_wage" >
+    update staff_wage
+    set userId = #{userid,jdbcType=INTEGER},
+      prizeClass = #{prizeclass,jdbcType=DOUBLE},
       welfare = #{welfare,jdbcType=DOUBLE},
       terms = #{terms,jdbcType=INTEGER},
-      publishTime = #{publishTime,jdbcType=VARCHAR}
-    where wageId = #{wageId,jdbcType=INTEGER}
+      publishTime = #{publishtime,jdbcType=VARCHAR}
+    where wageId = #{wageid,jdbcType=INTEGER}
   </update>
-
-    <select id="selectWagesByTerms" parameterType="com.iwork.bean.prize" resultMap="winnerList">
-        SELECT * FROM `staff_wage`,`user`,`prize` 
-        WHERE `staff_wage`.`userId`=`user`.`userId` AND `staff_wage`.`prizeId`=`prize`.`id`
-        AND `prize`.`prizeClass`=#{prizeClass} AND `prize`.`terms`=#{terms}
-    </select>
-    <resultMap id="winnerList" type="com.iwork.bean.staff_wage">
-        <id property="wageId" column="wageId"></id>
-        <result property="userId" column="userId"></result>
-        <result property="prizeId" column="prizeId"></result>
-        <association property="user" column="userId" javaType="com.iwork.bean.User">
-            <id property="userId" column="userId"></id>
-            <result property="userName" column="userName"></result>
-        </association>
-        <association property="prize" column="id" javaType="com.iwork.bean.prize">
-            <id property="id" column="id"></id>
-            <result property="type" column="type"></result>
-            <result property="publishTime" column="publishTime"></result>
-            <result property="prizeClass" column="prizeClass"></result>
-        </association>
-    </resultMap>
-    <delete id="deleteWageById" parameterType="java.lang.String">
-        delete from staff_wage where wageId=#{id}
-    </delete>
 </mapper>

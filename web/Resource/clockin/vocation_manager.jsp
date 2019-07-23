@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*,com.iwork.bean.*" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 
@@ -16,10 +19,10 @@
     <![endif]-->
 
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link href="Resource/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="Resource/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="Resource/css/animate.min.css" rel="stylesheet">
+    <link href="Resource/css/style.min.css?v=4.0.0" rel="stylesheet">
 	
 </head>
 
@@ -195,19 +198,19 @@
 		</div>
 
     </div>
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="../js/plugins/layer/layer.min.js"></script>
-    <script src="../js/hplus.min.js?v=4.0.0"></script>
-    <script type="text/javascript" src="../js/contabs.min.js"></script>
-    <script src="../js/plugins/pace/pace.min.js"></script>
+    <script src="Resource/js/jquery.min.js?v=2.1.4"></script>
+    <script src="Resource/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="Resource/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="Resource/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="Resource/js/plugins/layer/layer.min.js"></script>
+    <script src="Resource/js/hplus.min.js?v=4.0.0"></script>
+    <script type="text/javascript" src="Resource/js/contabs.min.js"></script>
+    <script src="Resource/js/plugins/pace/pace.min.js"></script>
 	<!-- 日期Daterange picker -->
-	<link href="../js/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />	
+	<link href="Resource/js/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />	
 	<!-- 日期控件 -->
-	<script src="../js/datetimepicker/bootstrap-datetimepicker.js"></script>
-	<script src='../js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
+	<script src="Resource/js/datetimepicker/bootstrap-datetimepicker.js"></script>
+	<script src='Resource/js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
 	<script>
 		$('#starttime').datetimepicker({
 			format : 'yyyy-mm-dd hh:ii',

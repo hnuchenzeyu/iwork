@@ -40,7 +40,8 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="mail-body text-right tooltip-demo">
-                            <button id="requestAdd" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
+                            <button id="requestAdd" class="btn btn-sm btn-primary" data-toggle="tooltip"
+                                    data-placement="top"
                                     title="Send"><i class="fa fa-reply"></i> 发送
                             </button>
                             <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"
@@ -55,38 +56,43 @@
                 </div>
             </div>
             <c:forEach items="${Origins}" var="o">
-            <div class="social-feed-box">
-                <div class="pull-right social-action dropdown">
-                    <button data-toggle="dropdown" class="dropdown-toggle btn-white">
-                        <i class="fa fa-angle-down"></i>
-                    </button>
-                    <ul class="dropdown-menu m-t-xs">
-                        <li><a onclick="deleteOrin(${o.activityId})">删除</a></li>
-                    </ul>
-                </div>
-                <div class="social-avatar">
-                    <a href="" class="pull-left">
-                        <img alt="image" src="img/a1.jpg">
-                    </a>
-                    <div class="media-body">
-                        <a href="#">
-                            ${o.user.userName}
+                <div class="social-feed-box">
+                    <div class="pull-right social-action dropdown">
+                        <button data-toggle="dropdown" class="dropdown-toggle btn-white">
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu m-t-xs">
+                            <li><a onclick="deleteOrin(${o.activityId})">删除</a></li>
+                        </ul>
+                    </div>
+                    <div class="social-avatar">
+                        <a href="" class="pull-left">
+                            <img alt="image" src="img/a1.jpg">
                         </a>
-                        <small class="text-muted">${o.activityCreateTime} 来自 微博 weibo.com</small>
+                        <div class="media-body">
+                            <a href="#">
+                                    ${o.user.userName}
+                            </a>
+                            <small class="text-muted">${o.activityCreateTime} 来自
+                                <c:choose>
+                                    <c:when test="${o.activityType==3}">创意</c:when>
+                                    <c:when test="${o.activityType==4}">意见栏</c:when>
+                                </c:choose>
+                            </small>
+                        </div>
                     </div>
-                </div>
-                <div class="social-body">
-                    <p>
-                        ${o.activityContext}
-                    </p>
+                    <div class="social-body">
+                        <p>
+                                ${o.activityContext}
+                        </p>
 
-                    <div class="btn-group">
-                        <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> 赞</button>
-                        <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> 评论</button>
-                        <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> 分享</button>
+                        <div class="btn-group">
+                            <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> 赞</button>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> 评论</button>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> 分享</button>
+                        </div>
                     </div>
                 </div>
-            </div>
             </c:forEach>
         </div>
     </div>
@@ -119,18 +125,17 @@
 <script>
     function sendOriginality(URL) {
         var original = $('.summernote').code();
-        if (original==""){
+        if (original == "") {
             alert("内容不能为空")
-        }
-        else{
+        } else {
             $.ajax({
-                url:URL,
-                type:"post",
-                data:{content:original},
-                success:function (data) {
+                url: URL,
+                type: "post",
+                data: {content: original},
+                success: function (data) {
                     window.location.reload();
                 },
-                error:function (data) {
+                error: function (data) {
                     alert("上传失败");
                 }
             });
@@ -140,13 +145,13 @@
 <script>
     function deleteOrin(activityId) {
         $.ajax({
-           url:"deleteActivityById",
-           type:"post",
-            data:{activityId:activityId},
-            success:function () {
+            url: "deleteActivityById",
+            type: "post",
+            data: {activityId: activityId},
+            success: function () {
                 window.location.reload();
             },
-            error:function () {
+            error: function () {
                 alert("删除失败！");
             }
         });
