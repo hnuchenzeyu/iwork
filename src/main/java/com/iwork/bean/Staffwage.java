@@ -1,6 +1,6 @@
-package andy.model;
+package com.iwork.bean;
 
-public class staff_wage {
+public class Staffwage {
     private Integer wageid;
 
     private Integer userid;

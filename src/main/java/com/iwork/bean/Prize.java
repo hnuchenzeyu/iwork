@@ -1,6 +1,6 @@
-package andy.model;
+package com.iwork.bean;
 
-public class prize {
+public class Prize {
     private Integer id;
 
     private Integer prizeclass;

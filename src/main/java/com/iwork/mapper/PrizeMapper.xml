@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="andy.dao.prizeMapper" >
-  <resultMap id="BaseResultMap" type="andy.model.prize" >
+<mapper namespace="com.iwork.mapper.PrizeMapper" >
+  <resultMap id="BaseResultMap" type="com.iwork.bean.Prize" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="prizeClass" property="prizeclass" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="terms" property="terms" jdbcType="INTEGER" />
+    <result column="amount" property="amount" jdbcType="INTEGER" />
     <result column="publishTime" property="publishtime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, prizeClass, type, terms, publishTime
+    id, prizeClass, type, terms, amount, publishTime
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -21,13 +22,15 @@
     delete from prize
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.prize" >
+  <insert id="insert" parameterType="com.iwork.bean.Prize" >
     insert into prize (id, prizeClass, type, 
-      terms, publishTime)
+      terms, amount, publishTime
+      )
     values (#{id,jdbcType=INTEGER}, #{prizeclass,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
-      #{terms,jdbcType=INTEGER}, #{publishtime,jdbcType=VARCHAR})
+      #{terms,jdbcType=INTEGER}, #{amount,jdbcType=INTEGER}, #{publishtime,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.prize" >
+  <insert id="insertSelective" parameterType="com.iwork.bean.Prize" >
     insert into prize
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -41,6 +44,9 @@
       </if>
       <if test="terms != null" >
         terms,
+      </if>
+      <if test="amount != null" >
+        amount,
       </if>
       <if test="publishtime != null" >
         publishTime,
@@ -59,12 +65,15 @@
       <if test="terms != null" >
         #{terms,jdbcType=INTEGER},
       </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=INTEGER},
+      </if>
       <if test="publishtime != null" >
         #{publishtime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.prize" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.Prize" >
     update prize
     <set >
       <if test="prizeclass != null" >
@@ -76,17 +85,21 @@
       <if test="terms != null" >
         terms = #{terms,jdbcType=INTEGER},
       </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
       <if test="publishtime != null" >
         publishTime = #{publishtime,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.prize" >
+  <update id="updateByPrimaryKey" parameterType="com.iwork.bean.Prize" >
     update prize
     set prizeClass = #{prizeclass,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},
       terms = #{terms,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=INTEGER},
       publishTime = #{publishtime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

@@ -1,6 +1,6 @@
-package andy.model;
+package com.iwork.bean;
 
-public class vocation {
+public class Vocation {
     private Integer vocationId;
 
     private Integer userId;
@@ -14,6 +14,28 @@ public class vocation {
     private String vocatinonReason;
 
     private Integer status;
+
+    private String username;
+
+    private String subperiorname;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getSubperiorname() {
+        return subperiorname;
+    }
+
+    public void setSubperiorname(String subperiorname) {
+        this.subperiorname = subperiorname;
+    }
+
+
 
     public Integer getVocationId() {
         return vocationId;
@@ -69,5 +91,10 @@ public class vocation {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "userid:"+userId+"startTime:"+startTime+"endtime:"+endTime+"subperior:"+subperior+"resaon:"+vocatinonReason;
     }
 }

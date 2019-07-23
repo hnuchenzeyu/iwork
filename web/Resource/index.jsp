@@ -92,20 +92,20 @@
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="/clockin/vocationApply">个人请假</a>
+                                <a class="J_menuItem" href="${pageContext.request.contextPath}/vocationApply">个人请假</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="/clockin/vocationManager">请假管理</a>
+                                <a class="J_menuItem" href="${pageContext.request.contextPath}/vocationManager">请假管理</a>
                             </li>
 
                             <li>
-                                <a class="J_menuItem" href="/clockin/outsiteWork" > 出差情况</a>
+                                <a class="J_menuItem" href="${pageContext.request.contextPath}/outsideWork" > 出差情况</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="/clockin/memberList">考勤名单</a>
+                                <a class="J_menuItem" href="${pageContext.request.contextPath}/memberList">考勤名单</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="/clockin/excellentStaff">优秀员工</a>
+                                <a class="J_menuItem" href="${pageContext.request.contextPath}/excellentStaff">优秀员工</a>
                             </li>
                         </ul>
                     </li>

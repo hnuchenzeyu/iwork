@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*,com.iwork.bean.*" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 
@@ -11,11 +14,11 @@
     <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
     <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="Resource/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="Resource/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 
-    <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link href="Resource/css/animate.min.css" rel="stylesheet">
+    <link href="Resource/css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
 
 </head>
 
@@ -87,7 +90,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a2.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a2.jpg">
                                 <div class="m-t-xs font-bold">CTO</div>
                             </div>
                         </div>
@@ -118,7 +121,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a1.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a1.jpg">
                                 <div class="m-t-xs font-bold">营销总监</div>
                             </div>
                         </div>
@@ -148,7 +151,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a3.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a3.jpg">
                                 <div class="m-t-xs font-bold">Marketing manager</div>
                             </div>
                         </div>
@@ -178,7 +181,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a4.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a4.jpg">
                                 <div class="m-t-xs font-bold">攻城师</div>
                             </div>
                         </div>
@@ -208,7 +211,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a5.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a5.jpg">
                                 <div class="m-t-xs font-bold">射鸡师</div>
                             </div>
                         </div>
@@ -238,7 +241,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a6.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a6.jpg">
                                 <div class="m-t-xs font-bold">射鸡师</div>
                             </div>
                         </div>
@@ -268,7 +271,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a1.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a1.jpg">
                                 <div class="m-t-xs font-bold">CEO</div>
                             </div>
                         </div>
@@ -298,7 +301,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a2.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a2.jpg">
                                 <div class="m-t-xs font-bold">射鸡师</div>
                             </div>
                         </div>
@@ -328,7 +331,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a3.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a3.jpg">
                                 <div class="m-t-xs font-bold">市场总监</div>
                             </div>
                         </div>
@@ -358,7 +361,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a4.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a4.jpg">
                                 <div class="m-t-xs font-bold">攻城师</div>
                             </div>
                         </div>
@@ -388,7 +391,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a5.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a5.jpg">
                                 <div class="m-t-xs font-bold">射鸡师</div>
                             </div>
                         </div>
@@ -418,7 +421,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a6.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a6.jpg">
                                 <div class="m-t-xs font-bold">射鸡师</div>
                             </div>
                         </div>
@@ -449,7 +452,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a1.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a1.jpg">
                                 <div class="m-t-xs font-bold">CEO</div>
                             </div>
                         </div>
@@ -479,7 +482,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../img/a2.jpg">
+                                <img alt="image" class="img-circle m-t-xs img-responsive" src="Resource/img/a2.jpg">
                                 <div class="m-t-xs font-bold">射鸡师</div>
                             </div>
                         </div>
@@ -499,9 +502,9 @@
             </div>
         </div>
     </div>
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/content.min.js?v=1.0.0"></script>
+    <script src="Resource/js/jquery.min.js?v=2.1.4"></script>
+    <script src="Resource/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="Resource/js/content.min.js?v=1.0.0"></script>
     <script>
         $(document).ready(function(){$(".contact-box").each(function(){animationHover(this,"pulse")})});
 		$(document).ready(function(){

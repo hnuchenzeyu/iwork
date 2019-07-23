@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="andy.dao.vocationMapper" >
-  <resultMap id="BaseResultMap" type="andy.model.vocation" >
+<mapper namespace="com.iwork.mapper.VocationMapper" >
+  <resultMap id="BaseResultMap" type="com.iwork.bean.Vocation" >
     <id column="vocation_id" property="vocationId" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="start_time" property="startTime" jdbcType="VARCHAR" />
@@ -14,24 +14,33 @@
     vocation_id, user_id, start_time, end_time, subperior, vocatinon_reason, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from vocation
     where vocation_id = #{vocationId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllRecordByUserid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from vocation
+    where user_id = #{userid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from vocation
     where vocation_id = #{vocationId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="andy.model.vocation" >
+  <insert id="insert" parameterType="com.iwork.bean.Vocation" >
     insert into vocation (vocation_id, user_id, start_time, 
       end_time, subperior, vocatinon_reason, 
       status)
     values (#{vocationId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{startTime,jdbcType=VARCHAR}, 
       #{endTime,jdbcType=VARCHAR}, #{subperior,jdbcType=INTEGER}, #{vocatinonReason,jdbcType=VARCHAR}, 
       #{status,jdbcType=INTEGER})
+    <selectKey keyProperty="id" resultType="java.lang.Integer">
+      select LAST_INSERT_ID()
+    </selectKey>
   </insert>
-  <insert id="insertSelective" parameterType="andy.model.vocation" >
+  <insert id="insertSelective" parameterType="com.iwork.bean.Vocation" >
     insert into vocation
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="vocationId != null" >
@@ -80,7 +89,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="andy.model.vocation" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.Vocation" >
     update vocation
     <set >
       <if test="userId != null" >
@@ -104,7 +113,7 @@
     </set>
     where vocation_id = #{vocationId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="andy.model.vocation" >
+  <update id="updateByPrimaryKey" parameterType="com.iwork.bean.Vocation" >
     update vocation
     set user_id = #{userId,jdbcType=INTEGER},
       start_time = #{startTime,jdbcType=VARCHAR},

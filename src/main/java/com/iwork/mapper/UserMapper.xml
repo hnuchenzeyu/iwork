@@ -4,7 +4,7 @@
 <mapper namespace="com.iwork.mapper.UserMapper">
 <!--    通过ID查找用户-->
     <select id="selectByUserId" parameterType="int" resultType="com.iwork.bean.User">
-        select * from user where user.user_id=#{id}
+        select * from user where user.userId=#{id}
     </select>
     <!--    <resultMap id="userResultMap" type="com.iwork.bean.User">-->
     <!--        <id property="userId" column="user_id"></id>-->
@@ -19,4 +19,7 @@
     <!--                    select="com.iwork.mapper.ActivityMapper.listWelfares">-->
     <!--        </collection>-->
     <!--    </resultMap>-->
+    <select id="selectByisManager"  resultType="com.iwork.bean.User">
+        select * from user where user.isManager=1
+    </select>
 </mapper>
