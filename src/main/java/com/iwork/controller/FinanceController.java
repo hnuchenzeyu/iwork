@@ -229,11 +229,22 @@ public class FinanceController {
         response.getWriter().print("success");
     }
 
+    /**
+     * 通过年份获取财务数据
+     * @param year
+     * @return
+     */
     @RequestMapping("/getFinanceData")
     @ResponseBody
     public List<Finance> getFinanceJson(@RequestParam String year){
         List<Finance> list = service.findFinanceCostByYear(year);
 //        List<Finance> list = service.showFinanceCost();
+        return list;
+    }
+    @RequestMapping("/getFinanceCost")
+    @ResponseBody
+    public Object getFinanceCost(){
+        List<Finance> list = service.showFinanceCost();
         return list;
     }
 }

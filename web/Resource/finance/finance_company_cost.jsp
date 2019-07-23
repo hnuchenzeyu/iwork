@@ -142,20 +142,36 @@
                 </button>
 
             </div>
-            <table id="finance">
-                <tbody>
-                <c:forEach items="${financeCosts}" var="fc">
-                    <tr data-id="${fc.financeId}">
-                        <td></td>
-                        <td>${fc.financeId}</td>
-                        <td>${fc.user.userName}</td>
-                        <td>${fc.createTime}</td>
-                        <td>${fc.expense}</td>
-                        <td>${fc.expenseType}</td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                <table id="finance"></table>
+<%--            <table  id="finance"--%>
+<%--                    data-toggle="table"--%>
+<%--                    data-url="getFinanceCost"--%>
+<%--                    data-pagination="true"--%>
+<%--                    data-search="true" >--%>
+<%--                <thead>--%>
+<%--                <tr>--%>
+<%--                    <th data-field="financeId">流水号</th>--%>
+<%--                    <th data-field="user.userName">创建人</th>--%>
+<%--                    <th data-field="createTime">创建时间</th>--%>
+<%--                    <th data-field="expense">金额</th>--%>
+<%--                    <th data-field="expenseType">类型</th>--%>
+<%--                </tr>--%>
+<%--                </thead>--%>
+<%--            </table>--%>
+            <%--            <table id="finance">--%>
+            <%--                <tbody>--%>
+            <%--                <c:forEach items="${financeCosts}" var="fc">--%>
+            <%--                    <tr data-id="${fc.financeId}">--%>
+            <%--                        <td></td>--%>
+            <%--                        <td>${fc.financeId}</td>--%>
+            <%--                        <td>${fc.user.userName}</td>--%>
+            <%--                        <td>${fc.createTime}</td>--%>
+            <%--                        <td>${fc.expense}</td>--%>
+            <%--                        <td>${fc.expenseType}</td>--%>
+            <%--                    </tr>--%>
+            <%--                </c:forEach>--%>
+            <%--                </tbody>--%>
+            <%--            </table>--%>
         </div>
     </div>
 </div>
@@ -255,16 +271,16 @@
         //初始化Table
         oTableInit.Init = function () {
             $("#finance").bootstrapTable({
-                url: '/VenderManager/TradeList',     //请求后台的URL（*）
+                url: 'getFinanceCost',     //请求后台的URL（*）
                 method: 'get',           //请求方式（*）
                 toolbar: '#toolbar_finance',        //工具按钮用哪个容器
                 striped: true,           //是否显示行间隔色
                 cache: false,            //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-                pagination: false,          //是否显示分页（*）
+                pagination: true,          //是否显示分页（*）
                 sortable: false,           //是否启用排序
-                sortOrder: "asc",          //排序方式
-                queryParams: oTableInit.queryParams,//传递参数（*）
-                sidePagination: "server",      //分页方式：client客户端分页，server服务端分页（*）
+                sortOrder: "desc",          //排序方式
+                // queryParams: oTableInit.queryParams,//传递参数（*）
+                sidePagination: "client",      //分页方式：client客户端分页，server服务端分页（*）
                 pageNumber: 1,            //初始化加载第一页，默认第一页
                 pageSize: 50,            //每页的记录行数（*）
                 pageList: [10, 25, 50, 100],    //可供选择的每页的行数（*）
@@ -280,43 +296,43 @@
                     field: 'checkbox',
                     checkbox: true
                 }, {
-                    field: 'finance_id',
+                    field: 'financeId',
                     title: '流水号'
                 }, {
-                    field: 'create_user_id',
+                    field: 'user.userName',
                     title: '创建人'
                 }, {
-                    field: 'create_time',
+                    field: 'createTime',
                     title: '创建时间'
                 }, {
                     field: 'expense',
                     title: '金额'
                 }, {
-                    field: 'expense——type',
+                    field: 'expenseType',
                     title: '类型'
                 },]
             });
         };
 
         //得到查询的参数
-        oTableInit.queryParams = function (params) {
-            var temp = {  //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-                limit: params.limit,  //页面大小
-                offset: params.offset, //页码
-                sdate: $("#stratTime").val(),
-                edate: $("#endTime").val(),
-                sellerid: $("#sellerid").val(),
-                orderid: $("#orderid").val(),
-                CardNumber: $("#CardNumber").val(),
-                maxrows: params.limit,
-                pageindex: params.pageNumber,
-                portid: $("#portid").val(),
-                CardNumber: $("#CardNumber").val(),
-                tradetype: $('input:radio[name="tradetype"]:checked').val(),
-                success: $('input:radio[name="success"]:checked').val(),
-            };
-            return temp;
-        };
+        // oTableInit.queryParams = function (params) {
+        //     var temp = {  //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+        //         limit: params.limit,  //页面大小
+        //         offset: params.offset, //页码
+        //         sdate: $("#stratTime").val(),
+        //         edate: $("#endTime").val(),
+        //         sellerid: $("#sellerid").val(),
+        //         orderid: $("#orderid").val(),
+        //         CardNumber: $("#CardNumber").val(),
+        //         maxrows: params.limit,
+        //         pageindex: params.pageNumber,
+        //         portid: $("#portid").val(),
+        //         CardNumber: $("#CardNumber").val(),
+        //         tradetype: $('input:radio[name="tradetype"]:checked').val(),
+        //         success: $('input:radio[name="success"]:checked').val(),
+        //     };
+        //     return temp;
+        // };
         return oTableInit;
     };
 
