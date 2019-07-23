@@ -55,8 +55,10 @@ public class NoteController{
     }
 
     @RequestMapping("deleteNote")
-    @ResponseBody
-    public void deleteNote(@RequestParam String noteId){
+    public void deleteNote(@RequestParam int noteId,HttpServletResponse response)throws IOException{
+
+        noteService.deleteNote(noteId);
+        response.getWriter().print("del");
 
     }
 

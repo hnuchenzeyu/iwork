@@ -27,68 +27,8 @@
 <body class="gray-bg">
     <div class="wrapper wrapper-content">
         <div class="row animated fadeInDown">
-            <div class="col-sm-3">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>会议室</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="calendar.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li id="myschedule"><a><i class="glyphicon glyphicon-plus"></i></a>
-                                </li>
-                                <li><a href="calendar.html#"><i class="glyphicon glyphicon-minus"></i></a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-												
-                    </div>
-                    <div class="ibox-content">
-						  <table id="exampleTableFromData" data-mobile-responsive="true">
-						    <thead>
-						        <tr>
-						            <th data-field="Tid">房号</th>
-						            <th data-field="First">会议室</th>
-						        </tr>
-						    </thead>
-						</table>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="col-sm-9">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>FullCalendar示例 </h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="calendar.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="calendar.html#">选项1</a>
-                                </li>
-                                <li><a href="calendar.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div id="calendar"></div>
-                    </div>
-                </div>
+            <div>
+
             </div>
         </div>
     </div>
@@ -106,92 +46,11 @@
 	<script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 	<script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 	<script src="../js/demo/bootstrap-table-demo.min.js"></script>
-	
-    <script>
-        $(document).ready(function(){
-			$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",});
-			$("#external-events div.external-event").each(function(){var d={title:$.trim($(this).text())};$(this).data("eventObject",d);$(this).draggable({zIndex:999,revert:true,revertDuration:0})});
-			var b=new Date();
-			var c=b.getDate();
-			var a=b.getMonth();
-			var e=b.getFullYear();
-			$("#calendar").fullCalendar({
-				header:{left:"prev,next",center:"title",
-				right:"month,agendaWeek,agendaDay"},
-				editable:true,droppable:true,
-				drop:function(g,h){
-				var f=$(this).data("eventObject");
-				var d=$.extend({},f);
-				d.start=g;d.allDay=h;
-				$("#calendar").fullCalendar("renderEvent",d,true);
-				if($("#drop-remove").is(":checked")){
-					$(this).remove()}},
-				events:[{title:"日事件",start:new Date(e,a,1)},{title:"长事件",start:new Date(e,a,c-5),end:new Date(e,a,c-2),},{id:999,title:"重复事件",start:new Date(e,a,c-3,16,0),allDay:false,},{id:999,title:"重复事件",start:new Date(e,a,c+4,16,0),allDay:false},{title:"会议",start:new Date(e,a,c,11,30),allDay:false,end:new Date(e,a,c,13,30)},{title:"午餐",start:new Date(e,a,c,12,0),end:new Date(e,a,c,14,0),allDay:false},{title:"生日",start:new Date(e,a,c+1,19,0),end:new Date(e,a,c+1,22,30),allDay:false},{title:"打开百度",start:new Date(e,a,28),end:new Date(e,a,29),url:"http://baidu.com/"}],})});
-    </script>
+
 	<script src="../js/datetimepicker/bootstrap-datetimepicker.js"></script>
 	<script src='../js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
 	<script src="../js/plugins/layer/layer.js"></script>	
-	<script>
-		
-		
-		
-		$('#starttime').datetimepicker({
-			format : 'yyyy-mm-dd hh:ii',
-			language : 'zh-CN',
-			weekStart : 1,
-			todayBtn : 1,
-			autoclose : 1,
-			todayHighlight : 1,
-			startView : 2,//日期时间选择器打开之后首先显示的视图。 可接受的值：//0 分钟视图；1小时
-			minView : 0, //日期时间选择器所能够提供的最精确的时间选择视图
-			minuteStep:1,//分钟
-			formatViewType : 'time'
-		}).on('hide', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			var startTime = event.date;
-			$("#expirationDate").datetimepicker('setStartDate',startTime);
-			$("#expirationDate").val("");
-		});
-		$('#expirationDate').datetimepicker({
-			format : 'yyyy-mm-dd hh:ii',
-			language : 'zh-CN',
-			weekStart : 1,
-			todayBtn : 1,
-			autoclose : 1,
-			todayHighlight : 1,
-			startView : 2,//日期时间选择器打开之后首先显示的视图。 可接受的值：//0 分钟视图；1小时
-			minView : 0, //日期时间选择器所能够提供的最精确的时间选择视图
-			minuteStep:1,//分钟
-			formatViewType : 'time'
-		}).on('hide', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-			var endTime = event.date;
-			$("#startDate").datetimepicker('setEndDate',endTime);
-		});
-		
-		$("#myschedule a").click(function(){			
-			layer.open({	
-                type: 2,         
-                title: '新增会议',
-                fix: false,
-                shadeClose: true,
-                maxmin: true,
-                area: ['1000px', '500px'],
-                content: 'calendar_insert.html',				
-				end:function(){
-					$("#external-events div.external-event").each(function(){
-					var d={title:$.trim($(this).text())};
-					$(this).data("eventObject",d);
-					$(this).draggable({zIndex:999,revert:true,revertDuration:0})
-					});
-					layer.msg("test");
-				} 
-            });
 
-		});
-	</script>
 	
 	
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>

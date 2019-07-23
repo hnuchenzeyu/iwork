@@ -22,4 +22,8 @@
                 #{noteContext}
                 )
     </insert>
+
+    <delete id="deleteNote" parameterType="com.iwork.bean.Note">
+        delete from note where noteId = #{noteId};
+    </delete>
 </mapper>

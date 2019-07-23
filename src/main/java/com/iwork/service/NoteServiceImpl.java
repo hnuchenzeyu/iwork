@@ -22,4 +22,9 @@ public class NoteServiceImpl implements NoteService{
     public void createNote(Note note) {
         noteMapper.createNote(note);
     }
+
+    @Override
+    public void deleteNote(int noteId) {
+        noteMapper.deleteNote(noteId);
+    }
 }

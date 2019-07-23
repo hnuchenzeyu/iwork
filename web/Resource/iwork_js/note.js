@@ -41,9 +41,9 @@ function showNotes() {
                 var timeSpan = time_span(datas[i].noteCreateTime,new Date().getTime());
                 var timeCurrent = new Date(datas[i].noteCreateTime).Format('yy-MM-dd');
                 var noteId = datas[i].noteId;
-                console.log(noteId);
+                // console.log(noteId);
                 noteStr += "<div class=\"timeline-item\">" +
-                        "<div name=\"noteDiv\" class=\"row delDiv\" value=\" "+ noteId +" \">" +
+                        "<div class=\"row noteDiv\" data-noteid=\" "+ noteId +" \">" +
                             "<div class=\"col-md-2 date\" style='width: 130px'>" +
                                 "创建时间：" +
                                 "<br>" +
@@ -95,9 +95,9 @@ $("#createNote").click(function () {
             noteContext:noteContext
         }),
         contentType: "application/json",
-        success:function (datas) {
+        success: function (datas) {
             //请求成功调用的函数
-            console.log("请求成功")
+            console.log("请求成功");
             createSuccess();
         },
         //调用执行后调用的函数
@@ -108,10 +108,14 @@ $("#createNote").click(function () {
         //调用出错执行的函数
         error: function(){
             createFail();
-            alert("请求失败！");
-        }
-    })
+        },
+    });
 });
+
+//删除
+// function deleteNote() {
+//     del();
+// }
 
 //SweetAlert警告框
 function del(){
@@ -125,36 +129,49 @@ function del(){
         closeOnConfirm:false
     },function(){
         delNote();
-    })
+    });
 };
 
 //删除笔记
 function delNote(){
-    var noteId = document.getElementsByName("noteDiv").getAttribute('value');
+    var noteId = parseInt($(".noteDiv").data("noteid"));
+    console.log(noteId);
+
+    // if (isNaN(noteId)){
+    //     alert("是非数字值");
+    // } else{
+    //     alert("是数字值");
+    // }
 
     console.log("删除笔记");
     $.ajax({
         type:"POST",
         url:"http://localhost:8080/iWork/deleteNote",
-        dataType:"json",
         data:{
             noteId:noteId
         },
-        contentType: "application/json",
-        success:function (datas) {
+        success: function (datas) {
             //请求成功调用的函数
-            console.log("请求成功")
-            swal("删除成功！","您已经永久删除了这条信息。","success");
+            swal({
+                title:"太帅了，删除成功",
+                text:"Sweet Alert 是一个替代传统的 JavaScript Alert 的漂亮提示效果。"
+            },function(){
+                    window.location.reload();
+            });
         },
         //调用执行后调用的函数
-        complete: function(XMLHttpRequest, textStatus){
+        complete: function(XMLHttpRequest,textStatus){
             // alert(XMLHttpRequest.responseText);
             // alert("查询成功！！！");
         },
         //调用出错执行的函数
         error: function(){
-            alert("请求失败！");
-            swal("删除失败！","对不起，数据删除失败。","failure");
-        }
-    })
+            swal({
+                title:"对不起，删除失败",
+                text:"不能删除的原因有很多，我也不知道。。。"
+            },function() {
+                window.location.reload();
+            });
+        },
+    });
 };
