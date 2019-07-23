@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.iwork.mapper.prizeMapper">
-    <resultMap id="BaseResultMap" type="com.iwork.bean.prize">
+    <resultMap id="BaseResultMap" type="com.iwork.bean.Prize">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="prizeClass" property="prizeClass" jdbcType="INTEGER"/>
         <result column="type" property="type" jdbcType="VARCHAR"/>
@@ -21,13 +21,13 @@
     delete from prize
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="addPrize" parameterType="com.iwork.bean.prize" useGeneratedKeys="true">
+    <insert id="addPrize" parameterType="com.iwork.bean.Prize" useGeneratedKeys="true">
     insert into prize (prizeClass, type,
       terms, amount, publishTime)
     values (#{prizeClass}, #{type},
       #{terms},#{amount}, #{publishTime})
   </insert>
-    <insert id="insertSelective" parameterType="com.iwork.bean.prize">
+    <insert id="insertSelective" parameterType="com.iwork.bean.Prize">
         insert into prize
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -64,7 +64,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.prize">
+    <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.Prize">
         update prize
         <set>
             <if test="prizeClass != null">
@@ -82,7 +82,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.iwork.bean.prize">
+    <update id="updateByPrimaryKey" parameterType="com.iwork.bean.Prize">
     update prize
     set prizeClass = #{prizeClass,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},
@@ -90,12 +90,12 @@
       publishTime = #{publishTime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-    <select id="selectNewPrizes" parameterType="int" resultType="com.iwork.bean.prize">
+    <select id="selectNewPrizes" parameterType="int" resultType="com.iwork.bean.Prize">
         select * from prize where prizeClass = #{id} and terms =
         (SELECT terms FROM prize where prizeClass = #{id} ORDER BY terms DESC LIMIT 1)
     </select>
 
-    <select id="selectPrizesByTerms" parameterType="com.iwork.bean.prize" resultType="com.iwork.bean.prize">
+    <select id="selectPrizesByTerms" parameterType="com.iwork.bean.Prize" resultType="com.iwork.bean.Prize">
         select * from prize where prizeClass = #{prizeClass} and terms=#{terms}
     </select>
 

@@ -1,6 +1,6 @@
 package com.iwork.bean;
 
-public class prize {
+public class Prize {
     private Integer id;
 
     private Integer prizeClass;
@@ -63,7 +63,7 @@ public class prize {
 
     @Override
     public String toString() {
-        return "prize{" +
+        return "Prize{" +
                 "id=" + id +
                 ", prizeClass=" + prizeClass +
                 ", type='" + type + '\'' +

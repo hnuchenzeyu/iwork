@@ -1,12 +1,12 @@
 package com.iwork.service;
 
 import com.iwork.bean.Finance;
+import com.iwork.bean.Prize;
 import com.iwork.bean.Project_Cost;
-import com.iwork.bean.prize;
 import com.iwork.bean.staff_wage;
 import com.iwork.mapper.FinanceMapper;
 import com.iwork.mapper.Project_CostMapper;
-import com.iwork.mapper.prizeMapper;
+import com.iwork.mapper.PrizeMapper;
 import com.iwork.mapper.staff_wageMapper;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
 public class FinanceServiceImpl implements FinanceService {
 
     @Resource
-    prizeMapper pmapper;
+    PrizeMapper pmapper;
     @Resource
     staff_wageMapper smapper;
     @Resource
@@ -25,28 +25,30 @@ public class FinanceServiceImpl implements FinanceService {
     @Resource
     FinanceMapper fmapper;
 
-    public void prizeAdd(prize p) {
-        pmapper.addPrize(p);
+    public void prizeAdd(Prize p) {
+//        pmapper.addPrize(p);
     }
 
-    public List<prize> showNewPrize(Integer prizeClass) {
-        return pmapper.selectNewPrizes(prizeClass);
+    public List<Prize> showNewPrize(Integer prizeClass) {
+//        return pmapper.selectNewPrizes(prizeClass);
+        return null;
     }
 
     public void addStaff_Wage(staff_wage sw) {
         smapper.addStaffWage(sw);
     }
 
-    public List<staff_wage> findWages(prize prize) {
+    public List<staff_wage> findWages(Prize prize) {
         return smapper.selectWagesByTerms(prize);
     }
 
-    public List<prize> showPrize(prize prize) {
-        return pmapper.selectPrizesByTerms(prize);
+    public List<Prize> showPrize(Prize prize) {
+//        return pmapper.selectPrizesByTerms(prize);
+        return null;
     }
 
     public void deletePrize(String id) {
-        pmapper.deletePrizeById(id);
+//        pmapper.deletePrizeById(id);
     }
 
     public void deleteStaff_Wage(String id) {

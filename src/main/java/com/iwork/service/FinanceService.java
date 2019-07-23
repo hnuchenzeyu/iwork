@@ -2,21 +2,21 @@ package com.iwork.service;
 
 import com.iwork.bean.Finance;
 import com.iwork.bean.Project_Cost;
-import com.iwork.bean.prize;
+import com.iwork.bean.Prize;
 import com.iwork.bean.staff_wage;
 
 import java.util.List;
 
 public interface FinanceService {
-    void prizeAdd(prize p);
+    void prizeAdd(Prize p);
 
-    List<prize> showNewPrize(Integer prizeClass);
+    List<Prize> showNewPrize(Integer prizeClass);
 
     void addStaff_Wage(staff_wage sw);
 
-    List<staff_wage> findWages(prize prize);
+    List<staff_wage> findWages(Prize prize);
 
-    List<prize> showPrize(prize prize);
+    List<Prize> showPrize(Prize prize);
 
     void deletePrize(String id);
 
