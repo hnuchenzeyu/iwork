@@ -1,7 +1,6 @@
 package com.iwork.mapper;
 
 import com.iwork.bean.prize;
-import com.iwork.bean.staff_wage;
 
 import java.util.List;
 
