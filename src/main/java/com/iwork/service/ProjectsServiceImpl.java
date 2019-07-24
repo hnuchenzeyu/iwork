@@ -15,6 +15,10 @@ public class ProjectsServiceImpl implements ProjectsService {
     @Resource
     private ProjectsMapper projectsMapper;
 
+    /**
+     * 显示所有的项目
+     * @return
+     */
     public List<Project> getProjects() {
         List<Project> projectList = projectsMapper.selectAllProject();
         return projectList;
@@ -27,7 +31,7 @@ public class ProjectsServiceImpl implements ProjectsService {
      * @throws NullPointerException
      */
     public List<Project> getTypeProjects(String project_type) throws NullPointerException {
-        List<Project> projectList = projectsMapper.selectAllProject();;
+        List<Project> projectList = projectsMapper.selectAllProject();
         List<Project> typeProjectList = new ArrayList<Project>();
         if (null != project_type&&null != projectList){
 

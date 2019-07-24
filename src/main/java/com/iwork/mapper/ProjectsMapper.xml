@@ -2,9 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
         "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="com.iwork.mapper.ProjectsMapper">
-    <select id="selectAllProject" resultType="com.iwork.bean.Project">
-        select * from project
+    <select id="selectAllProject" resultType="com.iwork.bean.Project" resultMap="projectTypeMap">
+        select * from project inner join project_type pt on project.projectType = pt.projectTypeId;
     </select>
+    <resultMap id="projectTypeMap" type="com.iwork.bean.Project">
+        <id property="projectId" column="projectId"></id>
+        <result property="projectTitle" column="projectTitle"></result>
+        <result property="projectStatus" column="projectStatus"></result>
+        <result property="createTime" column="createTime"></result>
+        <result property="projectType" column="projectType"></result>
+        <result property="projectContext" column="projectContext"></result>
+        <result property="projectProgress" column="projectProgress"></result>
+        <result property="projectReview" column="projectReview"></result>
+        <result property="projectExam" column="projectExam"></result>
+        <result property="projectBidding" column="projectBidding"></result>
+        <result property="bidingSummary" column="bidingSummary"></result>
+        <association property="project_type" column="projectType" javaType="com.iwork.bean.Project_Type">
+            <id property="projectTypeId" column="projectTypeId"></id>
+            <result property="projectTypeName" column="projectTypeName"></result>
+        </association>
+    </resultMap>
 
     <insert id="addProject" parameterType="com.iwork.bean.Project">
         insert into project(
@@ -42,11 +59,7 @@
                  projectStatus = #{projectStatus},
                  projectType = #{projectType},
                  projectContext = #{projectContext},
-                 projectProgress = #{projectProgress},
-                 projectReview = #{projectReview},
-                 projectExam = #{projectExam},
-                 projectBidding = #{projectBidding},
-                 bidingSummary = #{bidingSummary}
+                 projectProgress = #{projectProgress}
         where projectId = #{projectId}
     </update>
 </mapper>
