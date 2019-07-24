@@ -18,6 +18,8 @@ public class ClockinServiceImpl implements ClockinService{
     @Autowired
     private UserMapper user;
     private static Log logger =LogFactory.getLog(ClockinService.class);
+
+
     @Override
     public List<User> selectByisManager() {
 
@@ -34,9 +36,8 @@ public class ClockinServiceImpl implements ClockinService{
 
     @Override
     public List<Vocation> selectAllRecordByUserid(int id,int type) {
-        List<Vocation> vocationList=  vocationMapper.selectAllRecordByUserid(id);
 
-
+        List<Vocation>  vocationList=  vocationMapper.selectAllRecordByUserid(id);
         Iterator<Vocation> it=vocationList.iterator();
         while (it.hasNext()){
             Vocation vocation =it.next();
@@ -67,5 +68,38 @@ public class ClockinServiceImpl implements ClockinService{
 
         vocationMapper.deleteByPrimaryKey(vid);
         return true;
+    }
+
+    private List<Vocation> getVocationList(int id){
+        return vocationMapper.selectAllRecordBySubid(id);
+    }
+
+    @Override
+    public List<Vocation> selectAllRecordBySubid(int id, int type,int refresh) {
+
+        List<Vocation>  managerVList =getVocationList(id);
+        Iterator<Vocation> it=managerVList.iterator();
+        while (it.hasNext()){
+            Vocation vocation =it.next();
+            vocation.setUsername(user.selectByUserId(vocation.getUserId()).getUserName());
+            vocation.setSubperiorname(user.selectByUserId(vocation.getSubperior()).getUserName());
+            vocation.getStartTime();
+            if (!vocation.getStatus().equals(type)){
+
+                it.remove();
+            }
+        }
+        return managerVList;
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(Vocation record) {
+
+
+        return vocationMapper.updateByPrimaryKeySelective(record);
+    }
+
+    private void setVocationStatus(Vocation v){
+
     }
 }

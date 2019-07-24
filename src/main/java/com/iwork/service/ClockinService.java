@@ -11,4 +11,6 @@ public interface ClockinService {
     User selectUserById(int id);
     Boolean insertIntoVocation(Vocation record);
     Boolean deleteVocationById(int vid);
+    List<Vocation>selectAllRecordBySubid(int id,int type,int refresh);
+    int updateByPrimaryKeySelective(Vocation record);
 }
