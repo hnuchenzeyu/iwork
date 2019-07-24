@@ -15,24 +15,47 @@ function showProjects() {
         dataType:"json",
         success:function (datas) {
             //请求成功调用的函数
-            console.log(datas);
+            // console.log(datas);
             var i;
             var str = "";
             for (i in datas){
                 var progress = datas[i].projectProgress;
-                var projectType = datas[i].projectType;     //需要多表联合查询，先标记
+                var projectType = datas[i].project_type.projectTypeName;                //多表联合查询
                 var createTime = new Date(datas[i].createTime).Format("yy-MM-dd");      //月份是M，秒是m
-                console.log(progress);
-                console.log(datas[i].createTime);
+                var projectId = datas[i].projectId
+                // console.log(projectType);
+                // console.log(createTime);
                 str += "<tr>" +
-                    "<td class=\"project-status\"><span class=\"label label-primary\">" + datas[i].projectStatus + "</span></td>" +
-                    "<td name=\"project-title\" value=\""+ datas[i].projectId + "\" class=\"project-title\"><a href=\"project_detail.html\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ createTime +"</small> </td>" +
-                    "<td class=\"project-type\"><a href=\"project_detail.html\">" + "项目类型" + "</a> <br /> <small>"+ projectType +"</small> </td>" +
-                    "<td class=\"project-completion\"> <small>当前进度：" + progress + "%</small> <div class=\"progress progress-mini\"> <div style=\"width: " + progress + "%;\" class=\"progress-bar\"></div> </div> </td>" +
-                    "<td class=\"project-people\"> <img alt=\"image\" class=\"img-circle\" src=\"img/a3.jpg\"> </td>" +
+                    "<td class=\"project-status proTd\" data-projectid = \" " + projectId + " \">" +
+                        "<span class=\"label label-primary\">" + datas[i].projectStatus + "</span>" +
+                    "</td>" +
+                    "<td name=\"project-title\" class=\"project-title\">" +
+                        "<a href=\"#\">" + datas[i].projectTitle + "</a> " +
+                        "<br /> " +
+                        "<small>"+"创建于"+ createTime +"</small> " +
+                    "</td>" +
+                    "<td class=\"project-type\">" +
+                        "<a href=\"#\" >" + "项目类型" + "</a> " +
+                        "<br /> " +
+                        "<small>"+ projectType +"</small> " +
+                    "</td>" +
+                    "<td class=\"project-completion\"> " +
+                        "<small>当前进度：" + progress + "%</small> " +
+                        "<div class=\"progress progress-mini\"> " +
+                            "<div style=\"width: " + progress + "%;\" class=\"progress-bar\">" +
+                            "</div>" +
+                        " </div> " +
+                    "</td>" +
+                    "<td class=\"project-people\"> " +
+                        "<img alt=\"image\" class=\"img-circle\" src=\"img/a3.jpg\"> " +
+                    "</td>" +
                     "<td class=\"project-actions\" style=\"clear:both\"> " +
-                    "<a class=\"btn btn-white btn-sm\" ><i class=\"fa fa-folder\"></i> 查看 </a>" +
-                    "<a class=\"btn btn-white btn-sm\" data-target=\"#editProjectModal\"><i class=\"fa fa-pencil\"></i> 编辑 </a>" +
+                        "<a class=\"btn btn-white btn-sm\" href='../project_detail.html'>" +
+                            "<i class=\"fa fa-folder\"></i> 查看 " +
+                        "</a>" +
+                        "<a class=\"btn btn-white btn-sm\" onclick='editProjectModal()' data-target='#editProjectModal'>" +
+                            "<i class=\"fa fa-pencil\"></i> 编辑 " +
+                        "</a>" +
                     "</td>" +
                     "</tr>"
             }
@@ -51,51 +74,82 @@ function showProjects() {
     })
 };
 
-//编辑按钮
-$("#edit_project").click(function () {
-        var projectId = $(".project-title").val();
+//编辑项目
+function editProjectModal(){
+    var projectId = parseInt($(".proTd").data("projectid"));
+    $("#editProjectModal").modal("show");
+
+    //保存按钮
+    $("#save_project").click(function () {
+        console.log("保存")
         console.log(projectId);
 
-        var editProjectTitle = $(".project-title").val();
-        var editProjectStatus = $(".project-status").val();
-        var editProjectType = parseInt($(".project-type").val());
-        var editProjectProgress = $(".project-completion").val();
+        // var editProjectTitle = $(".project-title").val();
+        // var editProjectStatus = $(".project-status").val();
+        // var editProjectType = parseInt($(".project-type").val());
+        // var editProjectProgress = $(".project-completion").val();
+        // var editProjectContext = $("#editProjectContext").val();
+        //
+        // console.log("editProjectTitle：" + editProjectTitle);
+        //
+        // //将页面上的值写入编辑模拟窗口
+        // $("#editProjectTitle").value = editProjectTitle;
+        // $("#editProjectStatus").value = editProjectStatus;
+        // $("#editProjectType").value = editProjectType;
+        // $("#editProjectProgress").value = editProjectProgress;
+        // // $("#editProjectContext").value = editProjectContext;
+
+        var editProjectTitle = $("#editProjectTitle").val();
+        var editProjectStatus = $("#editProjectStatus").val();
+        var editProjectType =$("#editProjectType").val();
+        var editProjectProgress = $("#editProjectProgress").val();
         var editProjectContext = $("#editProjectContext").val();
+        console.log("editProjectTitle：" + editProjectTitle);
 
-        //将页面上的值写入编辑模拟窗口
-        $("#editProjectTitle").val(editProjectTitle);
-        $("#editProjectStatus").val(editProjectStatus);
-        $("#editProjectType").val(editProjectType);
-        $("#editProjectProgress").val(editProjectProgress);
+        if (editProjectTitle == null || editProjectStatus == null || editProjectType == null || editProjectProgress == null || editProjectContext == null){
 
-        $.ajax({
-            type:"POST",
-            url:"http://localhost:8080/iWork/updateProject",
-            data:JSON.stringify({
-                projectId:projectId,
-                projectTitle:editProjectTitle,
-                projectStatus:editProjectStatus,
-                projectType:editProjectType,
-                projectContext:editProjectContext,
-                projectProgress:editProjectProgress,
-            }),
-            dataType:"json",
-            success:function (datas) {
-                //请求成功调用的函数
-                alert("更新成功")
-            },
-            //调用执行后调用的函数
-            complete: function(XMLHttpRequest, textStatus){
-                // alert(XMLHttpRequest.responseText);
-                // alert(textStatus);
-                //HideLoading();
-            },
-            //调用出错执行的函数
-            error: function(){
-                alert("更新成功！");
-            }
-        })
-});
+        } else{
+            $.ajax({
+                type:"POST",
+                url:"http://localhost:8080/iWork/updateProject",
+                contentType: "application/json",
+                data:JSON.stringify({
+                    projectId:projectId,
+                    projectTitle:editProjectTitle,
+                    projectStatus:editProjectStatus,
+                    projectType:editProjectType,
+                    projectContext:editProjectContext,
+                    projectProgress:editProjectProgress,
+                }),
+                success:function (datas) {
+                    //请求成功调用的函数
+                    $("#editProjectModal").modal("hide");
+                    swal({
+                        title:"太帅了",
+                        text:"编辑成功了",
+                        type:"success"
+                    },function () {
+                        window.location.reload();
+                    });
+                },
+                //调用执行后调用的函数
+                complete: function(XMLHttpRequest, textStatus){
+                    // alert(XMLHttpRequest.responseText);
+                    // alert(textStatus);
+                    //HideLoading();
+                },
+                //调用出错执行的函数
+                error: function(){
+                    swal({
+                        title:"可惜了",
+                        text:"编辑失败了",
+                        type:"failure"
+                    });
+                }
+            });
+        };
+    });
+};
 
 //创建新的项目
 $("#create_new_project").click(function () {
@@ -105,12 +159,12 @@ $("#create_new_project").click(function () {
     var newProjectType = parseInt($("#newProjectType").val());
     var newProjectContext = $("#newProjectContext").val();
 
-    if (isNaN(newProjectType)){
-        alert("是非数字值");
-    } else{
-        alert("是数字值");
-    }
-
+    // if (isNaN(newProjectType)){
+    //     alert("是非数字值");
+    // } else{
+    //     alert("是数字值");
+    // }
+    //
 
     if (newProjectTitle == null||newProjectStatus==null||newProjectType==null||newProjectContext==null){
         alert("输入不能为空");
@@ -176,20 +230,24 @@ $("#allProjectTypes").click(function () {
             var str = "";
             for (i in datas){
                 var progress = datas[i].projectProgress;
-                console.log(progress);
-                console.log(datas[i].createTime);
+                var projectType = datas[i].project_type.projectTypeName;                //多表联合查询
+                var createTime = new Date(datas[i].createTime).Format("yy-MM-dd");      //月份是M，秒是m
+                console.log(projectType);
+                console.log(createTime);
                 str += "<tr>" +
                     "<td class=\"project-status\"><span class=\"label label-primary\">" + datas[i].projectStatus + "</span></td>" +
-                    "<td class=\"project-title\"><a href=\"project_detail.html\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ datas[i].createTime +"</small> </td>" +
+                    "<td name=\"project-title\" value=\""+ datas[i].projectId + "\" class=\"project-title\"><a href=\"#\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ createTime +"</small> </td>" +
+                    "<td class=\"project-type\"><a href=\"#\">" + "项目类型" + "</a> <br /> <small>"+ projectType +"</small> </td>" +
                     "<td class=\"project-completion\"> <small>当前进度：" + progress + "%</small> <div class=\"progress progress-mini\"> <div style=\"width: " + progress + "%;\" class=\"progress-bar\"></div> </div> </td>" +
                     "<td class=\"project-people\"> <img alt=\"image\" class=\"img-circle\" src=\"img/a3.jpg\"> </td>" +
                     "<td class=\"project-actions\" style=\"clear:both\"> " +
-                    "<a href=\"projects.jsp#\" class=\"btn btn-white btn-sm\"><i class=\"fa fa-folder\"></i> 查看 </a>" +
-                    "<a href=\"projects.jsp#\" class=\"btn btn-white btn-sm\"><i class=\"fa fa-pencil\"></i> 编辑 </a>" +
+                    "<a class=\"btn btn-white btn-sm\" ><i class=\"fa fa-folder\"></i> 查看 </a>" +
+                    "<a class=\"btn btn-white btn-sm\" onclick='editProjectModal()' data-target=\"#editProjectModal\"><i class=\"fa fa-pencil\"></i> 编辑 </a>" +
                     "</td>" +
                     "</tr>"
             }
             tbody.innerHTML = str;
+            console.log("所有项目success");
         },
         //调用执行后调用的函数
         complete: function(XMLHttpRequest, textStatus){
@@ -206,10 +264,10 @@ $("#allProjectTypes").click(function () {
 
 //点击不同的项目类别按钮，显示不同类别的所有项目
 function showTypeProjects() {
-    var pro = window.document.getElementsByName("projectType").val();
+    var tbody = window.document.getElementsByName("projectType").val();
     $.ajax({
         type:"POST",
-        url:"http://localhost:8080/iWork/showTypeProjects",
+        url:"showTypeProjects",
         data:{projectTypeId:pro},
         dataType:"json",
         success:function (datas) {
@@ -219,19 +277,22 @@ function showTypeProjects() {
             var str = "";
             for (i in datas){
                 var progress = datas[i].projectProgress;
-                console.log(progress);
-                console.log(datas[i].createTime);
+                var projectType = datas[i].project_type.projectTypeName;
+                var createTime = new Date(datas[i].createTime).Format("yy-MM-dd");
+                console.log(projectType);
+                console.log(createTime);
                 str += "<tr>" +
                     "<td class=\"project-status\"><span class=\"label label-primary\">" + datas[i].projectStatus + "</span></td>" +
-                    "<td class=\"project-title\"><a href=\"project_detail.html\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ datas[i].createTime +"</small> </td>" +
+                    "<td name=\"project-title\" value=\""+ datas[i].projectId + "\" class=\"project-title\"><a href=\"#\">" + datas[i].projectTitle + "</a> <br /> <small>"+"创建于"+ createTime +"</small> </td>" +
+                    "<td class=\"project-type\"><a href=\"#\">" + "项目类型" + "</a> <br /> <small>"+ projectType +"</small> </td>" +
                     "<td class=\"project-completion\"> <small>当前进度：" + progress + "%</small> <div class=\"progress progress-mini\"> <div style=\"width: " + progress + "%;\" class=\"progress-bar\"></div> </div> </td>" +
                     "<td class=\"project-people\"> <img alt=\"image\" class=\"img-circle\" src=\"img/a3.jpg\"> </td>" +
                     "<td class=\"project-actions\" style=\"clear:both\"> " +
-                    "<a href=\"projects.jsp#\" class=\"btn btn-white btn-sm\"><i class=\"fa fa-folder\"></i> 查看 </a>" +
-                    "<a href=\"projects.jsp#\" class=\"btn btn-white btn-sm\"><i class=\"fa fa-pencil\"></i> 编辑 </a>" +
+                    "<a class=\"btn btn-white btn-sm\" ><i class=\"fa fa-folder\"></i> 查看 </a>" +
+                    "<a class=\"btn btn-white btn-sm\" onclick='editProjectModal()' data-target=\"#editProjectModal\"><i class=\"fa fa-pencil\"></i> 编辑 </a>" +
                     "</td>" +
                     "</tr>"
-            }
+            };
             tbody.innerHTML = str;
         },
         //调用执行后调用的函数

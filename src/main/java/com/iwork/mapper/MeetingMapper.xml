@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.iwork.mapper.MeetingMapper">
+    <select id="selectAllMeeting" resultMap="userResultMap">
+        select * from meeting inner join user on meeting.meetingPublishUser = user.userId;
+    </select>
+    <resultMap id="userResultMap" type="com.iwork.bean.Meeting">
+        <id property="meetingId" column="meetingId"></id>
+        <result property="meetingPublishTime" column="meetingPublishTime"></result>
+        <result property="meetingStart" column="meetingStart"></result>
+        <result property="meetingEnd" column="meetingEnd"></result>
+        <result property="meetAddress" column="meetAddress"></result>
+        <result property="meetContext" column="meetContext"></result>
+        <association property="user" column="meetingPublishUser" javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+        </association>
+    </resultMap>
+
+</mapper>

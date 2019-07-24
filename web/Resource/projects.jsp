@@ -21,6 +21,9 @@
 		<link href="css/style.min.css?v=4.0.0" rel="stylesheet">
 		<base target="_blank">
 
+        <!-- Sweet Alert -->
+        <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
 		<%
 			pageContext.setAttribute("base_PATH", request.getContextPath());
 		%>
@@ -32,7 +35,6 @@
 		<div class="wrapper wrapper-content animated fadeInUp">
 			<div class="row">
 				<div class="col-sm-12">
-
 					<div class="ibox">
 						<div class="ibox-title">
 
@@ -94,8 +96,8 @@
                                             <div class="form-group">
                                                 <label>项目状态</label>
                                                 <select id="newProjectStatus" type="text" placeholder="请选择项目状态" class="form-control">
-                                                    <option value="1">进行中</option>
-                                                    <option value="2">已取消</option>
+                                                    <option value="进行中">进行中</option>
+                                                    <option value="已取消">已取消</option>
                                                 </select>
                                             </div>
                                             <br>
@@ -111,7 +113,6 @@
                                                 <label>项目内容</label>
                                                 <textarea id="newProjectContext" rows="3" cols="81" placeholder="请输入项目内容" ></textarea>
                                             </div>
-
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
@@ -142,8 +143,8 @@
 											<div class="form-group">
 												<label>项目状态</label>
 												<select id="editProjectStatus" type="text" placeholder="请选择项目状态" class="form-control">
-													<option value="1">进行中</option>
-													<option value="2">已取消</option>
+													<option value="进行中">进行中</option>
+													<option value="已取消">已取消</option>
 												</select>
 											</div>
 											<br>
@@ -157,43 +158,42 @@
 											</div>
 											<div class="form-group">
 												<label>项目进度</label>
-												<input id="editProjectProgress" rows="3" cols="81" placeholder="请输入项目进度" ></input>
+                                                <br>
+												<input id="editProjectProgress" type="text" placeholder="请输入项目进度" class="form-control" value="">
 											</div>
 											<div class="form-group">
 												<label>项目内容</label>
 												<textarea id="editProjectContext" rows="3" cols="81" placeholder="请输入项目内容" ></textarea>
 											</div>
 										</div>
-										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
-											<button id="edit_project" type="button" class="btn btn-primary">保存</button>
+											<button id="save_project" type="button" class="btn btn-primary">保存</button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="ibox-content">
-							<div class="row m-b-sm m-t-sm">
-								<div class="col-md-1">
-									<button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> 刷新</button>
-								</div>
-								<div class="col-md-11">
-									<div class="input-group">
-										<input type="text" placeholder="请输入项目名称" class="input-sm form-control"> <span class="input-group-btn">
-											<button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
-									</div>
-								</div>
-							</div>
-
-							<div class="project-list">
-
-								<table class="table table-hover">
-									<tbody id="tbody-data">
-									</tbody>
-								</table>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="row m-b-sm m-t-sm">
+						<div class="col-md-1">
+							<button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> 刷新</button>
+						</div>
+						<div class="col-md-11">
+							<div class="input-group">
+								<input type="text" placeholder="请输入项目名称" class="input-sm form-control"> <span class="input-group-btn">
+									<button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
 							</div>
 						</div>
+					</div>
+					<div class="project-list">
+
+						<table class="table table-hover">
+							<tbody id="tbody-data">
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -203,6 +203,8 @@
 		<script src="js/content.min.js?v=1.0.0"></script>
 
         <script src="js/json2.js"></script>
+        <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
 		<script src="iwork_js/projects.js"></script>
 		<script src="iwork_js/timeControl.js"></script>
 

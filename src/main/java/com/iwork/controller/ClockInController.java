@@ -46,9 +46,10 @@ public class ClockInController {
         return "clockin/kaoqin_01";
     }
 
+
     @RequestMapping("/vocationRecordSelf")
     @ResponseBody
-     public void getVocationRecord(HttpServletRequest request,HttpServletResponse response){
+     public void getVocationRecord(HttpServletRequest request,HttpServletResponse response) throws IOException {
 
             User user =(User)request.getSession().getAttribute("loginuser");
             //int userid =Integer.parseInt(request.getParameter("userid"));
@@ -58,18 +59,12 @@ public class ClockInController {
             logger.info("来了"+userid+recordTypes);
             List<Vocation> vList=clockinService.selectAllRecordByUserid(userid,recordTypes);
             response.setCharacterEncoding("utf-8");
-            try {
-                PrintWriter writer =response.getWriter();
-                JSONArray jsonArray =JSONArray.fromObject(vList);
-                logger.info("开始获取表格数据"+jsonArray.toString());
-                String json = "{\"total\":" + vList.size() + ",\"rows\":" + jsonArray.toString() + "}";
-                writer.print(json);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
+            PrintWriter writer =response.getWriter();
+            JSONArray jsonArray =JSONArray.fromObject(vList);
+            logger.info("开始获取表格数据"+jsonArray.toString());
+            String json = "{\"total\":" + vList.size() + ",\"rows\":" + jsonArray.toString() + "}";
+            writer.print(json);
 
      }
     @ResponseBody
@@ -95,6 +90,9 @@ public class ClockInController {
         pw.write("msg:'删除成功！'");
 
      }
+
+
+
     @RequestMapping("/testAj")
     @ResponseBody
     public void testAj(HttpServletResponse response){
@@ -119,10 +117,62 @@ public class ClockInController {
 
     }
     @RequestMapping("vocationManager")
-    public String vocationManager(){
-
+    public String vocationManager(HttpServletRequest request){
+        request.getSession().setAttribute("loginmanager",clockinService.selectUserById(1001));
         return "clockin/vocation_manager";
     }
+    @ResponseBody
+    @RequestMapping("/allRecord")
+    public void vocationRecordAll(HttpServletRequest request,HttpServletResponse response){
+        User manager=(User)request.getSession().getAttribute("loginmanager");
+        int managerId=manager.getUserId();
+        int recordTypes =Integer.parseInt(request.getParameter("recordTypes"));
+        logger.info("allrecord"+managerId+recordTypes);
+        List<Vocation> vList=clockinService.selectAllRecordBySubid(managerId,recordTypes,0);
+        response.setCharacterEncoding("utf-8");
+        try {
+            PrintWriter writer =response.getWriter();
+            JSONArray jsonArray =JSONArray.fromObject(vList);
+            logger.info("开始获取表格数据"+jsonArray.toString());
+            String json = "{\"total\":" + vList.size() + ",\"rows\":" + jsonArray.toString() + "}";
+            writer.print(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @ResponseBody
+    @RequestMapping("/permitVocation")
+    public void permitVocation(@RequestParam String vocationId,HttpServletResponse response) throws IOException {
+        int vId=Integer.parseInt(vocationId);
+        Vocation vocation =new Vocation();
+        vocation.setVocationId(vId);
+        vocation.setStatus(1);
+        clockinService.updateByPrimaryKeySelective(vocation);
+        responseMsg("msg:'已批准'",response);
+
+    }
+    @ResponseBody
+    @RequestMapping("/rejectVocation")
+    public void rejectVocation(@RequestParam String vocationId,HttpServletResponse response) throws IOException {
+        int vId=Integer.parseInt(vocationId);
+        Vocation vocation =new Vocation();
+        vocation.setVocationId(vId);
+        vocation.setStatus(5);
+        clockinService.updateByPrimaryKeySelective(vocation);
+        responseMsg("msg:'驳回成功'",response);
+
+    }
+
+    public void responseMsg(String msg,HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("utf-8");
+        PrintWriter pw = response.getWriter();
+        pw.write(msg);
+        pw.flush();
+        pw.close();
+    }
+
     @RequestMapping("outsideWork")
     public String outsiteWork(){
 

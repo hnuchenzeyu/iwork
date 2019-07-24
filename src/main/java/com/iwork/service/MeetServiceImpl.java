@@ -1,7 +1,7 @@
 package com.iwork.service;
 
+import com.iwork.bean.Meeting;
 import com.iwork.mapper.MeetingMapper;
-import com.iwork.view.meetingView;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,11 +14,10 @@ public class MeetServiceImpl implements MeetService{
     MeetingMapper meetingMapper;
 
     @Override
-    public List<meetingView> showMeeting() {
+    public List<Meeting> showMeeting() {
 
         
 
-        meetingMapper.selectAllMeeting();
-        return null;
+        return meetingMapper.selectAllMeeting();
     }
 }

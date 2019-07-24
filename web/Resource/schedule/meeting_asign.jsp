@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +36,7 @@
                     </div>
                     <div class="col-md-11">
                         <div class="input-group">
-                            <input type="text" placeholder="请输入项目名称" class="input-sm form-control">
+                            <input type="text" placeholder="请搜索信息" class="input-sm form-control">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-sm btn-primary"> 搜索</button>
                             </span>
@@ -44,6 +46,40 @@
                 <div class="project-list">
                     <table class="table table-hover">
                         <tbody id="tbody-meeting-data">
+                        <c:forEach var="m" items="${meetings}">
+                            <tr>
+                                <td name="project-title" class="project-title">
+                                    <a href="project_detail.html">发布人</a>
+                                    <br />
+                                    <small>${m.user.userName}</small>
+                                </td>
+                                <td name="project-title" class="project-title">
+                                    <a href="project_detail.html">发布时间</a>
+                                    <br />
+                                    <small>${m.meetingPublishTime}</small>
+                                </td>
+                                <td name="project-title" class="project-title">
+                                    <a href="project_detail.html">会议开始时间</a>
+                                    <br />
+                                    <small>${m.meetingStart}</small>
+                                </td>
+                                <td name="project-title" class="project-title">
+                                    <a href="project_detail.html">会议结束时间</a>
+                                    <br />
+                                    <small>${m.meetingEnd}</small>
+                                </td>
+                                <td name="project-title" class="project-title">
+                                    <a href="project_detail.html">会议室</a>
+                                    <br />
+                                    <small>${m.meetAddress}</small>
+                                </td>
+                                <td name="project-title" class="project-title">
+                                    <a href="project_detail.html">会议主题</a>
+                                    <br />
+                                    <small>${m.meetContext}</small>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -69,7 +105,7 @@
 	<script src='../js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
 	<script src="../js/plugins/layer/layer.js"></script>
 
-
+    <script src=../iwork_js/timeControl.js"></script>
 
     <script>
         $(document).ready(function() {

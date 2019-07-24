@@ -118,7 +118,7 @@
                                 <a class="J_menuItem" href="schedule/calendar.html">日历</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="schedule/meeting_asign.html">会议安排</a>
+                                <a class="J_menuItem" href="http://localhost:8080/iWork/Resource/schedule/showMeetings">会议安排</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="schedule/calendar_note.jsp">记事本</a>
@@ -156,8 +156,6 @@
                         <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">项目管理</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a class="J_menuItem" href="http://localhost:8080/iWork/Resource/showAllProjectType">项目</a>
-                            </li>
-                            <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
                             </li>
                         </ul>
                     </li>
