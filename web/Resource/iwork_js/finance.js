@@ -1,3 +1,13 @@
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+if (month < 10) {
+    month = "0" + month;
+}
+if (day < 10) {
+    day = "0" + day;
+}//年月日
 //================以下是绩效奖和福利======================
 //创建绩效奖
 $("#createPrize").click(function () {
@@ -50,14 +60,16 @@ $("#createList").click(function () {
 });
 
 //绩效期数改变时，刷新数据
-$("#terms").blur(function () {
-    var termNum = $("#terms").val();
-    var classPrize = null
-    if ($("h5").text() == "绩效奖")
-        classPrize = 1;
-    else if ($("h5").text() == "补贴")
-        classPrize = 2;
-    window.location.href = "changePrizeAndWage?classPrize=" + classPrize + "&terms=" + termNum;
+$("#terms").keypress(function (event) {
+    if (event.which == 13) {
+        var termNum = $("#terms").val();
+        var classPrize = null
+        if ($("h5").text() == "绩效奖")
+            classPrize = 1;
+        else if ($("h5").text() == "补贴")
+            classPrize = 2;
+        window.location.href = "changePrizeAndWage?classPrize=" + classPrize + "&terms=" + termNum;
+    }
 });
 
 //删除Prize选中的内容
@@ -174,11 +186,11 @@ function addFinance() {
         success: function () {
             $("#finance").prepend("<tr>" +
                 "<td class=\"bs-checkbox\"><input name=\"btSelectItem\" type='checkbox'></td>" +
-                "<td>"+financeId+"</td>" +
-                "<td>"+createUserId+"</td>" +
-                "<td>"+createTime+"</td>" +
-                "<td>"+expense+"</td>" +
-                "<td>"+expenseType+"</td>" +
+                "<td>" + financeId + "</td>" +
+                "<td>" + createUserId + "</td>" +
+                "<td>" + createTime + "</td>" +
+                "<td>" + expense + "</td>" +
+                "<td>" + expenseType + "</td>" +
                 "</tr>");
         },
         error: function () {

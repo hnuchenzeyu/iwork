@@ -116,6 +116,7 @@
                             <c:forEach items="${staff_wages}" var="w">
                                 <tr data-id="${w.wageId}">
                                     <td></td>
+                                    <td>${w.wageId}</td>
                                     <td>${w.user.userId}</td>
                                     <td>${w.user.userName}</td>
                                     <td>${w.prize.type}</td>
@@ -192,6 +193,9 @@
         var data = [{
             field: 'checkbox',
             checkbox: true
+        },{
+            field:'id',
+            title:'编号'
         }, {
             field: 'user_id',
             title: '员工工号'

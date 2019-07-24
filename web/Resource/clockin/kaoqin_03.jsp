@@ -108,7 +108,13 @@
 <%--                        </button>--%>
                     </div>
                     <table id="tradeList" data-toggle="table"
-                           data-url="getTodayAttendance">
+                           data-url="getTodayAttendance"
+                           data-mobile-responsive="true"
+                           data-pagination="true"
+                           data-sidePagination="client"
+                           data-pageSize="25"
+                           data-striped="true"
+                           data-clickToSelect="true">
                         <thead>
                         <tr>
                             <th data-field="Num">序号</th>
@@ -139,7 +145,13 @@
                     </div>
                     <table id="ab_statistic"
                            data-toggle="table"
-                           data-url="getAttendanceStatistic">
+                           data-url="getAttendanceStatistic"
+                           data-mobile-responsive="true"
+                           data-pagination="true"
+                           data-sidePagination="client"
+                           data-pageSize="25"
+                           data-striped="true"
+                           data-clickToSelect="true">
                         <thead>
                         <tr>
                             <th data-field="user.userId">工号</th>
