@@ -27,7 +27,34 @@
             </association>
         </association>
     </resultMap>
-    <delete id="deleteExcellentById" parameterType="java.lang.String" >
+    <delete id="deleteExcellentById" parameterType="java.lang.String">
         delete from excellent_stafff where excellentStaffId=#{excellentStaffId}
+    </delete>
+
+    <insert id="addAbsence" parameterType="com.iwork.bean.Absence" useGeneratedKeys="true">
+        insert into absence(absenceUserId,absenceTime,absenceTimeQuantum,lateTime,absenceType)
+        values (#{absenceUserId},#{absenceTime},#{absenceTimeQuantum},#{lateTime},#{absenceType})
+    </insert>
+    <select id="selectAbsence" resultMap="absenceJoinUser">
+        SELECT * FROM absence JOIN user ON absenceUserId=userId JOIN department ON department=departmentId;
+    </select>
+    <resultMap id="absenceJoinUser" type="com.iwork.bean.Absence">
+        <id property="absenceId" column="absenceId"></id>
+        <result property="absenceUserId" column="absenceUserId"></result>
+        <result property="absenceTime" column="absenceTime"></result>
+        <result property="absenceTimeQuantum" column="absenceTimeQuantum"></result>
+        <result property="lateTime" column="lateTime"></result>
+        <result property="absenceType" column="absenceType"></result>
+        <association property="user" column="absenceUserId" javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+            <association property="departmentObj" column="department" javaType="com.iwork.bean.Department">
+                <id property="departmentId" column="departmentId"></id>
+                <result property="departmentName" column="departmentName"></result>
+            </association>
+        </association>
+    </resultMap>
+    <delete id="deleteAbsenceById" parameterType="java.lang.String">
+        delete from absence where absenceId=#{id}
     </delete>
 </mapper>

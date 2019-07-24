@@ -1,5 +1,6 @@
 package com.iwork.service;
 
+import com.iwork.bean.Absence;
 import com.iwork.bean.Excellent_Stafff;
 import com.iwork.mapper.ExcellentStaffMapper;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,20 @@ public class ExcellentStafffService_cImpl implements ExcellentStafffService_c {
     @Override
     public void deleteExcellentById(String excellentStaffId) {
         mapper.deleteExcellentById(excellentStaffId);
+    }
+
+    @Override
+    public void addAbsence(Absence absence) {
+        mapper.addAbsence(absence);
+    }
+
+    @Override
+    public List<Absence> selectAbsence() {
+        return mapper.selectAbsence();
+    }
+
+    @Override
+    public void deleteAbsence(String id) {
+        mapper.deleteAbsenceById(id);
     }
 }
