@@ -99,7 +99,7 @@
                                 <a class="J_menuItem" href="${pageContext.request.contextPath}/outsideWork" > 出差情况</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="${pageContext.request.contextPath}/memberList">考勤名单</a>
+                                <a class="J_menuItem" href="clockin/kaoqin_03.jsp">考勤名单</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="clockin/showExcellence">优秀员工</a>

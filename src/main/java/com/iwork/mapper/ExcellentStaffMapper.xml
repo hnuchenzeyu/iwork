@@ -36,7 +36,10 @@
         values (#{absenceUserId},#{absenceTime},#{absenceTimeQuantum},#{lateTime},#{absenceType})
     </insert>
     <select id="selectAbsence" resultMap="absenceJoinUser">
-        SELECT * FROM absence JOIN user ON absenceUserId=userId JOIN department ON department=departmentId;
+        SELECT * FROM absence
+        JOIN user ON absenceUserId=userId
+        JOIN department ON department=departmentId
+        ORDER BY absenceId DESC;
     </select>
     <resultMap id="absenceJoinUser" type="com.iwork.bean.Absence">
         <id property="absenceId" column="absenceId"></id>

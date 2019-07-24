@@ -97,15 +97,15 @@
 
                 <div class="example">
                     <div class="btn-group hidden-xs" id="exampleToolbar" role="group">
-                        <button type="button" class="btn btn-outline btn-default">
-                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline btn-default">
-                            <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline btn-default"">
-                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-                        </button>
+<%--                        <button type="button" class="btn btn-outline btn-default">--%>
+<%--                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>--%>
+<%--                        </button>--%>
+<%--                        <button type="button" class="btn btn-outline btn-default">--%>
+<%--                            <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>--%>
+<%--                        </button>--%>
+<%--                        <button type="button" class="btn btn-outline btn-default"">--%>
+<%--                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>--%>
+<%--                        </button>--%>
                     </div>
                     <table id="tradeList" data-toggle="table"
                            data-url="getTodayAttendance">
@@ -127,26 +127,26 @@
 
                 <div class="example">
                     <div class="btn-group hidden-xs" id="toolbar" role="group">
-                        <button type="button" class="btn btn-outline btn-default">
-                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline btn-default">
-                            <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline btn-default">
-                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-                        </button>
+<%--                        <button type="button" class="btn btn-outline btn-default">--%>
+<%--                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>--%>
+<%--                        </button>--%>
+<%--                        <button type="button" class="btn btn-outline btn-default">--%>
+<%--                            <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>--%>
+<%--                        </button>--%>
+<%--                        <button type="button" class="btn btn-outline btn-default">--%>
+<%--                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>--%>
+<%--                        </button>--%>
                     </div>
-                    <table id="ab_statistic" data-toggle="table">
+                    <table id="ab_statistic"
+                           data-toggle="table"
+                           data-url="getAttendanceStatistic">
                         <thead>
                         <tr>
-                            <th data-checkbox="true"></th>
-                            <th data-field="uid">工号</th>
-                            <th data-field="uname">姓名</th>
-                            <th data-field="normal_signin">正常打卡</th>
-                            <th data-field="late_signin">迟到</th>
-                            <th data-field="vocation_signin">请假</th>
-                            <th data-field="absence_signin">旷工</th>
+                            <th data-field="user.userId">工号</th>
+                            <th data-field="user.userName">姓名</th>
+                            <th data-field="lateTimes">迟到次数</th>
+                            <th data-field="leaveTimes">请假次数</th>
+                            <th data-field="businessTime">出差次数</th>
                         </tr>
                         </thead>
                     </table>
