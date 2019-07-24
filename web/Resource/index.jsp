@@ -118,7 +118,7 @@
                                 <a class="J_menuItem" href="schedule/calendar.html">日历</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="schedule/meeting_asign.html">会议安排</a>
+                                <a class="J_menuItem" href="http://localhost:8080/iWork/Resource/schedule/showMeetings">会议安排</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="schedule/calendar_note.jsp">记事本</a>
