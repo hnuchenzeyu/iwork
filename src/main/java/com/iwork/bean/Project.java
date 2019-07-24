@@ -27,7 +27,9 @@ public class Project {
 
     private String bidingSummary;
 
-    public Integer getProjectId() {
+    private Project_Type project_type;
+
+   public Integer getProjectId() {
         return projectId;
     }
 
@@ -121,5 +123,32 @@ public class Project {
 
     public void setBidingSummary(String bidingSummary) {
         this.bidingSummary = bidingSummary == null ? null : bidingSummary.trim();
+    }
+
+    public Project_Type getProject_type() {
+        return project_type;
+    }
+
+    public void setProject_type(Project_Type project_type) {
+        this.project_type = project_type;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectId=" + projectId +
+                ", createUserId=" + createUserId +
+                ", projectTitle='" + projectTitle + '\'' +
+                ", projectStatus='" + projectStatus + '\'' +
+                ", createTime=" + createTime +
+                ", projectType=" + projectType +
+                ", projectContext='" + projectContext + '\'' +
+                ", projectProgress='" + projectProgress + '\'' +
+                ", projectReview=" + projectReview +
+                ", projectExam='" + projectExam + '\'' +
+                ", projectBidding=" + projectBidding +
+                ", bidingSummary='" + bidingSummary + '\'' +
+                ", project_type=" + project_type +
+                '}';
     }
 }

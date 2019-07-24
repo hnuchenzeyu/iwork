@@ -17,6 +17,7 @@ public interface VocationMapper {
 
     int updateByPrimaryKey(Vocation record);
     List<Vocation> selectAllRecordByUserid(Integer userid);
-
-
+    List<Vocation> selectAllRecordBySubid(Integer userid);
+    List<Vocation> selectAllRecord();
+    List<Vocation> updateRecordStatus(Integer type);
 }
