@@ -1,5 +1,6 @@
 package com.iwork.service;
 
+import com.iwork.bean.OutsideWork;
 import com.iwork.bean.User;
 import com.iwork.bean.Vocation;
 import com.iwork.mapper.UserMapper;
@@ -151,4 +152,10 @@ public class ClockinServiceImpl implements ClockinService{
         }
         }
     }
+
+    @Override
+    public List<User> selectAllUser() {
+        return user.selectAllUser();
+    }
+
 }

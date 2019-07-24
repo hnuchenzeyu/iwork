@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*,com.iwork.bean.*" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 
@@ -11,11 +14,11 @@
     <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
     <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="../css/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/plugins/markdown/bootstrap-markdown.min.css" />
-    <link href="../css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="Resource/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="Resource/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="Resource/css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Resource/css/plugins/markdown/bootstrap-markdown.min.css" />
+    <link href="Resource/css/style.min.css?v=4.0.0" rel="stylesheet">
 
 </head>
 
@@ -27,7 +30,7 @@
                         <label class="col-sm-2 control-label">主题：</label>
                     
                         <div class="col-sm-10">
-                            <input id="title_note" name="title_note" type="text" placeholder="主题" class="form-control"> 
+                            <input id="title_work" name="title_note" type="text" placeholder="主题" class="form-control">
                         </div>
                     </div>
                 </div>  
@@ -47,16 +50,11 @@
 				     
 				         <div  class="col-sm-10">
 				             
-								<div id="member_list"><label class="member" data-name="李总" data-fid="1231">李总</label><i></i><a id="add_member" class="btn btn-circle btn-default"><i class="glyphicon glyphicon-plus"></i></a></div>
-								<div id="member_list_select" class="wrapper wrapper-content" hidden="true">
-									
-									<div class="feed-activity-list">
-										<div id="member" class="feed-element">
-											<label class="media-body" data-name="肖总" data-fid="1231">肖总</label>
-										</div>
-									</div>
-								
-								</div>	
+								<div id="member_list">
+									<span id="mark"></span>
+									<a id="add_member" class="btn btn-circle btn-default"><i class="glyphicon glyphicon-plus"></i></a>
+								</div>
+
 							
 				         </div>
 				     </div>
@@ -64,36 +62,51 @@
 				<div class="row">
 					<div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
-					        <a id="create" class="btn btn-sm center btn-white" >创建</a>
+					        <a id="cancel" href="javascript:history.back();" class="btn btn-group center btn-default" >取消</a>
+							<a id="create" class="btn btn-group btn-primaryr">创建</a>
 					    </div>
 					</div>
 				</div>		   
                 </form>
     </div>
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="../js/content.min.js?v=1.0.0"></script>
-    <script type="text/javascript" src="../js/plugins/markdown/markdown.js"></script>
-    <script type="text/javascript" src="../js/plugins/markdown/to-markdown.js"></script>
-    <script type="text/javascript" src="../js/plugins/markdown/bootstrap-markdown.js"></script>
-    <script type="text/javascript" src="../js/plugins/markdown/bootstrap-markdown.zh.js"></script>
+	<div id="ml"><p id="memlist"></p></div>
+	<div id="member_list_select" class="wrapper wrapper-content" hidden="true">
+
+		<div class="feed-activity-list">
+			<div id="member" class="feed-element">
+				<c:forEach items="${userList}" var="user">
+					<label class="media-body" data-name="${user.userName}" data-fid="${user.userId}">${user.userName}</label>
+				</c:forEach>
+			</div>
+		</div>
+
+	</div>
+    <script src="Resource/js/jquery.min.js?v=2.1.4"></script>
+    <script src="Resource/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="Resource/js/content.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="Resource/js/plugins/markdown/markdown.js"></script>
+    <script type="text/javascript" src="Resource/js/plugins/markdown/to-markdown.js"></script>
+    <script type="text/javascript" src="Resource/js/plugins/markdown/bootstrap-markdown.js"></script>
+    <script type="text/javascript" src="Resource/js/plugins/markdown/bootstrap-markdown.zh.js"></script>
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-	<script src="../js/plugins/layer/layer.js"></script>	
+	<script src="Resource/js/plugins/layer/layer.js"></script>	
 	<script>
 		function callbackdata(){
-			var title = $("#title_note").val();
-			var detail =$("#detail_note").val();
-				
+			var title = $("#title_work").val();
+			var detail =$("#work_detail_new").val();
+
+			var k=new String("");
+			memberlist.forEach(function (value) {
+			   k.concat(value.id+",");
+			});
 			var data ={
-				note_title:title,
-				note_detail:datail
+                worktitle:title,
+                workdescription:detail.toString(),
+				memberlist:k
 			}
 			return data;
 		}
-		var index = parent.layer.getFrameIndex(window.name);
-		$("#create").click(function(){
-			parent.layer.close(index);
-		});
+
 		memberlist=new Array();
 		$("#member_list").on("click",".member",function(){	
 			
@@ -105,7 +118,6 @@
 					
 					if(memberlist[i].name==this.getAttribute("data-name"))
 						{
-							
 							memberlist.splice(i,1);
 						}
 				}
@@ -114,26 +126,22 @@
 			});
 		
 		$("#member").on('click',"label",function(){
-						var x=window.document.getElementById("member_list");
+						var x=window.document.getElementById("mark");
 						var k=0;
 						var member=new Object();
-						member.id==this.getAttribute("data-fid");
+						member.id=this.getAttribute("data-fid");
 						member.name=this.getAttribute("data-name");
-						if(memberlist!=null)
+
+						alert(member.id);
+						;
+
+
+						if(!memberlist.some(function (m) {
+                            return m.id==member.id;
+                        }))
 						{
-							for(var i=0;i<memberlist.length;i++)
-							{
-								
-								if(memberlist[i].id==member.id)
-									{
-										k=1;break;
-									}
-							}
-						}					
-						if(k!=1){				
 							memberlist.push(member);
-							s="<label  class='member' data-name='"+member.name  + "' data-fid='"+member.id+"'>"+this.getAttribute("data-name")+"</label>";
-							$(x).children().eq(0).before("<label class='member' data-name='"+member.name  + "' data-fid='"+member.id+"'>"+this.getAttribute("data-name")+"</label><i class='glyphicon glyphicon-triangle-right'></i>");
+							$(x).after("<label class='member' data-name='"+member.name  + "' data-fid='"+member.id+"'>"+this.getAttribute("data-name")+"</label><span>/</spcn>");
 						}					
 					});
 		$("#add_member").click(function(){
@@ -152,8 +160,13 @@
 				}
 			});	
 		});
-		
+
+
+		$("#create").click(function () {
+		    alert(callbackdata().memberlist);
+        });
 	</script>
+
 </body>
 
 </html>

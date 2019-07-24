@@ -17,6 +17,16 @@ public class OutsideWork {
 
     private Integer workprogress;
 
+    public String[] getMemberlist() {
+        return memberlist;
+    }
+
+    public void setMemberlist(String[] memberlist) {
+        this.memberlist = memberlist;
+    }
+
+    private String  memberlist[];
+
     public Integer getWorkid() {
         return workid;
     }

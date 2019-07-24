@@ -16,17 +16,18 @@
     workProgress
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from outsidwork
     where workId = #{workid,jdbcType=INTEGER}
   </select>
-  <select id="selectAllWork" resultMap="BaseResultMap"  >
+
+  <select id="selectAllWork" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from outsidwork
-    where 1=1
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from outsidwork
     where workId = #{workid,jdbcType=INTEGER}
