@@ -27,7 +27,8 @@
 </head>
 
 <body class="gray-bg" >  
-		<div id="vocation_datail" >
+	<div id="wrapper wrapper-content ">
+    <div id="vocation_datail" hidden >
 			<div class="row">
                         <form class="form-horizontal">
                             <div class="form-group">
