@@ -13,4 +13,6 @@ public interface ClockinService {
     Boolean deleteVocationById(int vid);
     List<Vocation>selectAllRecordBySubid(int id,int type,int refresh);
     int updateByPrimaryKeySelective(Vocation record);
+    void UpdateStatus();
+
 }
