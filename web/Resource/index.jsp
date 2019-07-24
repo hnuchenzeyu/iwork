@@ -102,7 +102,7 @@
                                 <a class="J_menuItem" href="${pageContext.request.contextPath}/memberList">考勤名单</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="${pageContext.request.contextPath}/excellentStaff">优秀员工</a>
+                                <a class="J_menuItem" href="/clockin/excellentStaff">优秀员工</a>
                             </li>
                         </ul>
                     </li>
@@ -118,7 +118,7 @@
                                 <a class="J_menuItem" href="schedule/calendar.html">日历</a>
                             </li>
                             <li>
-                                <a class="J_menuItem" href="schedule/meeting_asign.html">会议安排</a>
+                                <a class="J_menuItem" href="http://localhost:8080/iWork/Resource/schedule/showMeetings">会议安排</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="schedule/calendar_note.jsp">记事本</a>

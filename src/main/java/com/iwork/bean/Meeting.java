@@ -17,6 +17,8 @@ public class Meeting {
 
     private String meetContext;
 
+    private User user;
+
     public Integer getMeetingId() {
         return meetingId;
     }
@@ -71,5 +73,27 @@ public class Meeting {
 
     public void setMeetContext(String meetContext) {
         this.meetContext = meetContext == null ? null : meetContext.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Meeting{" +
+                "meetingId=" + meetingId +
+                ", meetingPublishUser=" + meetingPublishUser +
+                ", meetingPublishTime=" + meetingPublishTime +
+                ", meetingStart='" + meetingStart + '\'' +
+                ", meetingEnd='" + meetingEnd + '\'' +
+                ", meetAddress='" + meetAddress + '\'' +
+                ", meetContext='" + meetContext + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
