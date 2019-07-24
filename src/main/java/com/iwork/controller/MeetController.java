@@ -1,7 +1,7 @@
 package com.iwork.controller;
 
+import com.iwork.bean.Meeting;
 import com.iwork.service.MeetService;
-import com.iwork.view.meetingView;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +17,9 @@ public class MeetController {
 
     @RequestMapping("/showMeetings")
     @ResponseBody
-    public List<meetingView> showMeeting(){
+    public List<Meeting> showMeeting(){
+
+
         return meetService.showMeeting();
     }
 
