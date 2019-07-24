@@ -11,6 +11,8 @@ public class Excellent_Stafff {
 
     private String excellrntReason;
 
+    private User user;
+
     public Integer getExcellentStaffId() {
         return excellentStaffId;
     }
@@ -41,5 +43,23 @@ public class Excellent_Stafff {
 
     public void setExcellrntReason(String excellrntReason) {
         this.excellrntReason = excellrntReason == null ? null : excellrntReason.trim();
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Excellent_Stafff{" +
+                "excellentStaffId=" + excellentStaffId +
+                ", excellentUserId=" + excellentUserId +
+                ", excellentSelectTime=" + excellentSelectTime +
+                ", excellrntReason='" + excellrntReason + '\'' +
+                '}';
     }
 }

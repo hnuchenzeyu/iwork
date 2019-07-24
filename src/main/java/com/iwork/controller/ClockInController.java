@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -75,17 +76,25 @@ public class ClockInController {
     @RequestMapping("/vocationInsert")
      public void vocationInsert(@RequestBody Vocation vocation,HttpServletResponse response) throws IOException {
             logger.info("进入控制器"+vocation.toString());
-
+            clockinService.insertIntoVocation(vocation);
             response.setCharacterEncoding("utf-8");
-            PrintWriter pw=response.getWriter();
-            if(clockinService.insertIntoVocation(vocation))
-                pw.write(1);
-            else
-                pw.write(0);
-            pw.flush();
-            pw.close();
+            PrintWriter pw =response.getWriter();
+            pw.write("msg:'插入成功！'");
      }
 
+     @ResponseBody
+     @RequestMapping("/deleteVocation")
+     public void DeleteVocation(@RequestParam String vocationId,HttpServletResponse response) throws IOException {
+         logger.info("已进入后台");
+
+         int uid =Integer.parseInt(vocationId);
+        logger.info(vocationId);
+        clockinService.deleteVocationById(uid);
+        response.setCharacterEncoding("utf-8");
+        PrintWriter pw =response.getWriter();
+        pw.write("msg:'删除成功！'");
+
+     }
     @RequestMapping("/testAj")
     @ResponseBody
     public void testAj(HttpServletResponse response){

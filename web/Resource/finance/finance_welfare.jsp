@@ -313,22 +313,10 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group">
-                <label class="col-sm-2 control-label">补贴期数：</label>
-
-                <div class="col-sm-10">
-                    <input id="prizeTerm" name="title_note" value="补贴期数" type="text" class="form-control">
-                </div>
-            </div>
-        </div>
-
 
         <div class="row">
             <div class="form-group ">
                 <div class="col-sm-offset-2 col-sm-10 bottom">
-                    <a class="btn btn-sm center btn-white">取消</a>
-                    <a class="btn btn-sm center btn-white">修改</a>
                     <a id="createList" class="btn btn-sm center btn-white">创建</a>
                 </div>
             </div>

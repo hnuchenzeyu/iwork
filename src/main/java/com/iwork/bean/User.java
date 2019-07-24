@@ -17,6 +17,8 @@ public class User {
 
     private Integer isManager;
 
+    private Department departmentObj;
+
     public Integer getUserId() {
         return userId;
     }
@@ -30,7 +32,7 @@ public class User {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -38,7 +40,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+        this.password = password;
     }
 
     public Integer getPosition() {
@@ -79,5 +81,13 @@ public class User {
 
     public void setIsManager(Integer isManager) {
         this.isManager = isManager;
+    }
+
+    public Department getDepartmentObj() {
+        return departmentObj;
+    }
+
+    public void setDepartmentObj(Department departmentObj) {
+        this.departmentObj = departmentObj;
     }
 }

@@ -17,7 +17,7 @@ public class ClockinServiceImpl implements ClockinService{
     private VocationMapper vocationMapper;
     @Autowired
     private UserMapper user;
-
+    private static Log logger =LogFactory.getLog(ClockinService.class);
     @Override
     public List<User> selectByisManager() {
 
@@ -56,9 +56,16 @@ public class ClockinServiceImpl implements ClockinService{
 
     @Override
     public Boolean insertIntoVocation(Vocation record) {
+        logger.info("1");
+        vocationMapper.insert(record);
 
-        if (vocationMapper.insert(record)!=0)
-            return true;
-        return false;
+        return true;
+    }
+
+    @Override
+    public Boolean deleteVocationById(int vid) {
+
+        vocationMapper.deleteByPrimaryKey(vid);
+        return true;
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.iwork.mapper.ExcellentStaffMapper">
+    <insert id="addExcellenceByUserId"
+            parameterType="com.iwork.bean.Excellent_Stafff"
+            useGeneratedKeys="true">
+        insert into excellent_stafff (excellentUserId,excellentSelectTime,excellrntReason)
+        values (#{excellentUserId},#{excellentSelectTime},#{excellrntReason})
+    </insert>
+    <select id="selectExcellence" resultMap="ExcellenceJoinUser">
+        SELECT * FROM excellent_stafff
+        JOIN USER ON excellentUserId=userId
+        JOIN department ON department=departmentId
+        ORDER BY excellentSelectTime DESC;
+    </select>
+    <resultMap id="ExcellenceJoinUser" type="com.iwork.bean.Excellent_Stafff">
+        <id property="excellentStaffId" column="excellentStaffId"></id>
+        <result property="excellentSelectTime" column="excellentSelectTime"></result>
+        <result property="excellrntReason" column="excellrntReason"></result>
+        <association property="user" column="excellentUserId" javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+            <association property="departmentObj" column="department" javaType="com.iwork.bean.Department">
+                <id property="departmentId" column="departmentId"></id>
+                <result property="departmentName" column="departmentName"></result>
+            </association>
+        </association>
+    </resultMap>
+    <delete id="deleteExcellentById" parameterType="java.lang.String" >
+        delete from excellent_stafff where excellentStaffId=#{excellentStaffId}
+    </delete>
+</mapper>
