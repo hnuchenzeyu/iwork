@@ -61,7 +61,7 @@ public class ProjectsController {
      */
     @RequestMapping("/updateProject")
     @ResponseBody
-    public void updateProject(Project project){
+    public void updateProject(@RequestBody Project project){
 
         projectsService.updateProject(project);
     }

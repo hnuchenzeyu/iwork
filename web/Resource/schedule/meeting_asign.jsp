@@ -105,7 +105,7 @@
 	<script src='../js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js'></script>
 	<script src="../js/plugins/layer/layer.js"></script>
 
-
+    <script src=../iwork_js/timeControl.js"></script>
 
     <script>
         $(document).ready(function() {

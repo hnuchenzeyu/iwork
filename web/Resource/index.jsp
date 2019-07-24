@@ -157,8 +157,6 @@
                         <ul class="nav nav-second-level">
                             <li><a class="J_menuItem" href="http://localhost:8080/iWork/Resource/showAllProjectType">项目</a>
                             </li>
-                            <li><a class="J_menuItem" href="project_detail.html">项目详情</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
