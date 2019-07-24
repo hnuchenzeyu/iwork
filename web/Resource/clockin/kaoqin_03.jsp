@@ -107,7 +107,8 @@
                             <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <table id="tradeList" data-toggle="table">
+                    <table id="tradeList" data-toggle="table"
+                           data-url="getTodayAttendance">
                         <thead>
                         <tr>
                             <th data-field="Num">序号</th>
