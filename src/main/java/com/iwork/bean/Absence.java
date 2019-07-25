@@ -9,11 +9,13 @@ public class Absence {
 
     private Date absenceTime;
 
-    private Integer absenceTimeQuantum;
+    private String absenceTimeQuantum;
 
     private String lateTime;
 
-    private Integer absenceType;
+    private String absenceType;
+
+    private User user;
 
     public Integer getAbsenceId() {
         return absenceId;
@@ -39,11 +41,11 @@ public class Absence {
         this.absenceTime = absenceTime;
     }
 
-    public Integer getAbsenceTimeQuantum() {
+    public String getAbsenceTimeQuantum() {
         return absenceTimeQuantum;
     }
 
-    public void setAbsenceTimeQuantum(Integer absenceTimeQuantum) {
+    public void setAbsenceTimeQuantum(String absenceTimeQuantum) {
         this.absenceTimeQuantum = absenceTimeQuantum;
     }
 
@@ -55,11 +57,31 @@ public class Absence {
         this.lateTime = lateTime == null ? null : lateTime.trim();
     }
 
-    public Integer getAbsenceType() {
+    public String getAbsenceType() {
         return absenceType;
     }
 
-    public void setAbsenceType(Integer absenceType) {
+    public void setAbsenceType(String absenceType) {
         this.absenceType = absenceType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Absence{" +
+                "absenceId=" + absenceId +
+                ", absenceUserId=" + absenceUserId +
+                ", absenceTime=" + absenceTime +
+                ", absenceTimeQuantum=" + absenceTimeQuantum +
+                ", lateTime='" + lateTime + '\'' +
+                ", absenceType=" + absenceType +
+                '}';
     }
 }

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iwork.mapper.OutsideWorkMapper" >
+  <resultMap id="BaseResultMap" type="com.iwork.bean.OutsideWork" >
+    <id column="workId" property="workid" jdbcType="INTEGER" />
+    <result column="workTitle" property="worktitle" jdbcType="VARCHAR" />
+    <result column="workDescription" property="workdescription" jdbcType="VARCHAR" />
+    <result column="workMember" property="workmember" jdbcType="VARCHAR" />
+    <result column="workStartTime" property="workstarttime" jdbcType="VARCHAR" />
+    <result column="workEndTime" property="workendtime" jdbcType="VARCHAR" />
+    <result column="workStatus" property="workstatus" jdbcType="INTEGER" />
+    <result column="workProgress" property="workprogress" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    workId, workTitle, workDescription, workMember, workStartTime, workEndTime, workStatus, 
+    workProgress
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from outsidwork
+    where workId = #{workid,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAllWork" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from outsidwork
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from outsidwork
+    where workId = #{workid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.iwork.bean.OutsideWork" >
+    insert into outsidwork (workId, workTitle, workDescription, 
+      workMember, workStartTime, workEndTime, 
+      workStatus, workProgress)
+    values (#{workid,jdbcType=INTEGER}, #{worktitle,jdbcType=VARCHAR}, #{workdescription,jdbcType=VARCHAR}, 
+      #{workmember,jdbcType=VARCHAR}, #{workstarttime,jdbcType=VARCHAR}, #{workendtime,jdbcType=VARCHAR}, 
+      #{workstatus,jdbcType=INTEGER}, #{workprogress,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.iwork.bean.OutsideWork" >
+    insert into outsidwork
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workid != null" >
+        workId,
+      </if>
+      <if test="worktitle != null" >
+        workTitle,
+      </if>
+      <if test="workdescription != null" >
+        workDescription,
+      </if>
+      <if test="workmember != null" >
+        workMember,
+      </if>
+      <if test="workstarttime != null" >
+        workStartTime,
+      </if>
+      <if test="workendtime != null" >
+        workEndTime,
+      </if>
+      <if test="workstatus != null" >
+        workStatus,
+      </if>
+      <if test="workprogress != null" >
+        workProgress,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workid != null" >
+        #{workid,jdbcType=INTEGER},
+      </if>
+      <if test="worktitle != null" >
+        #{worktitle,jdbcType=VARCHAR},
+      </if>
+      <if test="workdescription != null" >
+        #{workdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="workmember != null" >
+        #{workmember,jdbcType=VARCHAR},
+      </if>
+      <if test="workstarttime != null" >
+        #{workstarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="workendtime != null" >
+        #{workendtime,jdbcType=VARCHAR},
+      </if>
+      <if test="workstatus != null" >
+        #{workstatus,jdbcType=INTEGER},
+      </if>
+      <if test="workprogress != null" >
+        #{workprogress,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.iwork.bean.OutsideWork" >
+    update outsidwork
+    <set >
+      <if test="worktitle != null" >
+        workTitle = #{worktitle,jdbcType=VARCHAR},
+      </if>
+      <if test="workdescription != null" >
+        workDescription = #{workdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="workmember != null" >
+        workMember = #{workmember,jdbcType=VARCHAR},
+      </if>
+      <if test="workstarttime != null" >
+        workStartTime = #{workstarttime,jdbcType=VARCHAR},
+      </if>
+      <if test="workendtime != null" >
+        workEndTime = #{workendtime,jdbcType=VARCHAR},
+      </if>
+      <if test="workstatus != null" >
+        workStatus = #{workstatus,jdbcType=INTEGER},
+      </if>
+      <if test="workprogress != null" >
+        workProgress = #{workprogress,jdbcType=INTEGER},
+      </if>
+    </set>
+    where workId = #{workid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.iwork.bean.OutsideWork" >
+    update outsidwork
+    set workTitle = #{worktitle,jdbcType=VARCHAR},
+      workDescription = #{workdescription,jdbcType=VARCHAR},
+      workMember = #{workmember,jdbcType=VARCHAR},
+      workStartTime = #{workstarttime,jdbcType=VARCHAR},
+      workEndTime = #{workendtime,jdbcType=VARCHAR},
+      workStatus = #{workstatus,jdbcType=INTEGER},
+      workProgress = #{workprogress,jdbcType=INTEGER}
+    where workId = #{workid,jdbcType=INTEGER}
+  </update>
+</mapper>

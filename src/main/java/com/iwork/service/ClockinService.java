@@ -1,5 +1,6 @@
 package com.iwork.service;
 
+import com.iwork.bean.OutsideWork;
 import com.iwork.bean.User;
 import com.iwork.bean.Vocation;
 
@@ -13,4 +14,7 @@ public interface ClockinService {
     Boolean deleteVocationById(int vid);
     List<Vocation>selectAllRecordBySubid(int id,int type,int refresh);
     int updateByPrimaryKeySelective(Vocation record);
+    void UpdateStatus();
+    List<User> selectAllUser();
+
 }

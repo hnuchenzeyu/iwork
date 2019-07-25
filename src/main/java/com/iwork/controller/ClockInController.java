@@ -1,9 +1,11 @@
 package com.iwork.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.iwork.bean.OutsideWork;
 import com.iwork.bean.User;
 import com.iwork.bean.Vocation;
 import com.iwork.service.ClockinService;
+import com.iwork.service.OutsideWorkService;
 import net.sf.json.JSONArray;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -21,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,6 +32,9 @@ public class ClockInController {
     private static final Log logger= LogFactory.getLog(ClockInController.class);
     @Autowired
     private ClockinService clockinService;
+
+    @Autowired
+    public OutsideWorkService workService;
 
     private List<User> userList;
     @RequestMapping("/vocationApply")
@@ -93,32 +99,11 @@ public class ClockInController {
 
 
 
-    @RequestMapping("/testAj")
-    @ResponseBody
-    public void testAj(HttpServletResponse response){
-//        List<Vocation> vList=clockinService.selectAllRecordByUserid(1,3);
-//        response.setCharacterEncoding("utf-8");
-//        try {
-//            PrintWriter writer =response.getWriter();
-//            JSONArray jsonArray =JSONArray.fromObject(vList);
-//            int i=1;
-//            logger.info("开始获取表格数据"+jsonArray.toString());
-//            String json = "{\"total\":" + vList.size() + ",\"rows\":" + jsonArray.toString() + "}";
-//            writer.print(json);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
-
-
-
-
-
-    }
     @RequestMapping("vocationManager")
     public String vocationManager(HttpServletRequest request){
         request.getSession().setAttribute("loginmanager",clockinService.selectUserById(1001));
+
         return "clockin/vocation_manager";
     }
     @ResponseBody
@@ -174,10 +159,25 @@ public class ClockInController {
     }
 
     @RequestMapping("outsideWork")
-    public String outsiteWork(){
+    public String outsiteWork(Model model){
+
+        model.addAttribute("outsideWorks",workService.selectAlloutsideWork());
 
         return "clockin/kaoqin_02";
     }
+
+    @RequestMapping("/insertIntoWork")
+    public void insertIntoWork(HttpServletResponse response,@RequestBody OutsideWork work) throws IOException {
+        logger.info("insertIntoWork");
+        if (work!=null)
+            logger.info(work.getWorkmember()+work.getWorktitle()+work.getWorkdescription());
+        workService.inserIntoWork(work);
+
+        logger.info("afterIntoWork");
+        responseMsg("msg:'插入成功'",response);
+
+    }
+
     @RequestMapping("/memberList")
     public String memberList(){
 
@@ -187,5 +187,14 @@ public class ClockInController {
     public String excellentStaff(){
 
         return "clockin/kaoqin_04";
+    }
+
+    @RequestMapping("/createWork")
+    public String createWork(Model model){
+        List<User> userList =clockinService.selectAllUser();
+        model.addAttribute("userList",userList);
+
+
+        return "clockin/new_work";
     }
 }

@@ -33,7 +33,7 @@
                     <div class="ibox-title">
                         <h5>所有出差任务</h5>
                         <div class="ibox-tools">
-                            <a id="evection" class="btn btn-primary btn-xs">创建新出差</a>
+                            <a id="evection" href="${pageContext.request.contextPath}/createWork" target="_self" class="btn btn-primary btn-xs">创建新出差</a>
                         </div>
 						<div  id="evections" hidden>
 						      
@@ -60,33 +60,46 @@
 
                             <table class="table table-hover">
                                 <tbody>
+                                <c:forEach items="${outsideWorks}" var="work">
                                     <tr>
-                                        <td class="project-status">
-                                            <span class="label label-primary">进行中</span>
-                                        </td>
+                                        <c:choose>
+                                            <c:when test="${work.workstatus==1}">
+                                                <td class="project-status">
+                                                    <span class="label label-primary">进行中</span>
+                                                </td>
+                                            </c:when>
+                                            <c:when test="${work.workstatus==2}">
+                                                <td class="project-status">
+                                                    <span class="label label-warning">已结束</span>
+                                                </td>
+                                            </c:when>
+                                        </c:choose>
                                         <td class="project-title">
-                                            <a href="project_detail.html">LIKE－一款能够让用户快速获得认同感的兴趣社交应用</a>
+                                            <a href="project_detail.html">${work.worktitle}</a>
                                             <br/>
-                                            <small>创建于 2014.08.15</small>
+                                            <small>创建于${work.workstarttime}</small>
                                         </td>
                                         <td class="project-completion">
-                                                <small>当前进度： 48%</small>
-                                                <div class="progress progress-mini">
-                                                    <div style="width: 48%;" class="progress-bar"></div>
-                                                </div>
+                                            <small>当前进度： ${work.workprogress}%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: ${work.workprogress}%;" class="progress-bar"></div>
+                                            </div>
                                         </td>
                                         <td class="project-people">
-                                            <a href="projects.html"><img alt="image" class="img-circle" src="Resource/img/a3.jpg"></a>
-                                            <a href="projects.html"><img alt="image" class="img-circle" src="Resource/img/a1.jpg"></a>
-                                            <a href="projects.html"><img alt="image" class="img-circle" src="Resource/img/a2.jpg"></a>
-                                            <a href="projects.html"><img alt="image" class="img-circle" src="Resource/img/a4.jpg"></a>
-                                            <a href="projects.html"><img alt="image" class="img-circle" src="Resource/img/a5.jpg"></a>
+                                            <span >成员</span><br/>
+                                            <c:forEach items="${work.memberlist}" var="member">
+                                                <span style="margin-right: 5px;">${member}</span>
+                                            </c:forEach>
+
                                         </td>
                                         <td class="project-actions">
-                                            <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
-                                            <a href="projects.html#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑 </a>
+                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑 </a>
                                         </td>
                                     </tr>
+
+                                </c:forEach>
+
                                 </tbody>
                                 </table>
                             </div>
@@ -103,23 +116,7 @@
        $(document).ready(function(){$("#loading-example-btn").click(function(){btn=$(this);simpleLoad(btn,true);simpleLoad(btn,false)})});function simpleLoad(btn,state){if(state){btn.children().addClass("fa-spin");btn.contents().last().replaceWith(" Loading")}else{setTimeout(function(){btn.children().removeClass("fa-spin");btn.contents().last().replaceWith(" Refresh")},2000)}};
     </script>	
 	<script src="Resource/js/plugins/layer/layer.js"></script>	
-	<script>		
-		$("#evection").click(function(){		
-			
-			layer.open({	
-		        type: 2,         
-		        title: '新增差务',
-		        fix: false,
-		        shadeClose: true,
-				closeBtn: 0,
-		        maxmin: true,
-		        area: ['1000px', '500px'],
-		        content: "new_work.jsp",
-				
-		    });	
-		});
-		
-	</script>
+
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
     </body>
 </html>

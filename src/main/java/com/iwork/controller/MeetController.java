@@ -19,6 +19,7 @@ public class MeetController {
 
     @RequestMapping("/showMeetings")
     @ResponseBody
+
     public ModelAndView showMeeting(){
         List<Meeting> list = meetService.showMeeting();
         ModelAndView modelAndView = new ModelAndView("schedule/meeting_asign");

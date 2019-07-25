@@ -31,6 +31,18 @@
     from vocation
     where subperior = #{userid,jdbcType=INTEGER}
   </select>
+  <select id="selectAllRecord" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from vocation
+    where 1=1
+  </select>
+  <select id="updateRecordStatus" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from vocation
+    where status = #{type,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from vocation
     where vocation_id = #{vocationId,jdbcType=INTEGER}
