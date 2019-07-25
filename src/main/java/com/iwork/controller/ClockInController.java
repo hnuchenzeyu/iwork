@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -61,9 +62,12 @@ public class ClockInController {
             //int userid =Integer.parseInt(request.getParameter("userid"));
             int userid =user.getUserId();
             int recordTypes =Integer.parseInt(request.getParameter("recordTypes"));
-
+            List<Vocation> vList;
             logger.info("来了"+userid+recordTypes);
-            List<Vocation> vList=clockinService.selectAllRecordByUserid(userid,recordTypes);
+
+            vList=clockinService.selectAllRecordByUserid(userid,recordTypes);
+            if (recordTypes==4)
+                vList.addAll(clockinService.selectAllRecordByUserid(userid,5));
             response.setCharacterEncoding("utf-8");
 
             PrintWriter writer =response.getWriter();
@@ -177,11 +181,13 @@ public class ClockInController {
         responseMsg("msg:'插入成功'",response);
 
     }
-
-    @RequestMapping("/memberList")
-    public String memberList(){
-
-        return "clockin/kaoqin_03";
+    @ResponseBody
+    @RequestMapping("/workDetail")
+    public ModelAndView memberList(HttpServletRequest request,HttpServletResponse response,Model model){
+        ModelAndView modelAndView =new ModelAndView("clockin/work_detail");
+        OutsideWork work = (OutsideWork) request.getAttribute("work");
+        model.addAttribute("work",work);
+        return modelAndView;
     }
     @RequestMapping("/excellentStaff")
     public String excellentStaff(){

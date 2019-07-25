@@ -43,15 +43,16 @@ public class ClockinServiceImpl implements ClockinService{
     public List<Vocation> selectAllRecordByUserid(int id,int type) {
 
         List<Vocation>  vocationList=  vocationMapper.selectAllRecordByUserid(id);
+
+
         Iterator<Vocation> it=vocationList.iterator();
         while (it.hasNext()){
             Vocation vocation =it.next();
             vocation.setUsername(user.selectByUserId(vocation.getUserId()).getUserName());
             vocation.setSubperiorname(user.selectByUserId(vocation.getSubperior()).getUserName());
             if (!vocation.getStatus().equals(type)){
-                if (type==4 && vocation.getStatus().equals(5))
-                    break;
-                it.remove();
+
+                    it.remove();
 
             }
         }
@@ -102,6 +103,7 @@ public class ClockinServiceImpl implements ClockinService{
             Vocation vocation =it.next();
             vocation.setUsername(user.selectByUserId(vocation.getUserId()).getUserName());
             vocation.setSubperiorname(user.selectByUserId(vocation.getSubperior()).getUserName());
+
             vocation.getStartTime();
             if (!vocation.getStatus().equals(type)){
 
@@ -158,4 +160,8 @@ public class ClockinServiceImpl implements ClockinService{
         return user.selectAllUser();
     }
 
+    @Override
+    public List<Vocation> selectRecordByStatus() {
+        return selectRecordByStatus();
+    }
 }

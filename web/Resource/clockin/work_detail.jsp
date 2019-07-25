@@ -37,8 +37,16 @@
                                 <dl class="dl-horizontal">
                                     <dt>状态：</dt>
                                     <dd>
-										<span class="label label-primary">进行中</span>
+                                        <c:choose>
+                                        <c:when test="${work.workstatus==1}">
+										    <span class="label label-primary">进行中</span>
+                                        </c:when>
+                                        <c:when test="${work.workstatus==2}">
+                                            <span class="label label-primary">已结束</span>
+                                        </c:when>
+                                        </c:choose>
 										<span  class="label label-warning hidden">取消</span>
+
                                     </dd>
                                 </dl>
                             </div>
@@ -62,13 +70,15 @@
                                 <dl class="dl-horizontal">
 
                                     <dt>最后更新：</dt>
-                                    <dd>2014年 11月7日 22:03</dd>
+                                    <dd>2019年 7月24日 22:03</dd>
                                     <dt>创建于：</dt>
-                                    <dd>2014年 2月16日 03:01</dd>
+                                    <dd>${work.workstarttime}</dd>
                                     <dt>团队成员：</dt>
                                     <dd class="project-people">
                                        <div id="member_list">
-										   <label class="member" data-name="李总" data-fid="1231">李总</label><i class="fa-genderless fa"></i>
+                                           <c:forEach items="${work.memberlist}" var="member">
+                                               <span style="margin-right: 5px;">${member}</span>
+                                           </c:forEach>
 										   <a id="add_member"  class="btn btn-circle btn-default hidden"><i class="glyphicon glyphicon-plus"></i></a>
 									   </div>
                                      
@@ -82,9 +92,9 @@
                                     <dt>当前进度</dt>
                                     <dd>
                                         <div class="progress progress-striped active m-b-sm">
-                                            <div style="width: 60%;" class="progress-bar"></div>
+                                            <div style="width: ${work.workprogress}%;" class="progress-bar"></div>
                                         </div>
-                                        <small>当前已完成项目总进度的 <input type="text" class="btn-link" style="color: #000000;" type="text" disabled="true"; value="60%"></small>
+                                        <small>当前已完成项目总进度的 <input type="text" class="btn-link" style="color: #000000;" type="text" disabled="true"; value="${work.workprogress}%"></small>
                                     </dd>
                                 </dl>
                             </div>
@@ -94,7 +104,7 @@
                                <h4>项目描述</h4>
                                        
                                        <p id="work_detail" class="small">
-                                          <textarea disabled="true" rows="10" cols="20" style="width: 100%;">在线互动式文档分享平台，在这里，您可以和千万网友分享自己手中的文档，全文阅读其他用户的文档，同时，也可以利用分享文档获取的积分下载文档
+                                          <textarea disabled="true" rows="10" cols="20" style="width: 100%;">${work.workdescription}
                                        </textarea>
 									   </p>
                                                                            

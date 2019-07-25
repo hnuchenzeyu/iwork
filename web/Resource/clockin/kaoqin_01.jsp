@@ -160,7 +160,9 @@
 			<div class="tab-pane fade" id="dealing">
 				<div class="row">
 				            <div class="ibox float-e-margins">
-
+                                <div class="ibox-title ">
+                                    <button type="button" id="loading-example-btn"  class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> 刷新</button>
+                                </div>
 				                <div class="ibox-content">
 
 				                    <div  class="project-list">
@@ -239,7 +241,12 @@
 			$("#starttime").datetimepicker('setEndDate',endTime);
 		});
 	</script>
+    <script>
+        $("#loading-example-btn").click(function () {
+            $("#vocation_submit").bootstrapTable("refresh");
 
+        });
+    </script>
 	<script>
 
         function getFormData() {
@@ -260,17 +267,14 @@
 		$("#sub").on('click',function () {
 		    alert($("input[name='username']").val());
 		   var fdata =getFormData();
-		   alert(fdata.userId+fdata.userName+fdata.startTime+fdata.endTime+fdata.vocatinonReason+fdata.subperior);
-
-
 		   $.ajax({
               url:'${pageContext.request.contextPath}/vocationInsert',
               type:'post',
               data:JSON.stringify(fdata),
               contentType:"application/json;charset=utf-8",
               success:function (data) {
-                  alert("success");
-                  alert(data.toString());
+                  alert(data);
+                  $("#vocation_submit").bootstrapTable("refresh");
               },
                error:function (XMLHttpRequest, textStatus) {
                    alert(XMLHttpRequest.readyState+"/"+XMLHttpRequest.status+"/"+textStatus);
@@ -306,7 +310,9 @@
 							type:"post",
 							data:{vocationId:row.vocationId},
 							success:function (data) {
-								alert(data.toString());
+							    alert(data.toString());
+							    $(row).remove();
+
                             },
                             error:function (XMLHttpRequest, textStatus) {
                                 alert(XMLHttpRequest.readyState+"/"+XMLHttpRequest.status+"/"+textStatus);

@@ -16,5 +16,5 @@ public interface ClockinService {
     int updateByPrimaryKeySelective(Vocation record);
     void UpdateStatus();
     List<User> selectAllUser();
-
+    List<Vocation> selectRecordByStatus();
 }

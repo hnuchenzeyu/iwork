@@ -20,4 +20,5 @@ public interface VocationMapper {
     List<Vocation> selectAllRecordBySubid(Integer userid);
     List<Vocation> selectAllRecord();
     List<Vocation> updateRecordStatus(Integer type);
+    List<Vocation> selectRecordByStatus();
 }
