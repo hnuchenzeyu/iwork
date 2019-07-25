@@ -81,4 +81,14 @@ public class ProjectsServiceImpl implements ProjectsService {
         projectsMapper.updateProject(project);
     }
 
+    /**
+     * 获取对应id的项目详情
+     * @param projectId
+     * @return
+     */
+    @Override
+    public Project viewProjectDetail(int projectId) {
+        return projectsMapper.viewProjectDetail(projectId);
+    }
+
 }

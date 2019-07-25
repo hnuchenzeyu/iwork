@@ -50,7 +50,7 @@ function showProjects() {
                         "<img alt=\"image\" class=\"img-circle\" src=\"img/a3.jpg\"> " +
                     "</td>" +
                     "<td class=\"project-actions\" style=\"clear:both\"> " +
-                        "<a class=\"btn btn-white btn-sm\" href='../project_detail.html'>" +
+                        "<a class=\"btn btn-white btn-sm\" onclick='viewProject()'>" +
                             "<i class=\"fa fa-folder\"></i> 查看 " +
                         "</a>" +
                         "<a class=\"btn btn-white btn-sm\" onclick='editProjectModal()' data-target='#editProjectModal'>" +
@@ -172,7 +172,7 @@ $("#create_new_project").click(function () {
         console.log(newProjectType);
         $.ajax({
             type:"POST",
-            url:"http://localhost:8080/iWork/addProjects",
+            url:"addProjects",
             contentType: "application/json",
             data: JSON.stringify({
                 projectTitle:newProjectTitle,
@@ -182,10 +182,20 @@ $("#create_new_project").click(function () {
             }),
             success:function (result) {
                 $("#newProjectModal").modal("hide");
-                window.location.reload();
+                swal({
+                    title:"太帅了",
+                    text:"创建成功了",
+                    type:"success"
+                },function () {
+                    window.location.reload();
+                });
             },
             error:function () {
-                alert("创建失败!");
+                swal({
+                    title:"可惜了",
+                    text:"编辑失败了",
+                    type:"failure"
+                });
                 $("#newProjectModal").modal("hide");
             }
         })
@@ -206,9 +216,20 @@ $("#save_btn").click(function () {
             data: {projectTypeName: projectType},
             success:function (result) {
                 $("#myModal").modal("hide");
+                swal({
+                    title:"太帅了",
+                    text:"创建成功了",
+                    type:"success"
+                },function () {
+                    window.location.reload();
+                });
             },
             error:function () {
-                alert("创建失败!");
+                swal({
+                    title:"可惜了",
+                    text:"创建失败了",
+                    type:"failure"
+                });
                 $("#myModal").modal("hide");
             }
         })
@@ -220,7 +241,7 @@ $("#allProjectTypes").click(function () {
     var tbody = window.document.getElementById("tbody-data");
     $.ajax({
         type:"GET",
-        url:"http://localhost:8080/iWork/showProjects",
+        url:"showProjects",
         data:"",
         dataType:"json",
         success:function (datas) {
@@ -306,4 +327,36 @@ function showTypeProjects() {
             alert("查询失败！");
         }
     })
+}
+
+//查看按钮
+function viewProject() {
+    var projectId = parseInt($(".proTd").data("projectid"));
+    console.log(projectId);
+
+    console.log("查看项目详情");
+    $.ajax({
+        type:"POST",
+        url:"viewProject",
+        data:{
+            projectId:projectId
+        },
+        success: function (datas) {
+            //请求成功调用的函数
+            window.location.href="viewProject?projectId="+projectId;
+        },
+        //调用执行后调用的函数
+        complete: function(XMLHttpRequest,textStatus){
+            // alert(XMLHttpRequest.responseText);
+            // alert("查询成功！！！");
+        },
+        //调用出错执行的函数
+        error: function(){
+            swal({
+                title:"可惜了",
+                text:"查看失败了",
+                type:"failure"
+            });
+        }
+    });
 }

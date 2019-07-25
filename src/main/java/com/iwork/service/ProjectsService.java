@@ -14,4 +14,5 @@ public interface ProjectsService {
 
     void updateProject(Project project);
 
+    Project viewProjectDetail(int projectId);
 }

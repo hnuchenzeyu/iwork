@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ page import="java.util.*,com.iwork.bean.*" pageEncoding="utf-8" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-
 <head>
 
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
     <title>H+ 后台主题UI框架 - 项目详情</title>
     <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
@@ -17,19 +16,21 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
 
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
 </head>
 
 <body class="gray-bg">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-12">
             <div class="wrapper wrapper-content animated fadeInUp">
                 <div class="ibox">
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="m-b-md">
-                                    <a href="project_detail.html#" class="btn btn-white btn-xs pull-right">编辑项目</a>
-                                    <h2>阿里巴巴集团</h2>
+                                    <h2>iWork Cloud团队</h2>
                                 </div>
                             </div>
                         </div>
@@ -37,49 +38,48 @@
                             <div class="col-sm-5">
 								<dl class="dl-horizontal">
 								    <dt>状态：</dt>
-								    <dd><span class="label label-primary">进行中</span>
+								    <dd><span class="label label-primary">${projectStatus}</span>
 								    </dd>
 								</dl>
                                 <dl class="dl-horizontal">
 
                                     <dt>项目经理：</dt>
-                                    <dd>Beaut-zihan</dd>
-                                    <dt>消息：</dt>
-                                    <dd>162</dd>
-                                    <dt>客户：</dt>
-                                    <dd><a href="project_detail.html#" class="text-navy"> 百度</a>
-                                    </dd>
-                                    <dt>版本：</dt>
-                                    <dd>v1.4.2</dd>
+                                    <dd>${project.user.userName}</dd>
+                                    <dt>项目主题：</dt>
+                                    <dd>${project.projectTitle}</dd>
+                                    <dt>项目类型：</dt>
+                                    <dd>${project.project_type.projectTypeName}</dd>
+                                    <dt>项目考核</dt>
+                                    <dd><span class="label label-primary">${project.projectReview}</span>
                                 </dl>
                             </div>
                             <div class="col-sm-7" id="cluster_info">
 								<dl class="dl-horizontal">
 								    <dt>审批：</dt>
-								    <dd><span class="label label-primary">已审批</span>
+								    <dd><span class="label label-primary">${project.projectReview}</span>
 								    </dd>
 								</dl>
                                 <dl class="dl-horizontal">
 
-                                    <dt>最后更新：</dt>
-                                    <dd>2014年 11月7日 22:03</dd>
+                                    <dt>项目竞标：</dt>
+                                    <dd>${project.projectBidding}</dd>
                                     <dt>创建于：</dt>
-                                    <dd>2014年 2月16日 03:01</dd>
+                                    <dd>${project.createTime}</dd>
                                     <dt>团队成员：</dt>
                                     <dd class="project-people">
-                                        <a href="project_detail.html">
+                                        <a href="project_detail.jsp">
                                             <img alt="image" class="img-circle" src="img/a3.jpg">
                                         </a>
-                                        <a href="project_detail.html">
+                                        <a href="project_detail.jsp">
                                             <img alt="image" class="img-circle" src="img/a1.jpg">
                                         </a>
-                                        <a href="project_detail.html">
+                                        <a href="project_detail.jsp">
                                             <img alt="image" class="img-circle" src="img/a2.jpg">
                                         </a>
-                                        <a href="project_detail.html">
+                                        <a href="project_detail.jsp">
                                             <img alt="image" class="img-circle" src="img/a4.jpg">
                                         </a>
-                                        <a href="project_detail.html">
+                                        <a href="project_detail.jsp">
                                             <img alt="image" class="img-circle" src="img/a5.jpg">
                                         </a>
                                     </dd>
@@ -92,9 +92,9 @@
                                     <dt>当前进度</dt>
                                     <dd>
                                         <div class="progress progress-striped active m-b-sm">
-                                            <div style="width: 60%;" class="progress-bar"></div>
+                                            <div style="width:${project.projectProgress}%" class="progress-bar"></div>
                                         </div>
-                                        <small>当前已完成项目总进度的 <strong>60%</strong></small>
+                                        <small>当前已完成项目总进度的 <strong>${project.projectProgress}%</strong></small>
                                     </dd>
                                 </dl>
                             </div>
@@ -105,9 +105,9 @@
                                     <div class="panel-heading">
                                         <div class="panel-options">
                                             <ul class="nav nav-tabs">
-                                                <li><a href="project_detail.html#tab-1" data-toggle="tab">团队消息</a>
+                                                <li><a href="project_detail.jsp#tab-1" data-toggle="tab">团队消息</a>
                                                 </li>
-                                                <li class=""><a href="project_detail.html#tab-2" data-toggle="tab">最后更新</a>
+                                                <li class=""><a href="project_detail.jsp#tab-2" data-toggle="tab">最后更新</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -274,18 +274,13 @@
                                                                     未测试
                                                                 </p>
                                                             </td>
-
                                                         </tr>
-
-
                                                     </tbody>
                                                 </table>
 
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -293,49 +288,45 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            <div class="wrapper wrapper-content project-manager">
-                <h4>项目描述</h4>
-                <img src="img/wenku_logo.png" class="img-responsive">
-                <p class="small">
-                    <br>在线互动式文档分享平台，在这里，您可以和千万网友分享自己手中的文档，全文阅读其他用户的文档，同时，也可以利用分享文档获取的积分下载文档
-                </p>
-                <p class="small font-bold">
-                    <span><i class="fa fa-circle text-warning"></i> 高优先级</span>
-                </p>
-                <h5>项目标签</h5>
-                <ul class="tag-list" style="padding: 0">
-                    <li><a href="project_detail.html"><i class="fa fa-tag"></i> 文档</a>
-                    </li>
-                    <li><a href="project_detail.html"><i class="fa fa-tag"></i> 分享</a>
-                    </li>
-                    <li><a href="project_detail.html"><i class="fa fa-tag"></i> 下载</a>
-                    </li>
-                </ul>
-                <h5>项目文档</h5>
-                <ul class="list-unstyled project-files">
-                    <li><a href="project_detail.html"><i class="fa fa-file"></i> Project_document.docx</a>
-                    </li>
-                    <li><a href="project_detail.html"><i class="fa fa-file-picture-o"></i> Logo_zender_company.jpg</a>
-                    </li>
-                    <li><a href="project_detail.html"><i class="fa fa-stack-exchange"></i> Email_from_Alex.mln</a>
-                    </li>
-                    <li><a href="project_detail.html"><i class="fa fa-file"></i> Contract_20_11_2014.docx</a>
-                    </li>
-                </ul>
-                <div class="m-t-md">
-                    <a href="project_detail.html#" class="btn btn-xs btn-primary">添加文档</a>
-
-                </div>
-            </div>
-        </div>
     </div>
     <script src="js/jquery.min.js?v=2.1.4"></script>
     <script src="js/bootstrap.min.js?v=3.3.5"></script>
     <script src="js/content.min.js?v=1.0.0"></script>
+
+    <script src="js/json2.js"></script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <script src="iwork_js/projects.js"></script>
+    <script src="iwork_js/timeControl.js"></script>
+
     <script>
-        $(document).ready(function(){$("#loading-example-btn").click(function(){btn=$(this);simpleLoad(btn,true);simpleLoad(btn,false)})});function simpleLoad(btn,state){if(state){btn.children().addClass("fa-spin");btn.contents().last().replaceWith(" Loading")}else{setTimeout(function(){btn.children().removeClass("fa-spin");btn.contents().last().replaceWith(" Refresh")},2000)}};
+        $(document).ready(function(){
+            $("#loading-example-btn").click(function(){
+                btn=$(this);simpleLoad(btn,true);
+                simpleLoad(btn,false)
+            })
+        });
+        function simpleLoad(btn,state){
+            if(state){
+                btn.children().addClass("fa-spin");
+                btn.contents().last().replaceWith(" Loading")
+            }else{
+                setTimeout(
+                    function(){
+                        btn.children().removeClass("fa-spin");
+                        btn.contents().last().replaceWith(" Refresh")
+                    },2000
+                )
+            }
+        };
     </script>
+
+    <script>
+        $(document).ready(function () {
+
+        })
+    </script>
+
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 
 </body>

@@ -10,4 +10,6 @@ public interface ProjectsMapper {
     void addProject(Project project);
 
     void updateProject(Project project);
+
+    Project viewProjectDetail(int projectId);
 }

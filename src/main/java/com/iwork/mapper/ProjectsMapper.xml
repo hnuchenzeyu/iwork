@@ -23,6 +23,32 @@
         </association>
     </resultMap>
 
+    <select id="viewProjectDetail" resultType="com.iwork.bean.Project" resultMap="projectMap">
+        select * from project inner join project_type,user where projectId = #{projectId};
+    </select>
+    <resultMap id="projectMap" type="com.iwork.bean.Project">
+        <id property="projectId" column="projectId"></id>
+        <result property="createUserId" column="createUserId"></result>
+        <result property="projectTitle" column="projectTitle"></result>
+        <result property="projectStatus" column="projectStatus"></result>
+        <result property="createTime" column="createTime"></result>
+        <result property="projectType" column="projectType"></result>
+        <result property="projectContext" column="projectContext"></result>
+        <result property="projectProgress" column="projectProgress"></result>
+        <result property="projectReview" column="projectReview"></result>
+        <result property="projectExam" column="projectExam"></result>
+        <result property="projectBidding" column="projectBidding"></result>
+        <result property="bidingSummary" column="bidingSummary"></result>
+        <association property="user" column="createUserId" javaType="com.iwork.bean.User">
+            <id property="userId" column="userId"></id>
+            <result property="userName" column="userName"></result>
+        </association>
+        <association property="project_type" column="projectType" javaType="com.iwork.bean.Project_Type">
+            <id property="projectTypeId" column="projectTypeId"></id>
+            <result property="projectTypeName" column="projectTypeName"></result>
+        </association>
+    </resultMap>
+
     <insert id="addProject" parameterType="com.iwork.bean.Project">
         insert into project(
                         projectId,
