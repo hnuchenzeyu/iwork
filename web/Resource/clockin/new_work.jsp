@@ -91,21 +91,7 @@
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 	<script src="Resource/js/plugins/layer/layer.js"></script>	
 	<script>
-		function callbackdata(){
-			var title = $("#title_work").val();
-			var detail =$("#work_detail_new").val();
 
-			var k=new String("");
-			memberlist.forEach(function (value) {
-			   k.concat(value.id+",");
-			});
-			var data ={
-                worktitle:title,
-                workdescription:detail.toString(),
-				memberlist:k
-			}
-			return data;
-		}
 
 		memberlist=new Array();
 		$("#member_list").on("click",".member",function(){	
@@ -161,9 +147,41 @@
 			});	
 		});
 
+        function callbackdata(){
+            var title = $("#title_work").val();
+            var detail =$("#work_detail_new").val();
 
+            var str="";
+
+            for(var i=0;i<memberlist.length;i++)
+            {
+                str+=memberlist[i].id+',';
+            }
+            if (str.length > 0) {
+                str = str.substr(0, str.length - 1);
+            }
+
+            var data ={
+                worktitle:title,
+                workdescription:detail.toString(),
+                workmember:str
+            }
+            return data;
+        }
 		$("#create").click(function () {
-		    alert(callbackdata().memberlist);
+		    alert(callbackdata().workmember);
+            $.ajax({
+                url:"${pageContext.request.contextPath}/insertIntoWork",
+                type:"post",
+                data:JSON.stringify(callbackdata()),
+                contentType:"application/json;charset=utf-8",
+                success:function (data) {
+                    alert(data);
+                },error:function (XMLHttpRequest, textStatus) {
+                    alert(XMLHttpRequest.readyState+"/"+XMLHttpRequest.status+"/"+textStatus);
+                }
+
+            });
         });
 	</script>
 

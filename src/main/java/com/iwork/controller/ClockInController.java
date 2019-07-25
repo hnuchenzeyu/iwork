@@ -169,7 +169,8 @@ public class ClockInController {
     @RequestMapping("/insertIntoWork")
     public void insertIntoWork(HttpServletResponse response,@RequestBody OutsideWork work) throws IOException {
         logger.info("insertIntoWork");
-
+        if (work!=null)
+            logger.info(work.getWorkmember()+work.getWorktitle()+work.getWorkdescription());
         workService.inserIntoWork(work);
 
         logger.info("afterIntoWork");

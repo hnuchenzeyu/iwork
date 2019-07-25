@@ -43,7 +43,7 @@ public class OustsideWorkServiceImpl implements OutsideWorkService {
 
 
         Date d=new Date();
-        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd");
         work.setWorkstarttime(sdf.format(d));
         work.setWorkstatus(1);
         work.setWorkprogress(0);
