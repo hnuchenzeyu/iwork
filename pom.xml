@@ -124,7 +124,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.83</version>
         </dependency>
         <!-- 返回json字符串的支持，注意不要与spring的版本冲突 -->
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
